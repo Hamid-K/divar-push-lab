@@ -1,0 +1,26 @@
+# Android/Gradle build state
+.gradle/
+.idea/
+build/
+**/build/
+local.properties
+*.iml
+*.apk
+*.apks
+*.aab
+*.dex
+
+# Private project credentials and signing material
+google-services.json
+*.keystore
+*.jks
+*.p12
+*.pem
+.env
+.env.*
+
+# Runtime and editor debris
+__pycache__/
+*.pyc
+*.log
+.DS_Store

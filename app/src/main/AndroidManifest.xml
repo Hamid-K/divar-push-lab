@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="false"
+        android:label="Divar Push Lab"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Exported for a synthetic lab event; other installed apps can send it too. -->
+        <receiver
+            android:name=".LabPushReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="org.hamidk.divarpushlab.SIMULATE_PUSH" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
