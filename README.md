@@ -6,7 +6,7 @@ The [Divar code analysis](https://gist.github.com/raminfp/a548a2af86108eb40b8bff
 
 This lab reconstructs the **observed inserted notification-handler branch** in the infected `11.14.20-b` APK. It is a small synthetic app, not a repackaged Divar APK. “Exact” here means the branch conditions, field mapping, internal Intent, receiver check, and **receipt-time trigger** follow that build’s code. The dangerous worker is replaced by a fixed simulated-LPE stage that cannot escalate privileges; the ordinary Divar notification path is outside this focused lab. Source APK SHA-256: `cdaf0bf256269eec249787299b5ebb7058f3944c86b14debfa41f9c263ad17da`.
 
-The `11.14.20-b` inserted branch runs while the push is processed; the user does not have to see or tap a notification.
+The `11.14.20-b` code indicates that a well-formed matching push is **silent on the normal path**: it starts the worker on receipt, then records the push locally without posting an Android notification. No tap is needed. This conclusion comes from the preserved APK's code; this lab did not send a push to the original Divar app.
 
 ## Demo
 
@@ -33,7 +33,9 @@ flowchart LR
     G -->|No| N[Ordinary Divar path; not reproduced here]
 ```
 
-The inserted provider branch sends the broadcast and **returns before the provider’s ordinary notification code**. Neither that broadcast nor the receiver's worker depends on a tap. In the sampled app, the OneSignal extender can then continue its SDK display path. The current lab suppresses that display after the cloned provider call: stock OneSignal 3.15.3's default display path crashed on this API 33/target 34 lab setup because its `PendingIntent` lacked a required mutability flag. This is a **lab-only compatibility shim**; notification display fidelity is outside this test. In the original APK, `campaign` is decoded by Base64 then XOR with `0x68` to form the worker’s fetch URL; `callback_url` is only a nonempty guard in this branch. The lab accepts only its fixed marker destination and never runs downloaded code. Its precompiled stage attempts a **read-only open** of Android's protected package registry, expects `EACCES` or `EPERM`, reads no bytes, and checks that UID and SELinux context did not change.
+The inserted provider branch sends the broadcast and **returns before the provider’s ordinary notification code**. The sampled OneSignal extender then calls `AbstractC3677v0.q(..., true)`, which stores the message locally with `opened=1`; it does **not** call the SDK's notification-posting routine `AbstractC3677v0.c(...)`. A separate received-event callback runs afterward. That local `opened` flag is not evidence of a user tap. The extender's exception fallback may display an alert, and a separately supplied FCM system-notification payload is a different route. The direct FCM **data** route reaches the same provider and likewise returns before Divar's ordinary notification code.
+
+The synthetic lab uses `return true` after the cloned provider call to prevent stock OneSignal 3.15.3 from displaying the message. Stock display crashed on this API 33/target 34 setup because its `PendingIntent` lacked a required mutability flag. The lab therefore matches the silent outcome through a different internal SDK path; original-APK runtime display has not been tested. In the original APK, `campaign` is decoded by Base64 then XOR with `0x68` to form the worker’s fetch URL; `callback_url` is only a nonempty guard in this branch. The lab accepts only its fixed marker destination and never runs downloaded code. Its precompiled stage attempts a **read-only open** of Android's protected package registry, expects `EACCES` or `EPERM`, reads no bytes, and checks that UID and SELinux context did not change.
 
 The two entry routes reach the same provider in the sampled APK:
 
@@ -107,7 +109,7 @@ As of 4 October 2026, [OneSignal's Free plan](https://onesignal.com/pricing) inc
 | --- | --- |
 | Push parsing and trigger | Reconstructs the observed `11.14.20-b` OneSignal field mapping, FCM source route, shared provider checks, internal broadcast, and receiver equality check. |
 | Timing | Matching message acts during push processing. The notification shade and user tap are not part of the inserted branch. |
-| Notification display | The current lab extender returns `true` after the cloned provider call to suppress stock SDK display on API 33/target 34, where its legacy `PendingIntent` caused a crash. The earlier cloud logs used `return false`. The sampled app's normal display path and runtime behavior are not established by this lab. |
+| Notification display | The sampled `11.14.20-b` matching path records the OneSignal push locally as opened/received without invoking SDK display; this is code evidence, not an original-app runtime test. The lab also shows no system notification, but uses `return true` to suppress stock SDK display on API 33/target 34. Earlier cloud logs used `return false`. |
 | Worker | Replaced with a fixed host-loopback stage descriptor and precompiled handler. The simulated-LPE probe tries a read-only open of `/data/system/packages.xml`, expects denial, reads no bytes, and checks unchanged UID/SELinux context. No server-selected method, arbitrary URL, executable file, exploit, or privilege escalation. |
 | Transport | Direct FCM reaches both the Divar adapter and stock OneSignal 3.15.3 parser in this synthetic app. Live OneSignal dashboard and API CLI sends also reached the emulator through FCM. The sampled APK appears to use a Divar-specific OneSignal REST endpoint, which this lab does not reproduce. |
 
