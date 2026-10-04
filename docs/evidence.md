@@ -22,16 +22,16 @@ In `11.14.19-b`, the receiver and worker remain but the inspected notification s
 
 | Historical code observation | Lab stand-in | Difference |
 | --- | --- | --- |
-| OneSignal or Firebase notification ingress | App button or ADB event | No cloud push is sent or received. |
+| OneSignal or Firebase notification ingress | Direct FCM data message to this lab installation | Real FCM delivery is tested, but not Divar's Firebase service, OneSignal configuration, or original push fields. |
 | Push-supplied encoded address | Fixed allowlisted `http://10.0.2.2:18765/marker` | No arbitrary destination or attacker server. |
 | Server response can name bytes and methods | Fixed `lab-marker` JSON | No executable content or server-selected method. |
 | File write, reflective invocation, cleanup | Harmless marker and precompiled method | No reflection, dynamic loading, native invocation, or LPE. |
 
-The lab receiver checks a fixed action and nonce. It does not reproduce Divar's title/`push_id` and JSON field gate. The encoded endpoint in this app is a constant that must decode to one allowlisted emulator URL.
+The lab's FCM service checks an exact two-field data map, then posts an Android notification. A tap invokes its private receiver through an app-created `PendingIntent`; only then does the marker path run. This does not reproduce Divar's title/`push_id` and JSON field gate. The encoded endpoint in this app is a constant that must decode to one allowlisted emulator URL.
 
 The fixed server binds to the host loopback interface. Its negative controls reject other routes and uploads. The app's rejected samples should make no request to `/marker`.
 
-The lab uses package `org.hamidk.divarpushlab` and targets Android API 34. The sampled Divar `11.14.20-b` APK is package `ir.divar` and targets API 35. The demo is an analogy of the delivery boundary, not a patched build or a platform-parity test.
+The lab uses package `org.hamidk.divarpushlab` and targets Android API 34. The sampled Divar `11.14.20-b` APK is package `ir.divar` and targets API 35. On 4 October 2026, a direct FCM HTTP v1 message reached an API 33 emulator, posted the lab notification, and its tap completed the fixed marker path with `PASS`. That validates the synthetic cloud-to-tap route on that emulator. It is an analogy of the delivery boundary, not a patched Divar build, OneSignal test, or platform-parity test.
 
 ## The missing evidence that would change the assessment
 

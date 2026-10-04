@@ -12,6 +12,8 @@ local.properties
 
 # Private project credentials and signing material
 google-services.json
+*service-account*.json
+*firebase-admin*.json
 *.keystore
 *.jks
 *.p12

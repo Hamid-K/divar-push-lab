@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="false"
@@ -15,13 +16,22 @@
             </intent-filter>
         </activity>
 
-        <!-- Exported for a synthetic lab event; other installed apps can send it too. -->
+        <!-- An immutable PendingIntent created by this app invokes this receiver on tap. -->
         <receiver
             android:name=".LabPushReceiver"
-            android:exported="true">
+            android:exported="false" />
+
+        <service
+            android:name=".LabFirebaseMessagingService"
+            android:exported="false">
             <intent-filter>
-                <action android:name="org.hamidk.divarpushlab.SIMULATE_PUSH" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </receiver>
+        </service>
+
+        <!-- Current FCM registration mode: target this installation by FID. -->
+        <meta-data
+            android:name="firebase_messaging_installation_id_enabled"
+            android:value="true" />
     </application>
 </manifest>
