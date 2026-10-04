@@ -22,14 +22,12 @@ public final class LabPipeline {
     public static final String KEY_STATUS = "status";
     private static final String TAG = "DivarPushLab";
     private static final String EXPECTED_URL = "http://10.0.2.2:18765/marker";
-    // Base64 of each byte of EXPECTED_URL XOR 0x68, mirroring the observed URL decoding shape.
-    private static final String ENCODED_URL = "ABwcGFJHR1lYRlhGWkZaUllQX15dRwUJGgMNGg==";
     private static final byte XOR_KEY = 0x68;
     private static final AtomicBoolean RUNNING = new AtomicBoolean(false);
 
     private LabPipeline() { }
 
-    public static void run(Context context) {
+    public static void run(Context context, String campaign) {
         if (!RUNNING.compareAndSet(false, true)) {
             Log.i(TAG, "Ignored concurrent synthetic event.");
             return;
@@ -39,17 +37,16 @@ public final class LabPipeline {
         boolean handled = false;
         String failureMessage = null;
         try {
-            record(context, "Accepted fixed synthetic event.");
-            String decoded = decodeFixedEndpoint();
+            record(context, "Receiver equality check matched; benign worker started at receipt.");
+            String decoded = decodeCampaign(campaign);
             if (!EXPECTED_URL.equals(decoded)) {
                 throw new IllegalStateException("Decoded endpoint failed the local allowlist");
             }
             Log.i(TAG, "Decoded endpoint matched the fixed emulator-host allowlist.");
 
             JSONObject response = fetchMarker(decoded);
-            if (response.length() != 3
+            if (response.length() != 2
                     || !"lab-marker".equals(response.optString("kind"))
-                    || !"divar-lab".equals(response.optString("nonce"))
                     || !"benign".equals(response.optString("message"))) {
                 throw new IllegalStateException("Marker response failed the exact schema check");
             }
@@ -89,8 +86,8 @@ public final class LabPipeline {
                 .edit().putString(KEY_STATUS, message).apply();
     }
 
-    private static String decodeFixedEndpoint() {
-        byte[] decoded = Base64.decode(ENCODED_URL, Base64.NO_WRAP);
+    private static String decodeCampaign(String campaign) {
+        byte[] decoded = Base64.decode(campaign, Base64.DEFAULT);
         for (int i = 0; i < decoded.length; i++) decoded[i] ^= XOR_KEY;
         return new String(decoded, StandardCharsets.UTF_8);
     }

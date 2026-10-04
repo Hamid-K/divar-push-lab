@@ -1,103 +1,95 @@
-# Cloud push to a synthetic Android app
+# Divar 11.14.20-b push-handler lab
 
-**Hamid Kashfi · October 2026 · lab version 1.1**
+**Hamid Kashfi · October 2026 · LLM-assisted lab documentation**
 
-The Divar APKs described in [raminfp's code analysis](https://gist.github.com/raminfp/a548a2af86108eb40b8bffc5c8f07aaa) contain an inserted route from a qualifying push to a worker that can fetch instructions, write supplied bytes, invoke a compatible method, and later delete the file. As I noted in [my X post](https://x.com/hkashfi/status/2106147963332633025), the installed app could therefore be useful as a way to reach selected phones, even if its own data were not the objective. A second stage could act inside the app's privileges; crossing Android's sandbox would require a separate vulnerability.
+The [Divar code analysis](https://gist.github.com/raminfp/a548a2af86108eb40b8bffc5c8f07aaa) describes an inserted route from a specially formed push message to `ReportDeserializer`, a worker capable of fetching instructions and handling supplied bytes. In [my X post](https://x.com/hkashfi/status/2106147963332633025), I raised the possibility that the installed app could serve as a delivery path to selected phones. Whether any such message was sent, or any later stage ran on a phone, remains unverified.
 
-This repository tests the delivery boundary with **real Firebase Cloud Messaging (FCM) sent to a synthetic app on an Android emulator**. The test message crosses Google's cloud service, reaches the app's `FirebaseMessagingService`, causes the app to post an Android notification, and continues only when the user taps it. The rest is a fixed, harmless marker exercise. The app is not a modified Divar APK or a clone of Divar's notification handler. It does not use OneSignal, fetch executable code, or attempt privilege escalation.
+This lab reconstructs the **observed inserted notification-handler branch** in the infected `11.14.20-b` APK. It is a small synthetic app, not a repackaged Divar APK. “Exact” here means the branch conditions, field mapping, internal Intent, receiver check, and **receipt-time trigger** follow that build’s code. The dangerous worker is replaced by a fixed, harmless marker; the ordinary Divar notification path is outside this focused lab. Source APK SHA-256: `cdaf0bf256269eec249787299b5ebb7058f3944c86b14debfa41f9c263ad17da`.
 
-[Watch the 23-second cloud push demo](docs/divar_cloud_push_demo.mp4): the app's accepted-message status, the Android notification shade, a user tap, and `PASS` on the API 33 emulator. The recording begins after the send; it does not show the sender's API request. It is a synthetic app test, not a Divar device trace.
+The `11.14.20-b` inserted branch runs while the push is processed; the user does not have to see or tap a notification.
 
-## What the test shows
+## The observed route
 
 ```mermaid
 flowchart LR
-    S[Lab sender] -->|FCM HTTP v1<br/>data message| F[Firebase Cloud Messaging]
-    F --> G[Google-enabled<br/>Android emulator]
-    G --> A[Lab FirebaseMessagingService<br/>exact field gate]
-    A --> N[Android notification]
-    N -->|User taps| T[Private app receiver]
-    T --> M[Fixed GET /marker<br/>on host loopback]
-    M --> P[Write harmless text<br/>invoke precompiled method<br/>delete marker]
-    A -->|Wrong fields| R[Reject without marker fetch]
-    P -. separate, untested hypothesis .-> X[Another stage might attempt<br/>an Android vulnerability]
+    O[OneSignal send] --> C[FCM transport]
+    C --> S[OneSignal SDK 3.15.3 and extender]
+    S -->|custom.a / alert / title| P[Shared notification provider]
+    F[Direct FCM data: source=divar or default] --> P
+    P --> G{Nonempty title = push_id? Body JSON has nonempty callback_url, campaign, action?}
+    G -->|Yes, on receipt| B[Explicit internal broadcast: campaign is URI and extra key/value]
+    B --> R[Private receiver checks URI = extra value]
+    R --> L[Fixed benign lab marker]
+    G -->|No| N[Ordinary Divar path; not reproduced here]
 ```
 
-| Part | Fidelity and limit |
-| --- | --- |
-| Cloud transport | A real FCM send targets this lab installation by Firebase Installation ID (FID). This exercises cloud registration and delivery on the emulator; it is not a locally injected notification or ADB broadcast. |
-| Android interaction | The app itself posts a system notification after checking the data fields. The user taps that notification to begin the fixed marker step. |
-| Divar comparison | The inspected Divar builds used their own notification code and included OneSignal and Firebase routes. This app has different code, package, signing identity, field gate, and payload behavior. It is a demonstration of the *kind* of delivery boundary, not a faithful reconstruction of a historical push or proof that one was sent. |
-| Further exploitation | The dashed edge is a research hypothesis. No downloaded binary, dynamic code, local privilege escalation, or sandbox escape is in this lab. |
+The inserted provider branch sends the broadcast and **returns before the provider’s ordinary notification code**. The OneSignal extender then resumes its SDK processing and may display a notification, but the receiver has already started its worker. Neither the broadcast nor the worker depends on a tap. In the original APK, `campaign` is decoded by Base64 then XOR with `0x68` to form the worker’s fetch URL; `callback_url` is only a nonempty guard in this branch. The lab accepts only its fixed marker destination and never runs downloaded code.
 
-The tap requirement is a choice in this lab. It should not be read back into the Divar implementation; this test does not determine whether a historical qualifying message needed a user tap.
+The two entry routes reach the same provider in the sampled APK:
 
-OneSignal is a push platform present in the inspected Divar app. It can [target subscriptions](https://documentation.onesignal.com/reference/create-message), so retained sender, recipient, and message records could matter in a real investigation. This lab sends **directly through FCM**; it does not test a OneSignal account or establish that anyone controlled Divar's push infrastructure.
+- **OneSignal:** the bundled parser takes provider data from `custom.a`, body from `alert`, and title from `title`.
+- **Divar Firebase service:** for `source=divar` or `source=default`, it passes the FCM data map as provider data, with `body` and `title` from that map. Other `source` values follow different routes or stop.
 
-## Run the cloud test
+This lab uses **real direct FCM cloud delivery** to a Google-enabled Android emulator. The [sample messages](docs/sample-events.md) show the FCM data and controls. No historical Divar push or provider log is included.
 
-You need JDK 21, Android SDK platform 34, an emulator image with Google Play services, ADB, Python 3, Google Cloud CLI (`gcloud`) for the included sender, and the Gradle wrapper. Android Studio can provide the SDK and emulator; Docker is not needed. The tested device was an API 33 ARM64 emulator. The app targets API 34.
+## OneSignal status
 
-On macOS with Android Studio installed, the command-line setup is:
+The preserved APK contains the SDK marker `onesignal/android/031503`. This lab embeds **stock** `com.onesignal:OneSignal:3.15.3` and a real `NotificationExtenderService`. The SDK normalizes `custom.a`, `alert`, and `title`; the extender passes those values into the same provider method as direct FCM, then returns control to OneSignal’s normal SDK processing. The sampled APK also contains a Divar-specific REST address in its OneSignal code, so matching the SDK version does **not** establish identical transport backends. The lab emulator has registered an active OneSignal push subscription, but **live OneSignal message delivery is not yet verified**.
 
-```sh
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
-export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$PATH"
-```
+## Run the lab
 
-1. Create a fresh [Firebase project and Android app](https://firebase.google.com/docs/android/setup) for the package **`org.hamidk.divarpushlab`**. Enable the Firebase Cloud Messaging API in that project. Download its `google-services.json` into `app/google-services.json`. This file is ignored by Git. Do not use Divar's package, signing key, or push credentials.
-2. Start the fixed marker service in one terminal: `python3 tools/marker_server.py`. It serves only `GET /marker` on host `127.0.0.1:18765` and always returns `{"kind":"lab-marker","nonce":"divar-lab","message":"benign"}`. The emulator reaches host loopback through `10.0.2.2`, as [Android documents](https://developer.android.com/studio/run/emulator-networking-address).
-3. Start a Google-enabled emulator, build, install, and open the app:
+Use JDK 21, Android SDK platform 34, a Google-enabled emulator, ADB, Python 3, and `gcloud`. Android Studio can supply the SDK and emulator. The app has its own package and Firebase project; do not use Divar’s push credentials.
+
+1. Create a [Firebase project and Android app](https://firebase.google.com/docs/android/setup) for the exact package `org.hamidk.divarpushlab`. Enable the **Firebase Cloud Messaging API (HTTP v1)** in its Google Cloud project. Download that app’s `google-services.json` to `app/google-services.json`; Git ignores it. This FCM setup needs no Android signing SHA fingerprint; do not use Divar’s Firebase configuration.
+2. Start the fixed marker server: `python3 tools/marker_server.py`. It listens on host loopback `127.0.0.1:18765`; the emulator reaches it at `10.0.2.2` ([Android emulator networking](https://developer.android.com/studio/run/emulator-networking-address)).
+3. Start the emulator, then build and install the app:
 
    ```sh
-   emulator -list-avds
-   emulator @YOUR_AVD_NAME
    ./gradlew :app:assembleDebug
    adb install -r app/build/outputs/apk/debug/app-debug.apk
    ```
 
-4. In **Divar Push Lab**, allow Android notifications and wait for FCM registration. The screen shows only the last four characters of this installation's Firebase Installation ID (FID). The included sender reads the current FID privately through ADB on the emulator; **Copy registered FID** is available if you send the HTTP request manually. Keep the full FID out of screenshots, public logs, and commits. FIDs can change. [Firebase's Android guide](https://firebase.google.com/docs/cloud-messaging/android/get-started#access-the-firebase-installation-id) explains the registration flow.
-5. Authenticate `gcloud` with a sender account that has `cloudmessaging.messages.create` permission in *your* project, then send the fixed accepted sample:
+4. Open the app and wait for its FCM registration token. The app masks it on screen and the helper reads it privately through ADB. The HTTP v1 request targets [`message.token`](https://firebase.google.com/docs/cloud-messaging/send/v1-api#send_messages_to_specific_devices), which also allows the legacy OneSignal 3.15.3 SDK to register in this single app.
+5. In **your** project, give the sending identity `cloudmessaging.messages.create` (for example, the [Firebase Cloud Messaging Service Editor role](https://cloud.google.com/iam/docs/roles-permissions/firebasecloudmessaging)). For a personal test, sign in with `gcloud auth login`; for automation, use a dedicated service account with that role and [short-lived impersonated credentials](https://cloud.google.com/docs/authentication/use-service-account-impersonation). The helper reads the current `gcloud auth print-access-token` identity; it needs no downloaded service-account key.
+6. Send one of the fixed [sample messages](docs/sample-events.md):
 
    ```sh
-   gcloud auth login
    python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID accepted
+   python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID title-mismatch
    ```
 
-   The helper reads the FID from this debug app with `adb run-as`, gets a short-lived token from `gcloud`, and sends a fixed data-only HTTP v1 message. It prints the API's **acceptance for delivery**, which is not proof that the emulator received it. The [sample message bodies and field breakdown](docs/sample-events.md) show exactly what it sends. [Firebase's HTTP v1 guide](https://firebase.google.com/docs/cloud-messaging/send/v1-api) explains authorization. Never put a service-account key or access token in this repository.
-6. Open the emulator's notification shade and tap **Cloud lab message received**. The tap, rather than FCM receipt alone, starts the marker fetch. Return to the app and use **Refresh lab status** to see `PASS`. Check `adb logcat -d -s DivarPushLab:I '*:S'` and the marker server terminal for the corresponding `GET /marker`. The [sample events](docs/sample-events.md) also show rejected FCM messages.
+7. Watch the app status, `adb logcat -d -s DivarPushLab:I '*:S'`, and the marker server. A matching cloud push should reach the provider, trigger the internal receiver, and complete the benign marker **without a tap**. Rejected samples should not reach the marker server. FCM API acceptance alone is not proof of device delivery.
 
-To check the rejection gate, send `python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID rejected`. It changes only the fixed nonce. The expected result is a rejection log with no new lab notification or marker request. For an API schema check without delivery, add `--validate-only` before `accepted` or `rejected`.
+The public checkout builds without `google-services.json`, but cloud registration and delivery require your own Firebase configuration. The fixed marker server has tests: `python3 -m unittest discover -s tools -p 'test_*.py'`.
 
-The exact gate accepts only a **data-only** message with `lab_action=deliver_marker` and `lab_nonce=divar-lab`. There is no top-level FCM `notification` object: in a background app, FCM can display such a notification without calling the app's `onMessageReceived` handler. Here the app must receive and validate the data first, then post the Android notification itself. [Firebase documents that distinction](https://firebase.google.com/docs/cloud-messaging/android/receive-messages).
+## Test through OneSignal
 
-The marker endpoint is compiled into the app as an encoded constant and must decode to the allowlisted emulator URL. Neither the push nor the server can choose a URL, file, method, or executable. The response is checked against an exact three-field schema. The app writes harmless text in its private storage, calls a method compiled into the app, logs its ordinary UID and SELinux label, and deletes the text file. On a physical phone, `10.0.2.2` is not a route to the host; this marker setup is emulator-specific.
+This is a separate cloud route through the **actual 3.15.3 SDK**. It still uses FCM to reach the emulator.
 
-**Observed on 4 October 2026:** An FCM HTTP v1 message reached the API 33 emulator; the lab service accepted its data fields and posted an Android notification. Tapping it triggered the fixed marker GET, in-app write, precompiled handler, cleanup, and `PASS` log. This establishes that the lab's cloud-to-tap-to-marker path worked on that emulator. It does not establish anything about historical Divar delivery, fetched malware, or elevated privileges.
+As of 4 October 2026, [OneSignal's Free plan](https://onesignal.com/pricing) includes unlimited mobile push sends for up to 1,000 monthly active users.
 
-The public checkout builds without `google-services.json`, but cloud registration and reception require your own Firebase configuration. You can separately check the marker server with `python3 -m unittest discover -s tools -p 'test_*.py'`.
+1. In the **same Firebase project**, create a dedicated sender service account with only `cloudmessaging.messages.create` and `firebase.projects.get` (a custom IAM role). Generate a service-account JSON key. In the new OneSignal app, open **Settings → Push & In-App → Platforms → Google Android (FCM)** and upload that JSON key. [OneSignal documents the required permissions and upload path](https://documentation.onesignal.com/docs/android-firebase-credentials). Keep the key out of this repository.
+2. In the ignored `app/onesignal.properties`, set `app_id=<YOUR_ONESIGNAL_APP_ID>` and `sender_id=<FIREBASE_PROJECT_NUMBER>` (the numeric Firebase sender ID). Stock OneSignal 3.15.3 requires the sender ID; its registration failed when the lab supplied only the sampled `REMOTE-<app_id>` manifest pattern. Rebuild, install, and open the app. Wait for an active OneSignal push subscription; a player ID alone does not establish that a push token was registered. The app masks identifiers on screen, and the helper reads the private debug-app subscription ID through ADB.
+3. Supply your OneSignal App API key as the `ONESIGNAL_API_KEY` environment variable, then send the fixed vectors:
 
-## Where the real evidence ends
+   ```sh
+   python3 tools/send_onesignal_sample.py accepted
+   python3 tools/send_onesignal_sample.py title-mismatch
+   ```
 
-| Evidence | What it supports | What it does not establish |
-| --- | --- | --- |
-| Preserved Divar APKs, DEX, and manifest review | The inserted worker and notification route are present in sampled signed builds. | A qualifying push was sent, who controlled delivery, or a device executed a payload. |
-| This synthetic FCM emulator test | Real cloud delivery can reach an installed app, produce a notification, and continue after a tap to a fixed benign in-app action. | OneSignal or Divar parity, dynamic code loading, native binary execution, or elevated privileges. |
-| A future historical device or provider trace | It may identify a push, fetch, downloaded bytes, or process behavior. | Attribution by itself. |
+   The helper obtains the App ID and player ID locally and accepts no target, URL, or receiver-class override. An API response is **not** device-delivery evidence; check the emulator status, logcat, marker-server request, and the provider’s delivery record. See [sample messages](docs/sample-events.md).
 
-The sampled release picture is uneven: `11.14.9` lacks the known inserted class; `11.14.10` is the first confirmed positive APK; `11.14.15-b` lacks the chain between positive samples; `11.14.19-b` retains the worker while its inspected sender lacks the relay; the relay returns in `11.14.20-b`; and `11.15.0-w` lacks the known class. These are observations of available builds, not a continuous installation history. See the [evidence notes](docs/evidence.md) for hashes and limits.
+**After the test:** stop the marker server, uninstall the lab app or clear its data to discard registration IDs, and remove the ignored configuration files if retiring the project. Revoke the direct FCM sender role and the dedicated OneSignal service-account key, or delete the lab Firebase/OneSignal projects. Keep FCM tokens, player IDs, OAuth tokens, OneSignal API keys, and service-account JSON out of commits and screen recordings. `google-services.json` identifies a project but is not itself a sender credential.
 
-The original worker's write-and-invoke behavior should not be mistaken for a demonstrated Android escape. Android gives each app a UID sandbox, and Android 10 removed direct execution permission for files in the writable app home directory for apps targeting API 29 or later. This lab calls a harmless method already compiled into itself and records its ordinary app identity. [Android sandbox](https://source.android.com/docs/security/app-sandbox) · [Android 10 execution rule](https://developer.android.com/about/versions/10/behavior-changes-10).
+## What is and is not reproduced
 
-For a real incident, preserve the app build and hash, notification fields, sender jobs, server responses, device logs, and any fetched file before drawing conclusions. Divar infrastructure, OneSignal, FCM, and affected phones may each hold different portions of that trail; retention and field coverage need to be checked. A push record alone cannot prove a later fetch or execution. See the [evidence notes](docs/evidence.md) and [LPE evidence worksheet](docs/lpe-evidence-template.md).
+| Boundary | Lab treatment |
+| --- | --- |
+| Push parsing and trigger | Reconstructs the observed `11.14.20-b` OneSignal field mapping, FCM source route, shared provider checks, internal broadcast, and receiver equality check. |
+| Timing | Matching message acts during push processing. The notification shade and user tap are not part of the inserted branch. |
+| Worker | Replaced with a fixed marker on host loopback and a harmless in-app action. No server-selected method, arbitrary URL, executable file, or privilege escalation. |
+| Transport | Direct FCM reaches this synthetic app. Stock OneSignal 3.15.3 is embedded, but the sampled APK appears to use a Divar-specific OneSignal REST endpoint. Live OneSignal delivery is pending verification. |
 
-## Sources and credit
+This is a behavioral reproduction of a **specific sampled handler branch**, not evidence that attackers sent a matching push. A separate vulnerability would be needed for a payload to cross Android’s app sandbox. Logs from affected phones, Divar’s sender infrastructure, Firebase, and potentially OneSignal could help reconstruct messages and downstream requests; the fields and retention available from each must be checked. A sender record by itself cannot prove execution on a device.
 
-- [raminfp's Divar code analysis](https://gist.github.com/raminfp/a548a2af86108eb40b8bffc5c8f07aaa)
-- [My X post on why this delivery path matters](https://x.com/hkashfi/status/2106147963332633025)
-- [Firebase Android registration](https://firebase.google.com/docs/cloud-messaging/android/get-started), [receiving messages](https://firebase.google.com/docs/cloud-messaging/android/receive-messages), and [FCM HTTP v1 sends](https://firebase.google.com/docs/cloud-messaging/send/v1-api)
-- [Android emulator host networking](https://developer.android.com/studio/run/emulator-networking-address), [app sandbox](https://source.android.com/docs/security/app-sandbox), and [Android 10 execution change](https://developer.android.com/about/versions/10/behavior-changes-10)
-- [OneSignal message targeting](https://documentation.onesignal.com/reference/create-message)
-
-The original Divar APKs and decompiled code are not part of this repository. The lab and accompanying text were prepared with LLM assistance; the Divar summary draws on the cited analysis and sampled APK review. License for this repository's original material: [MIT](LICENSE).
+The [evidence notes](docs/evidence.md) identify the source methods and the remaining validation limits. The original APK and decompiled code are not distributed in this repository. License for this lab’s original material: [MIT](LICENSE). The bundled OneSignal SDK has its own [modified MIT terms and full notice](THIRD_PARTY_NOTICES.md).

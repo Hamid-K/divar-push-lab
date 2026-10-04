@@ -9,7 +9,6 @@ HOST = "127.0.0.1"
 PORT = 18765
 MARKER = {
     "kind": "lab-marker",
-    "nonce": "divar-lab",
     "message": "benign",
 }
 MARKER_BODY = json.dumps(MARKER, separators=(",", ":")).encode("utf-8")

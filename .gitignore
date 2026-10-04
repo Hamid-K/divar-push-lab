@@ -12,6 +12,7 @@ local.properties
 
 # Private project credentials and signing material
 google-services.json
+onesignal.properties
 *service-account*.json
 *firebase-admin*.json
 *.keystore

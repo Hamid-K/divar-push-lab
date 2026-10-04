@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Send one fixed FCM data message to this synthetic emulator lab."""
+"""Send a fixed 11.14.20-b push-handler test vector to the emulator lab."""
 
 import argparse
+import base64
 import json
 import re
 import subprocess
@@ -13,6 +14,14 @@ import xml.etree.ElementTree as ET
 
 PACKAGE = "org.hamidk.divarpushlab"
 PROJECT_ID = re.compile(r"[a-z][a-z0-9-]{4,28}[a-z0-9]\Z")
+MARKER_URL = "http://10.0.2.2:18765/marker"
+HANDLER = "ir.divar.chat.notification.provider.ChatPushNotificationOpenHandler"
+PUSH_ID = "divar-lab-push"
+SAMPLES = (
+    "accepted", "default-source", "extra-field", "wrong-source",
+    "title-mismatch", "empty-title", "missing-push-id", "malformed-body",
+    "missing-callback-url", "missing-campaign", "missing-action",
+)
 
 
 class LabSendError(Exception):
@@ -29,18 +38,18 @@ def command_output(argv, failure_message):
     return result.stdout.strip()
 
 
-def registered_fid():
+def registered_fcm_token():
     preferences = command_output(
         ["adb", "exec-out", "run-as", PACKAGE, "cat", "shared_prefs/lab.xml"],
         "Cannot read the lab app's registration. Check adb devices, install/open "
         "the debug app, and wait for FCM registration.",
     )
     try:
-        node = ET.fromstring(preferences).find("./string[@name='registered_fid']")
+        node = ET.fromstring(preferences).find("./string[@name='fcm_token']")
     except ET.ParseError as error:
         raise LabSendError("The lab app's local registration data is malformed.") from error
     if node is None or not node.text or not node.text.strip():
-        raise LabSendError("No FCM installation ID yet. Open the app and wait for registration.")
+        raise LabSendError("No FCM registration token yet. Open the app and wait for registration.")
     return node.text.strip()
 
 
@@ -52,26 +61,66 @@ def access_token():
     )
 
 
+def sample_data(sample):
+    """Return one immutable-choice FCM data map; the marker URL is not a CLI input."""
+    campaign = base64.b64encode(
+        bytes(byte ^ 0x68 for byte in MARKER_URL.encode("utf-8"))
+    ).decode("ascii")
+    body = {
+        "callback_url": "present-but-not-fetched",
+        "campaign": campaign,
+        "action": HANDLER,
+    }
+    data = {
+        "source": "divar",
+        "title": PUSH_ID,
+        "push_id": PUSH_ID,
+    }
+    if sample == "default-source":
+        data["source"] = "default"
+    elif sample == "extra-field":
+        data["unused_extra"] = "allowed"
+    elif sample == "wrong-source":
+        data["source"] = "other"
+    elif sample == "title-mismatch":
+        data["title"] = "different-title"
+    elif sample == "empty-title":
+        data["title"] = ""
+        data["push_id"] = ""
+    elif sample == "missing-push-id":
+        del data["push_id"]
+    elif sample == "malformed-body":
+        data["body"] = "{not-json"
+    elif sample == "missing-callback-url":
+        del body["callback_url"]
+    elif sample == "missing-campaign":
+        del body["campaign"]
+    elif sample == "missing-action":
+        del body["action"]
+    elif sample != "accepted":
+        raise ValueError("Unknown fixed sample")
+    if "body" not in data:
+        data["body"] = json.dumps(body, separators=(",", ":"))
+    return data
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project", required=True, help="Your Firebase project ID")
     parser.add_argument("--validate-only", action="store_true",
                         help="Ask FCM to validate the request without delivery")
-    parser.add_argument("sample", choices=("accepted", "rejected"),
-                        help="Fixed valid data or the wrong-nonce control")
+    parser.add_argument("sample", choices=SAMPLES,
+                        help="Fixed accepted or boundary-control message")
     args = parser.parse_args()
     if not PROJECT_ID.fullmatch(args.project):
         parser.error("--project must be a Firebase project ID (lowercase letters, digits, hyphens)")
 
-    fid = registered_fid()
+    fcm_token = registered_fcm_token()
     token = access_token()
     body = {
         "message": {
-            "fid": fid,
-            "data": {
-                "lab_action": "deliver_marker",
-                "lab_nonce": "divar-lab" if args.sample == "accepted" else "wrong-nonce",
-            },
+            "token": fcm_token,
+            "data": sample_data(args.sample),
             "android": {"priority": "HIGH"},
         }
     }
@@ -107,7 +156,7 @@ def main():
         print("FCM accepted validation only; no message was delivered.")
     else:
         print(f"FCM accepted the {args.sample} sample for delivery. "
-              "Check the emulator and app log for actual reception.")
+              "Check the emulator and marker-server logs for actual processing.")
 
 
 if __name__ == "__main__":

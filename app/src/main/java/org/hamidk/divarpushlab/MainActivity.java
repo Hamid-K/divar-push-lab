@@ -1,18 +1,13 @@
 package org.hamidk.divarpushlab;
 
-import android.Manifest;
 import android.app.Activity;
-import android.app.NotificationManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -25,22 +20,22 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 /** Setup and observation screen. It never invokes the marker pipeline. */
 public final class MainActivity extends Activity {
-    private static final int NOTIFICATION_PERMISSION_REQUEST = 33;
     private final Handler uiHandler = new Handler(Looper.getMainLooper());
     private final Runnable statusPoll = new Runnable() {
         @Override
         public void run() {
             if (status != null) refreshStatus();
+            if (oneSignalPlayerId != null) refreshOneSignalPlayerUi();
             uiHandler.postDelayed(this, 500);
         }
     };
 
     private TextView cloudState;
     private TextView installationId;
-    private TextView permissionState;
+    private TextView oneSignalPlayerId;
     private TextView status;
     private Button copyId;
-    private Button allowNotifications;
+    private Button copyPlayerId;
     private boolean cloudConfigured;
 
     @Override
@@ -61,7 +56,7 @@ public final class MainActivity extends Activity {
         column.addView(title, matchWrap());
 
         TextView explanation = new TextView(this);
-        explanation.setText("FCM data message → Android notification → your tap → fixed local marker → precompiled in-app handler → cleanup. No Divar code, downloaded executable, or privilege escalation is present.");
+        explanation.setText("FCM data push or OneSignal 3.15.3 push → shared Divar title/push_id and body checks → explicit broadcast → receiver → fixed local marker. The inserted branch runs on receipt, with no tap. The post-receiver worker is a benign lab substitute.");
         explanation.setTextSize(15);
         explanation.setTextColor(Color.rgb(193, 205, 222));
         explanation.setPadding(0, pad / 2, 0, pad);
@@ -81,18 +76,18 @@ public final class MainActivity extends Activity {
         column.addView(refreshId, matchWrap());
 
         copyId = new Button(this);
-        copyId.setText("Copy registered FID");
+        copyId.setText("Copy FCM token");
         copyId.setOnClickListener(view -> copyInstallationId());
         column.addView(copyId, matchWrap());
 
-        permissionState = bodyText();
-        permissionState.setPadding(0, pad / 2, 0, 0);
-        column.addView(permissionState, matchWrap());
+        oneSignalPlayerId = bodyText();
+        oneSignalPlayerId.setPadding(0, pad / 2, 0, 0);
+        column.addView(oneSignalPlayerId, matchWrap());
 
-        allowNotifications = new Button(this);
-        allowNotifications.setText("Allow Android notifications");
-        allowNotifications.setOnClickListener(view -> requestNotificationPermission());
-        column.addView(allowNotifications, matchWrap());
+        copyPlayerId = new Button(this);
+        copyPlayerId.setText("Copy OneSignal player ID");
+        copyPlayerId.setOnClickListener(view -> copyOneSignalPlayerId());
+        column.addView(copyPlayerId, matchWrap());
 
         Button refreshStatus = new Button(this);
         refreshStatus.setText("Refresh lab status");
@@ -107,7 +102,7 @@ public final class MainActivity extends Activity {
         column.addView(status, matchWrap());
 
         TextView footer = new TextView(this);
-        footer.setText("Cloud target: Firebase Installation ID (FID)\nHost marker: 127.0.0.1:18765  •  Emulator alias: 10.0.2.2\nLogcat tag: DivarPushLab");
+        footer.setText("Cloud targets: FCM token or OneSignal player ID\nHost marker: 127.0.0.1:18765  •  Emulator alias: 10.0.2.2\nLogcat tag: DivarPushLab");
         footer.setTextSize(13);
         footer.setTextColor(Color.rgb(158, 173, 196));
         footer.setPadding(0, pad, 0, 0);
@@ -118,8 +113,8 @@ public final class MainActivity extends Activity {
         setContentView(scroll);
 
         cloudConfigured = FirebaseApp.initializeApp(this) != null;
-        refreshPermissionUi();
         refreshInstallationIdUi();
+        refreshOneSignalPlayerUi();
         refreshStatus();
         if (cloudConfigured) {
             registerWithFcm();
@@ -131,8 +126,8 @@ public final class MainActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (permissionState != null) refreshPermissionUi();
         if (installationId != null) refreshInstallationIdUi();
+        if (oneSignalPlayerId != null) refreshOneSignalPlayerUi();
         if (status != null) refreshStatus();
         uiHandler.removeCallbacks(statusPoll);
         uiHandler.postDelayed(statusPoll, 500);
@@ -144,24 +139,23 @@ public final class MainActivity extends Activity {
         super.onPause();
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                           int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == NOTIFICATION_PERMISSION_REQUEST) refreshPermissionUi();
-    }
-
     private void registerWithFcm() {
         if (!cloudConfigured) {
             cloudState.setText("Cloud push is not configured. Add app/google-services.json and rebuild.");
             return;
         }
         cloudState.setText("Registering this lab installation with FCM...");
-        FirebaseMessaging.getInstance().register().addOnCompleteListener(this, task -> {
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
-                cloudState.setText("FCM registration succeeded. The registered FID is shown below when its callback arrives.");
-                installationId.postDelayed(this::refreshInstallationIdUi, 1200);
-                installationId.postDelayed(this::refreshInstallationIdUi, 4200);
+                String token = task.getResult();
+                if (token != null && !token.isEmpty()) {
+                    getSharedPreferences(LabPipeline.PREFS, MODE_PRIVATE).edit()
+                            .putString(LabFirebaseMessagingService.KEY_TOKEN, token).apply();
+                    cloudState.setText("FCM registration succeeded. Token saved locally.");
+                    refreshInstallationIdUi();
+                } else {
+                    cloudState.setText("FCM registration returned no token.");
+                }
             } else {
                 String reason = task.getException() == null ? "unknown error"
                         : task.getException().getClass().getSimpleName();
@@ -171,55 +165,57 @@ public final class MainActivity extends Activity {
     }
 
     private void refreshInstallationIdUi() {
-        String fid = getSharedPreferences(LabPipeline.PREFS, MODE_PRIVATE)
-                .getString(LabFirebaseMessagingService.KEY_FID, "");
-        copyId.setEnabled(fid != null && !fid.isEmpty());
-        if (fid == null || fid.isEmpty()) {
-            installationId.setText("No registered Firebase Installation ID yet.");
+        String token = getSharedPreferences(LabPipeline.PREFS, MODE_PRIVATE)
+                .getString(LabFirebaseMessagingService.KEY_TOKEN, "");
+        copyId.setEnabled(token != null && !token.isEmpty());
+        if (token == null || token.isEmpty()) {
+            setTextIfChanged(installationId, "No FCM registration token yet.");
         } else {
-            String suffix = fid.substring(Math.max(0, fid.length() - 4));
-            installationId.setText("Registered FID: ••••" + suffix
-                    + "\nUse Copy registered FID to target this emulator.");
+            String suffix = token.substring(Math.max(0, token.length() - 4));
+            setTextIfChanged(installationId, "FCM token: ••••" + suffix
+                    + "\nUse Copy FCM token to target this emulator.");
         }
     }
 
     private void copyInstallationId() {
-        String fid = getSharedPreferences(LabPipeline.PREFS, MODE_PRIVATE)
-                .getString(LabFirebaseMessagingService.KEY_FID, "");
-        if (fid == null || fid.isEmpty()) return;
+        String token = getSharedPreferences(LabPipeline.PREFS, MODE_PRIVATE)
+                .getString(LabFirebaseMessagingService.KEY_TOKEN, "");
+        if (token == null || token.isEmpty()) return;
         ClipboardManager clipboard = getSystemService(ClipboardManager.class);
         if (clipboard != null) {
-            clipboard.setPrimaryClip(ClipData.newPlainText("Lab FCM FID", fid));
-            Toast.makeText(this, "Registered FID copied", Toast.LENGTH_SHORT).show();
+            clipboard.setPrimaryClip(ClipData.newPlainText("Lab FCM token", token));
+            Toast.makeText(this, "FCM token copied", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void requestNotificationPermission() {
-        if (Build.VERSION.SDK_INT >= 33
-                && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)
-                != PackageManager.PERMISSION_GRANTED) {
-            requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS},
-                    NOTIFICATION_PERMISSION_REQUEST);
+    private void refreshOneSignalPlayerUi() {
+        String playerId = getSharedPreferences(LabPipeline.PREFS, MODE_PRIVATE)
+                .getString(LabApplication.KEY_ONESIGNAL_PLAYER_ID, "");
+        boolean tokenPresent = getSharedPreferences(LabPipeline.PREFS, MODE_PRIVATE)
+                .getBoolean(LabApplication.KEY_ONESIGNAL_PUSH_TOKEN_PRESENT, false);
+        boolean subscribed = getSharedPreferences(LabPipeline.PREFS, MODE_PRIVATE)
+                .getBoolean(LabApplication.KEY_ONESIGNAL_SUBSCRIBED, false);
+        copyPlayerId.setEnabled(playerId != null && !playerId.isEmpty() && subscribed);
+        if (playerId == null || playerId.isEmpty()) {
+            setTextIfChanged(oneSignalPlayerId,
+                    "No OneSignal player ID yet. Configure the fresh lab OneSignal app and wait for registration.");
         } else {
-            refreshPermissionUi();
+            String suffix = playerId.substring(Math.max(0, playerId.length() - 4));
+            setTextIfChanged(oneSignalPlayerId, "OneSignal 3.15.3 player ID: ••••" + suffix
+                    + "\nPush token present: " + tokenPresent + "  •  Subscribed: " + subscribed
+                    + "\nThe full ID remains only in local app preferences.");
         }
     }
 
-    private void refreshPermissionUi() {
-        NotificationManager manager = getSystemService(NotificationManager.class);
-        boolean runtimeGranted = Build.VERSION.SDK_INT < 33
-                || checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)
-                == PackageManager.PERMISSION_GRANTED;
-        boolean enabled = manager != null && manager.areNotificationsEnabled();
-        if (runtimeGranted && enabled) {
-            permissionState.setText("Android notifications are allowed. A qualifying FCM message can appear in the notification shade.");
-        } else if (!runtimeGranted) {
-            permissionState.setText("Android notification permission is needed before the cloud message can be shown.");
-        } else {
-            permissionState.setText("Notifications are disabled in Android settings for this app.");
+    private void copyOneSignalPlayerId() {
+        String playerId = getSharedPreferences(LabPipeline.PREFS, MODE_PRIVATE)
+                .getString(LabApplication.KEY_ONESIGNAL_PLAYER_ID, "");
+        if (playerId == null || playerId.isEmpty()) return;
+        ClipboardManager clipboard = getSystemService(ClipboardManager.class);
+        if (clipboard != null) {
+            clipboard.setPrimaryClip(ClipData.newPlainText("Lab OneSignal player ID", playerId));
+            Toast.makeText(this, "OneSignal player ID copied", Toast.LENGTH_SHORT).show();
         }
-        allowNotifications.setVisibility(Build.VERSION.SDK_INT >= 33 && !runtimeGranted
-                ? View.VISIBLE : View.GONE);
     }
 
     private void refreshStatus() {
@@ -227,12 +223,17 @@ public final class MainActivity extends Activity {
                 .getString(LabPipeline.KEY_STATUS, "No cloud message has reached the lab yet.");
         if (latest.startsWith("PASS:")) {
             status.setTextColor(Color.rgb(132, 235, 174));
-        } else if (latest.startsWith("STOPPED:") || latest.startsWith("Rejected")) {
+        } else if (latest.startsWith("STOPPED:") || latest.startsWith("Rejected")
+                || latest.startsWith("Inserted branch did not match")) {
             status.setTextColor(Color.rgb(255, 180, 152));
         } else {
             status.setTextColor(Color.rgb(177, 227, 206));
         }
-        status.setText(latest);
+        setTextIfChanged(status, latest);
+    }
+
+    private static void setTextIfChanged(TextView target, String value) {
+        if (!value.contentEquals(target.getText())) target.setText(value);
     }
 
     private TextView bodyText() {

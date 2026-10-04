@@ -1,53 +1,36 @@
-# Evidence behind the lab
+# Evidence and limits: `11.14.20-b`
 
-The lab models a narrow point: notification delivery can put an encoded endpoint in reach of installed app code, and the endpoint can then provide a second instruction set. It does not replay the Divar code or claim an observed attack. The following distinctions should travel with any screenshot or video of the demo.
+This lab is anchored to the preserved infected Divar APK `divar-11-14-20-b.apk`, SHA-256 `cdaf0bf256269eec249787299b5ebb7058f3944c86b14debfa41f9c263ad17da`. Its package is `ir.divar`. The public lab uses a separate package and does not distribute the original APK or DEX files.
 
-## The sampled APK record
+## Code path observed in the APK
 
-| Sample | SHA-256 | Observation |
-| --- | --- | --- |
-| `11.14.9` | `1636d586bd89ae68cf9d8214b3ab31ddda60f3c05b8b4a4eed724520f2cc7bad` | Known worker class absent from the parsed APK. |
-| `11.14.10` | `9e6a9955d9b6e1db5636d4213c386944da8e740170f4e6159b2ecb202decb0db` | Earliest confirmed APK containing the inserted worker in this sample set. Archive file date: 24 February 2026. |
-| `11.14.15-b` | `9c02f4467d5495bdcdd2c9783a496d665ba128a81f6793e7018e8b59382b4a6f` | Known inserted chain absent between positive samples. |
-| `11.14.20-b` | `cdaf0bf256269eec249787299b5ebb7058f3944c86b14debfa41f9c263ad17da` | Worker, receiver and inspected notification relay present. |
-| `11.15.0-w` | `2c57177e254ec914883a2ed33716e703fad1e2cd21f022332b79a06667852db8` | Known worker class absent from the parsed APK. |
+1. The bundled OneSignal parser maps `custom.a` to provider data, `alert` to body, and `title` to title. `PushNotificationExtender.h` passes those values to the shared notification provider. Decompiled references: `com.onesignal.AbstractC3677v0.a` and `ir.divar.chat.notification.onesingnal.PushNotificationExtender.h`.
+2. Divar’s Firebase service routes a flat data map through the same provider when `source` is `divar` or `default`; it takes body and title from the map. Other source values do not enter this branch. Decompiled reference: the Firebase service’s message callback in the sampled APK.
+3. In provider method `Wk.g.f`, nonempty `title` must equal provider-data `push_id`. It parses the body as JSON and requires nonempty `callback_url`, `campaign`, and `action`. It sends an explicit broadcast to the class named by `action`, sets the Intent URI to `campaign`, stores `campaign` as both an extra key and its value, then **returns before the provider’s ordinary notification code**. The calling OneSignal extender can still continue its SDK display path. Companion source: `divar-backdoor-analysis/src/Wk_g.java`, around lines 619–655.
+4. The non-exported `ChatPushNotificationOpenHandler.onReceive` reads the URI and compares it with the extra selected by that URI. On equality it starts `ReportDeserializer(context, dataString)` on a new thread and returns before its ordinary notification-open behavior. Companion source: `divar-backdoor-analysis/src/ChatPushNotificationOpenHandler.java`, around lines 40–49.
+5. The original worker Base64-decodes and XORs `campaign` with `0x68` to form a fetch URL. Its fetched JSON can determine file bytes and an invoked method. Companion source: `divar-backdoor-analysis/src/ReportDeserializer.java`, around lines 54–79 and 135–174. **The lab substitutes a fixed benign marker at this point.**
 
-These hashes were checked against the preserved APK inventory and release audit on 3 October 2026. The source CSVs are in the companion local research folder and are not bundled here. Archive file dates are not verified developer release, installation, or activation dates. Different distribution variants need separate inspection.
+The broadcast and receiver check run **on push receipt**. No tap or Android notification display is required for this branch. `callback_url` is a nonempty guard; it is not the URL given to `ReportDeserializer`. Merely finding these strings in another APK would not establish the same control flow.
 
-The inserted route in inspected positive builds is: OneSignal notification extender or Divar Firebase Messaging service → field gate in the handler → internal relay → non-exported receiver → `ir.divar.chat.util.ReportDeserializer`. The worker Base64-decodes and XORs the push-supplied `campaign` value to obtain a URL, GETs one JSON line, writes decoded `data` bytes to a path, invokes a compatible method by reflection, then removes the file after a delay. The push itself provides the encoded URL; the HTTP response can provide the file bytes and invocation details. These are code observations. No qualifying real push, command response, payload file, on-device execution, or LPE was recovered.
+The sampled APK’s `classes3.dex` contains `onesignal/android/031503`, identifying the OneSignal 3.15.3 SDK generation. The sampled DEX class `Lcom/onesignal/I0;` also contains `https://push.divar.ir/_nrto_/`. That address **suggests a Divar-specific modification to OneSignal REST transport**; its complete runtime use has not been established. The lab builds against stock `com.onesignal:OneSignal:3.15.3`, not that apparent modification. Its `LabOneSignalExtenderService` subclasses the real `NotificationExtenderService`, passes SDK-normalized `additionalData`, `body`, and `title` to `LabNotificationProvider`, and returns `false` so the legacy SDK can continue its own processing. The observed callback and inserted provider/receiver path are the fidelity target; the transport backend and ordinary Divar fallback are not cloned.
 
-In `11.14.19-b`, the receiver and worker remain but the inspected notification sender lacks the relay; an alternate route has not been proven or excluded. This is why the repo never labels every intermediate release as having an identical working path. The first confirmed insertion in sampled APKs has no new manifest permission. `RECORD_AUDIO` was already declared; the later foreground-service microphone delta belongs to a VoIP service and does not establish recording by the inserted worker.
+## Fidelity boundary
 
-## What the synthetic code stands in for
+| Question | Current answer |
+| --- | --- |
+| Which release is modeled? | The observed `11.14.20-b` inserted branch in the APK hash above. Other versions had code changes; this lab makes no claim that their paths are identical. |
+| Is the handler bytecode copied? | No. The app independently implements the observed logic and internal handoff. The original worker and the normal Divar notification path are deliberately absent. |
+| Is direct FCM cloud push real? | On the combined OneSignal/FCM build, an HTTP v1 send to the emulator’s registration token reached the handler. The accepted vector ran the receiver and fixed marker without a tap; a title-mismatch control did not relay. Device and marker logs establish this beyond API acceptance. |
+| Is OneSignal delivery real? | Stock 3.15.3 is embedded, its extender calls the shared provider, and the lab emulator reports an active push subscription with a registered push token. No live OneSignal project message delivery has been confirmed yet; the sampled APK’s apparent Divar-specific REST transport is not reproduced. |
+| Was an attack observed? | No historical matching push, fetched command, payload, on-device execution, or Android privilege escalation was recovered for this lab. |
 
-| Historical code observation | Lab stand-in | Difference |
-| --- | --- | --- |
-| OneSignal or Firebase notification ingress | Direct FCM data message to this lab installation | Real FCM delivery is tested, but not Divar's Firebase service, OneSignal configuration, or original push fields. |
-| Push-supplied encoded address | Fixed allowlisted `http://10.0.2.2:18765/marker` | No arbitrary destination or attacker server. |
-| Server response can name bytes and methods | Fixed `lab-marker` JSON | No executable content or server-selected method. |
-| File write, reflective invocation, cleanup | Harmless marker and precompiled method | No reflection, dynamic loading, native invocation, or LPE. |
+The corrected demo should show the cloud message reaching the app and the benign marker completing **without interaction with a system notification**. A OneSignal notification may still be displayed after the inserted provider branch has already run; display is not its trigger.
 
-The lab's FCM service checks an exact two-field data map, then posts an Android notification. A tap invokes its private receiver through an app-created `PendingIntent`; only then does the marker path run. This does not reproduce Divar's title/`push_id` and JSON field gate. The encoded endpoint in this app is a constant that must decode to one allowlisted emulator URL.
-
-The fixed server binds to the host loopback interface. Its negative controls reject other routes and uploads. The app's rejected samples should make no request to `/marker`.
-
-The lab uses package `org.hamidk.divarpushlab` and targets Android API 34. The sampled Divar `11.14.20-b` APK is package `ir.divar` and targets API 35. On 4 October 2026, a direct FCM HTTP v1 message reached an API 33 emulator, posted the lab notification, and its tap completed the fixed marker path with `PASS`. That validates the synthetic cloud-to-tap route on that emulator. It is an analogy of the delivery boundary, not a patched Divar build, OneSignal test, or platform-parity test.
-
-## The missing evidence that would change the assessment
-
-1. A push request or retained provider message with the exact title and body fields, sender identity, recipient set, and timestamp.
-2. Correlated phone, Divar backend, OneSignal, or FCM records tying that push to a command fetch. A delivery export may omit message body; verify the actual retention and export fields.
-3. The fetched response and file bytes, with hashes, and an on-device trace of write, invocation, and deletion.
-4. Separate evidence for any attempted or successful sandbox escape: exact OS image, patch level, process identity before and after, and a trace of the boundary crossed.
-
-Each item answers a different question. A signed APK demonstrates code in a sampled app lineage, not who inserted it. A matching push demonstrates delivery, not command execution. A worker log demonstrates execution in the app, not an LPE. A privilege change would need its own trace and vulnerability analysis.
+The [34-second emulator recording](divar_cloud_push_demo.mp4) captures a fresh direct FCM run on 4 October 2026. At 03:22:16 CEST, a title mismatch produced no dispatch. At 03:22:28.848, the matching push entered the inserted branch; the receiver started its worker by .851, the local server logged `GET /marker` at 03:22:28, and the app logged cleanup and `PASS` by .867. No screen interaction triggered the worker.
 
 ## Sources
 
-- [raminfp, technical disclosure and code notes](https://gist.github.com/raminfp/a548a2af86108eb40b8bffc5c8f07aaa)
-- [Hamid Kashfi, X post about the Divar finding and possible device-delivery use](https://x.com/hkashfi/status/2106147963332633025)
-- [Uptodown's Divar version archive](https://divar.en.uptodown.com/android/versions) and [APKPure's Divar listing](https://apkpure.net/divar/ir.divar) for sampled distribution files; their dates and files do not constitute a complete release record.
-- [OneSignal message API and audience selection](https://documentation.onesignal.com/reference/create-message)
-- [Firebase Cloud Messaging architecture](https://firebase.google.com/docs/cloud-messaging/fcm-architecture)
-- [Android application sandbox](https://source.android.com/docs/security/app-sandbox)
-- [Android 10 app-home execution rule](https://developer.android.com/about/versions/10/behavior-changes-10)
+- [raminfp’s original code analysis](https://gist.github.com/raminfp/a548a2af86108eb40b8bffc5c8f07aaa)
+- [Hamid Kashfi’s X post](https://x.com/hkashfi/status/2106147963332633025)
+- [Firebase Android receive behavior](https://firebase.google.com/docs/cloud-messaging/android/receive-messages) and [FCM HTTP v1 sends](https://firebase.google.com/docs/cloud-messaging/send/v1-api)
+- Companion local analysis: `divar-backdoor-analysis/src/Wk_g.java`, `ChatPushNotificationOpenHandler.java`, and `ReportDeserializer.java`, extracted from the APK hash above.
