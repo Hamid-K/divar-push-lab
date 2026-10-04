@@ -9,6 +9,7 @@ import subprocess
 import sys
 import urllib.error
 import urllib.request
+import uuid
 import xml.etree.ElementTree as ET
 
 
@@ -18,7 +19,8 @@ MARKER_URL = "http://10.0.2.2:18765/marker"
 HANDLER = "ir.divar.chat.notification.provider.ChatPushNotificationOpenHandler"
 PUSH_ID = "divar-lab-push"
 SAMPLES = (
-    "accepted", "default-source", "extra-field", "wrong-source",
+    "accepted", "onesignal-envelope", "onesignal-envelope-title-mismatch",
+    "default-source", "extra-field", "wrong-source",
     "title-mismatch", "empty-title", "missing-push-id", "malformed-body",
     "missing-callback-url", "missing-campaign", "missing-action",
 )
@@ -71,6 +73,13 @@ def sample_data(sample):
         "campaign": campaign,
         "action": HANDLER,
     }
+    if sample in ("onesignal-envelope", "onesignal-envelope-title-mismatch"):
+        return {
+            "custom": json.dumps({"i": str(uuid.uuid4()), "a": {"push_id": PUSH_ID}},
+                                 separators=(",", ":")),
+            "title": PUSH_ID if sample == "onesignal-envelope" else "different-title",
+            "alert": json.dumps(body, separators=(",", ":")),
+        }
     data = {
         "source": "divar",
         "title": PUSH_ID,

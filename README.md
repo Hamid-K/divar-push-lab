@@ -30,11 +30,11 @@ The two entry routes reach the same provider in the sampled APK:
 - **OneSignal:** the bundled parser takes provider data from `custom.a`, body from `alert`, and title from `title`.
 - **Divar Firebase service:** for `source=divar` or `source=default`, it passes the FCM data map as provider data, with `body` and `title` from that map. Other `source` values follow different routes or stop.
 
-This lab uses **real direct FCM cloud delivery** to a Google-enabled Android emulator. The [sample messages](docs/sample-events.md) show the FCM data and controls. No historical Divar push or provider log is included.
+This lab uses **real direct FCM cloud delivery** to a Google-enabled Android emulator. The [sample messages](docs/sample-events.md) cover both the Divar FCM adapter and a fixed OneSignal-shaped envelope sent through FCM. No historical Divar push or provider log is included.
 
 ## OneSignal status
 
-The preserved APK contains the SDK marker `onesignal/android/031503`. This lab embeds **stock** `com.onesignal:OneSignal:3.15.3` and a real `NotificationExtenderService`. The SDK normalizes `custom.a`, `alert`, and `title`; the extender passes those values into the same provider method as direct FCM, then returns control to OneSignal’s normal SDK processing. The sampled APK also contains a Divar-specific REST address in its OneSignal code, so matching the SDK version does **not** establish identical transport backends. The lab emulator has registered an active OneSignal push subscription, but **live OneSignal message delivery is not yet verified**.
+The preserved APK contains the SDK marker `onesignal/android/031503`. This lab embeds **stock** `com.onesignal:OneSignal:3.15.3` and a real `NotificationExtenderService`. A fixed OneSignal-shaped envelope sent **directly through FCM** reached the SDK parser, extender, shared provider, receiver, and benign marker [on receipt](docs/onesignal_envelope_receipt_log.txt). A [title-mismatch control](docs/onesignal_envelope_title_mismatch_log.txt) reached the extender without dispatching. The extender then returns control to the SDK's normal processing. The sampled APK also contains a Divar-specific REST address in its OneSignal code, so matching the SDK version does **not** establish identical transport backends. The emulator has registered an active OneSignal push subscription; **a send from OneSignal's dashboard or API has not yet been verified**.
 
 ## Run the lab
 
@@ -56,6 +56,8 @@ Use JDK 21, Android SDK platform 34, a Google-enabled emulator, ADB, Python 3, a
    ```sh
    python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID accepted
    python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID title-mismatch
+   python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID onesignal-envelope
+   python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID onesignal-envelope-title-mismatch
    ```
 
 7. Watch the app status, `adb logcat -d -s DivarPushLab:I '*:S'`, and the marker server. A matching cloud push should reach the provider, trigger the internal receiver, and complete the benign marker **without a tap**. Rejected samples should not reach the marker server. FCM API acceptance alone is not proof of device delivery.
@@ -88,7 +90,7 @@ As of 4 October 2026, [OneSignal's Free plan](https://onesignal.com/pricing) inc
 | Push parsing and trigger | Reconstructs the observed `11.14.20-b` OneSignal field mapping, FCM source route, shared provider checks, internal broadcast, and receiver equality check. |
 | Timing | Matching message acts during push processing. The notification shade and user tap are not part of the inserted branch. |
 | Worker | Replaced with a fixed marker on host loopback and a harmless in-app action. No server-selected method, arbitrary URL, executable file, or privilege escalation. |
-| Transport | Direct FCM reaches this synthetic app. Stock OneSignal 3.15.3 is embedded, but the sampled APK appears to use a Divar-specific OneSignal REST endpoint. Live OneSignal delivery is pending verification. |
+| Transport | Direct FCM reaches both the Divar adapter and stock OneSignal 3.15.3 parser in this synthetic app. The sampled APK appears to use a Divar-specific OneSignal REST endpoint. A send from OneSignal's dashboard or API is pending verification. |
 
 This is a behavioral reproduction of a **specific sampled handler branch**, not evidence that attackers sent a matching push. A separate vulnerability would be needed for a payload to cross Android’s app sandbox. Logs from affected phones, Divar’s sender infrastructure, Firebase, and potentially OneSignal could help reconstruct messages and downstream requests; the fields and retention available from each must be checked. A sender record by itself cannot prove execution on a device.
 

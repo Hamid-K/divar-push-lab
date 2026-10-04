@@ -1,0 +1,4 @@
+Direct FCM send of the fixed OneSignal-shaped title-mismatch control, 4 October 2026 (device log time).
+10-04 03:34:02.423  7136  7755 I DivarPushLab: OneSignal extender received normalized payload.
+10-04 03:34:02.423  7136  7755 I DivarPushLab: Inserted branch did not match; no lab dispatch.
+Host marker server: no GET /marker was observed for this control.

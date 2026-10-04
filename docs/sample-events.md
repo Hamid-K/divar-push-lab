@@ -7,6 +7,8 @@ For a fresh cloud setup, register Android package `org.hamidk.divarpushlab` in y
 ```sh
 python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID accepted
 python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID title-mismatch
+python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID onesignal-envelope
+python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID onesignal-envelope-title-mismatch
 ```
 
 The helper privately reads the emulator app's current FCM registration token through `adb run-as`, obtains a short-lived `gcloud` OAuth token, and sends a fixed message. This legacy token mode is used so OneSignal 3.15.3 can register on the same test installation. It accepts no URL, receiver class, or body from the command line. `--validate-only` asks FCM to check the request schema **without delivery**. API acceptance alone does not prove device receipt; inspect the app and marker-server logs.
@@ -43,6 +45,22 @@ The helper privately reads the emulator app's current FCM registration token thr
 
 **Timing:** The provider sends the broadcast while processing the push. The receiver starts the worker from that broadcast; **no notification tap is part of this branch**. Do not expect a visible Android notification to be the trigger. The lab's fixed local server returns a benign marker and cannot provide code or choose another destination.
 
+## OneSignal envelope through direct FCM
+
+`onesignal-envelope` sends a **data-only FCM message directly to the emulator**, shaped like the OneSignal 3.15.3 SDK's incoming envelope. Its `data` map has no `source` field:
+
+```json
+{
+  "custom": "{\"i\":\"<FRESH_UUID>\",\"a\":{\"push_id\":\"divar-lab-push\"}}",
+  "title": "divar-lab-push",
+  "alert": "{\"callback_url\":\"present-but-not-fetched\",\"campaign\":\"ABwcGFJHR1lYRlhGWkZaUllQX15dRwUJGgMNGg==\",\"action\":\"ir.divar.chat.notification.provider.ChatPushNotificationOpenHandler\"}"
+}
+```
+
+The helper generates a fresh UUID for `custom.i` on every send. The SDK parses `custom.a` as provider data and passes `title` and `alert` to the extender. In the 4 October 2026 live test, this route reached the shared provider, receiver, and fixed marker [on push receipt](onesignal_envelope_receipt_log.txt). **It did not use OneSignal's dashboard or message API to send the push.**
+
+`onesignal-envelope-title-mismatch` changes only the handler-relevant `title` to `different-title`; `custom.i` still receives a fresh UUID on each send. In the live control, the SDK extender received it, but the inserted branch [did not dispatch](onesignal_envelope_title_mismatch_log.txt) and the marker server saw no request.
+
 ## Fixed control vectors
 
 All commands retain the accepted request except for the stated change. “No relay” means the inserted broadcast/worker branch is not taken; the original app can still continue through ordinary notification handling.
@@ -61,7 +79,7 @@ All commands retain the accepted request except for the stated change. “No rel
 | `missing-campaign` | Omit `campaign` from body JSON | Empty/missing guard; no relay. |
 | `missing-action` | Omit `action` from body JSON | Empty/missing guard; no relay. |
 
-Run any vector with `python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID SAMPLE_NAME`. No historical OneSignal delivery, original Divar installation, or post-fetch malicious behavior is established by these FCM vectors.
+Run any vector with `python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID SAMPLE_NAME`. The `onesignal-envelope` sample above is a separate SDK entry route; it is not one of the Divar FCM adapter controls in this table. No historical OneSignal delivery, original Divar installation, or post-fetch malicious behavior is established by these FCM vectors.
 
 ## OneSignal test-app route
 
@@ -82,6 +100,6 @@ The accepted REST request is `POST https://api.onesignal.com/notifications` with
 }
 ```
 
-The `title-mismatch` vector changes only `headings.en` to `different-title`. OneSignal should wrap `data` into `custom.a` and localize `headings`/`contents` into the wire `title`/`alert`; **confirm that mapping in the received SDK envelope before claiming live OneSignal parity**. The sender's API acknowledgement alone proves neither subscription delivery nor extender execution. This is a separate route from direct FCM; it does not need FCM's `source` field. See [OneSignal's message API](https://documentation.onesignal.com/reference/create-message) and [Android FCM credential setup](https://documentation.onesignal.com/docs/en/android-firebase-credentials).
+The `title-mismatch` vector changes only `headings.en` to `different-title`. OneSignal should wrap `data` into `custom.a` and localize `headings`/`contents` into the wire `title`/`alert`; **confirm that mapping in a message sent by the OneSignal test app before claiming live OneSignal delivery**. The direct FCM envelope test above confirms SDK handling of those fields, but does not test the OneSignal sender or its FCM credentials. The sender's API acknowledgement alone proves neither subscription delivery nor extender execution. A OneSignal-originated message does not need FCM's `source` field. See [OneSignal's message API](https://documentation.onesignal.com/reference/create-message) and [Android FCM credential setup](https://documentation.onesignal.com/docs/en/android-firebase-credentials).
 
 [Firebase's receive guide](https://firebase.google.com/docs/cloud-messaging/android/receive-messages) explains why these use **data-only** FCM messages: a top-level `notification` message can follow a system-tray path while the app is in the background. [HTTP v1 authorization](https://firebase.google.com/docs/cloud-messaging/send/v1-api) and the [message schema](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages) cover transport and targeting.

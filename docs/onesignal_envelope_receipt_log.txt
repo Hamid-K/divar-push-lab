@@ -1,0 +1,11 @@
+Direct FCM send of a fixed OneSignal-shaped data envelope, 4 October 2026 (device log time).
+10-04 03:32:14.082  7136  7755 I DivarPushLab: OneSignal extender received normalized payload.
+10-04 03:32:14.083  7136  7755 I DivarPushLab: Inserted branch matched; sending explicit broadcast at receipt.
+10-04 03:32:14.106  7136  7756 I DivarPushLab: Receiver equality check matched; benign worker started at receipt.
+10-04 03:32:14.106  7136  7756 I DivarPushLab: Decoded endpoint matched the fixed emulator-host allowlist.
+10-04 03:32:14.110  7136  7756 I DivarPushLab: Received fixed marker from host mock server.
+10-04 03:32:14.110  7136  7756 I DivarPushLab: Wrote fixed non-executable marker in app-private storage.
+10-04 03:32:14.157  7136  7756 I DivarPushLab: Precompiled handler consumed fixed marker; UID=10175; SELinux=u:r:untrusted_app:s0:c175,c256,c512,c768; no external code or native binary executed.
+10-04 03:32:14.157  7136  7756 I DivarPushLab: Marker cleanup complete.
+10-04 03:32:14.157  7136  7756 I DivarPushLab: PASS: fixed marker fetched, written, handled inside UID 10175, then cleaned up.
+Host marker server, manually noted from the same test: 127.0.0.1 - - [04/Oct/2026 03:32:14] "GET /marker HTTP/1.1" 200 -
