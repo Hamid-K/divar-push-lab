@@ -1,0 +1,18 @@
+OneSignal custom campaign URL smoke test — 2026-10-04 03:10:53 UTC
+
+Target: locally registered divar-push-lab subscription on emulator-5554.
+Sender options: accepted --url https://example.invalid/stage.json --push-id lab-custom-url --title lab-custom-url --callback-url guard-only
+The OneSignal App API key was supplied privately through the environment.
+
+Sender: OneSignal accepted the request for delivery. This alone does not prove device receipt.
+
+Device log (epoch seconds):
+1791083453.651 I DivarPushLab: OneSignal extender received normalized payload.
+1791083453.653 I DivarPushLab: Inserted branch matched; sending explicit broadcast at receipt.
+1791083453.664 I DivarPushLab: Receiver equality check matched; benign worker started at receipt.
+1791083453.668 E DivarPushLab: Lab pipeline stopped: Decoded endpoint failed the local allowlist
+1791083453.669 I DivarPushLab: STOPPED: Decoded endpoint failed the local allowlist
+
+The device log confirms delivery and dispatch. LabPipeline checks the decoded URL
+against the fixed marker URL before its fetch call, so this custom URL was not fetched.
+No simulated-LPE marker stage ran for this test.

@@ -78,7 +78,7 @@ Use JDK 21, Android SDK platform 34, a Google-enabled emulator, ADB, Python 3, a
 
 7. Watch the app status, `adb logcat -d -s DivarPushLab:I '*:S'`, and the marker server. A matching cloud push should reach the provider, trigger the internal receiver, and complete the fixed simulated stage **without a tap**. Rejected samples should not reach the marker server. FCM API acceptance alone is not proof of device delivery.
 
-The public checkout builds without `google-services.json`, but cloud registration and delivery require your own Firebase configuration. The fixed marker server has tests: `python3 -m unittest discover -s tools -p 'test_*.py'`.
+The public checkout builds without `google-services.json`, but cloud registration and delivery require your own Firebase configuration. Run the local marker-server and sender-request tests with `python3 -m unittest discover -s tools -p 'test_*.py'`.
 
 ## Test through OneSignal
 
@@ -97,7 +97,13 @@ As of 4 October 2026, [OneSignal's Free plan](https://onesignal.com/pricing) inc
    python3 tools/send_onesignal_sample.py accepted
    ```
 
-   The helper obtains the App ID and player ID locally and accepts no target, URL, or receiver-class override. Both fixed vectors were [delivered and observed on the emulator](docs/evidence/onesignal_cli_simulated_lpe_2026-10-04.txt). API acceptance alone is **not** device-delivery evidence; check the emulator status, logcat, and marker-server request. See [sample messages](docs/sample-events.md).
+   The helper obtains the App ID and subscription ID locally, so the CLI cannot retarget another device. The two default vectors were [delivered and observed on the emulator](docs/evidence/onesignal_cli_simulated_lpe_2026-10-04.txt). You can override the encoded `campaign` URL and the handler's title, `push_id`, and `callback_url` fields:
+
+   ```sh
+   python3 tools/send_onesignal_sample.py accepted --url 'https://example.invalid/stage.json' --push-id lab-demo --title lab-demo --callback-url guard-only
+   ```
+
+   `--url` (also `--campaign-url`) is the worker URL encoded into `campaign`; `--callback-url` is only a nonempty guard and is **not fetched**. The `action` field stays fixed to the lab receiver. This synthetic app still fetches **only** `http://10.0.2.2:18765/marker`: a custom URL can exercise push parsing and internal dispatch, but the worker rejects it before network access if the message arrives. A [live custom-URL test](docs/evidence/onesignal_custom_url_rejected_2026-10-04.txt) confirmed that sequence. API acceptance alone is **not** device-delivery evidence; check the emulator status, logcat, and marker-server request. See [sample messages](docs/sample-events.md).
 
    For the **split-screen CLI demo**, keep the emulator visible beside three terminal panes: the fixed OneSignal sender, `python3 tools/marker_server.py`, and a live `adb logcat -v epoch -s DivarPushLab:I '*:S'` stream. Send `title-mismatch` followed by `accepted`. The verified accepted run logged a denied protected-file open, unchanged UID/SELinux context, and `PASS` without a tap. The visible “Running simulated LPE payload...” line names the harmless precompiled probe; no exploit runs.
 
@@ -110,7 +116,7 @@ As of 4 October 2026, [OneSignal's Free plan](https://onesignal.com/pricing) inc
 | Push parsing and trigger | Reconstructs the observed `11.14.20-b` OneSignal field mapping, FCM source route, shared provider checks, internal broadcast, and receiver equality check. |
 | Timing | Matching message acts during push processing. The notification shade and user tap are not part of the inserted branch. |
 | Notification display | The sampled `11.14.20-b` matching path records the OneSignal push locally as opened/received without invoking SDK display; this is code evidence, not an original-app runtime test. The lab also shows no system notification, but uses `return true` to suppress stock SDK display on API 33/target 34. Earlier cloud logs used `return false`. |
-| Worker | Replaced with a fixed host-loopback stage descriptor and precompiled handler. The simulated-LPE probe tries a read-only open of `/data/system/packages.xml`, expects denial, reads no bytes, and checks unchanged UID/SELinux context. No server-selected method, arbitrary URL, executable file, exploit, or privilege escalation. |
+| Worker | Replaced with a fixed host-loopback stage descriptor and precompiled handler. The simulated-LPE probe tries a read-only open of `/data/system/packages.xml`, expects denial, reads no bytes, and checks unchanged UID/SELinux context. The sender can encode a custom URL, but the app rejects it before fetching. No server-selected method, executable file, exploit, or privilege escalation. |
 | Transport | Direct FCM reaches both the Divar adapter and stock OneSignal 3.15.3 parser in this synthetic app. Live OneSignal dashboard and API CLI sends also reached the emulator through FCM. The sampled APK appears to use a Divar-specific OneSignal REST endpoint, which this lab does not reproduce. |
 
 This is a behavioral reproduction of a **specific sampled handler branch**, not evidence that attackers sent a matching push. A separate vulnerability would be needed for a payload to cross Android’s app sandbox. Logs from affected phones, Divar’s sender infrastructure, Firebase, and potentially OneSignal could help reconstruct messages and downstream requests; the fields and retention available from each must be checked. A sender record by itself cannot prove execution on a device.
