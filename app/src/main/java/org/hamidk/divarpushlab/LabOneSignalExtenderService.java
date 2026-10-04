@@ -18,8 +18,10 @@ public final class LabOneSignalExtenderService extends NotificationExtenderServi
             LabNotificationProvider.handle(this, payload.additionalData,
                     payload.body, payload.title);
         }
-        // The preserved extender continues the SDK's normal processing after
-        // calling the provider. The inserted provider branch itself has returned.
-        return false;
+        // Lab-only compatibility shim: stock OneSignal 3.15.3 creates a
+        // PendingIntent without the mutability flag required on Android 12+.
+        // Suppress only its notification display after the cloned provider
+        // has run on receipt. The sampled app's normal display path is not cloned.
+        return true;
     }
 }

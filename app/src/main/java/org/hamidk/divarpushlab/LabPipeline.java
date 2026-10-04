@@ -45,17 +45,18 @@ public final class LabPipeline {
             Log.i(TAG, "Decoded endpoint matched the fixed emulator-host allowlist.");
 
             JSONObject response = fetchMarker(decoded);
-            if (response.length() != 2
+            if (response.length() != 3
                     || !"lab-marker".equals(response.optString("kind"))
-                    || !"benign".equals(response.optString("message"))) {
+                    || !"benign".equals(response.optString("message"))
+                    || !"simulated-lpe".equals(response.optString("stage"))) {
                 throw new IllegalStateException("Marker response failed the exact schema check");
             }
-            Log.i(TAG, "Received fixed marker from host mock server.");
+            Log.i(TAG, "Fetched fixed simulated-LPE stage descriptor from host marker server.");
 
             try (FileOutputStream output = new FileOutputStream(marker, false)) {
-                output.write("divar-lab:benign\n".getBytes(StandardCharsets.UTF_8));
+                output.write("divar-lab:simulated-lpe\n".getBytes(StandardCharsets.UTF_8));
             }
-            Log.i(TAG, "Wrote fixed non-executable marker in app-private storage.");
+            Log.i(TAG, "Wrote fixed non-executable stage marker in app-private storage.");
             PrecompiledMarkerHandler.handle(marker);
             handled = true;
         } catch (Exception failure) {
@@ -69,8 +70,8 @@ public final class LabPipeline {
                 Log.i(TAG, "Marker cleanup complete.");
             }
             if (handled && cleaned) {
-                record(context, "PASS: fixed marker fetched, written, handled inside UID "
-                        + Process.myUid() + ", then cleaned up.");
+                record(context, "PASS: simulated LPE stage completed inside app UID "
+                        + Process.myUid() + "; no privilege change; marker cleaned.");
             } else if (failureMessage != null) {
                 record(context, "STOPPED: " + failureMessage);
             } else {

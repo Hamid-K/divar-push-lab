@@ -1,0 +1,15 @@
+--------- beginning of main
+         1791080720.173  2163  2702 I DivarPushLab: OneSignal extender received normalized payload.
+         1791080720.174  2163  2702 I DivarPushLab: Inserted branch did not match; no lab dispatch.
+         1791080737.252  2163  2702 I DivarPushLab: OneSignal extender received normalized payload.
+         1791080737.254  2163  2702 I DivarPushLab: Inserted branch matched; sending explicit broadcast at receipt.
+         1791080737.270  2163  4220 I DivarPushLab: Receiver equality check matched; benign worker started at receipt.
+         1791080737.272  2163  4220 I DivarPushLab: Decoded endpoint matched the fixed emulator-host allowlist.
+         1791080737.286  2163  4220 I DivarPushLab: Fetched fixed simulated-LPE stage descriptor from host marker server.
+         1791080737.288  2163  4220 I DivarPushLab: Wrote fixed non-executable stage marker in app-private storage.
+         1791080737.289  2163  4220 I DivarPushLab: Running simulated LPE payload... stage marker validated; UID=10175; SELinux=u:r:untrusted_app:s0:c175,c256,c512,c768
+         1791080737.289  2163  4220 I DivarPushLab: Simulated LPE boundary probe: read-only open of system-private package registry; no file contents are read.
+         1791080737.290  2163  4220 I DivarPushLab: Simulated LPE boundary probe: privileged read denied (expected); no bytes read.
+         1791080737.290  2163  4220 I DivarPushLab: Simulated LPE stage complete; UID unchanged=true; SELinux context unchanged=true; app sandbox retained; no exploit or external code executed.
+         1791080737.291  2163  4220 I DivarPushLab: Marker cleanup complete.
+         1791080737.291  2163  4220 I DivarPushLab: PASS: simulated LPE stage completed inside app UID 10175; no privilege change; marker cleaned.

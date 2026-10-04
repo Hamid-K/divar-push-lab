@@ -1,0 +1,10 @@
+--------- beginning of main
+         1791078715.223  7136  7755 I DivarPushLab: OneSignal extender received normalized payload.
+         1791078715.223  7136  7755 I DivarPushLab: Inserted branch matched; sending explicit broadcast at receipt.
+         1791078715.238  7136  8146 I DivarPushLab: Receiver equality check matched; benign worker started at receipt.
+         1791078715.238  7136  8146 I DivarPushLab: Decoded endpoint matched the fixed emulator-host allowlist.
+         1791078715.293  7136  8146 I DivarPushLab: Received fixed marker from host mock server.
+         1791078715.328  7136  8146 I DivarPushLab: Wrote fixed non-executable marker in app-private storage.
+         1791078715.333  7136  8146 I DivarPushLab: Precompiled handler consumed fixed marker; UID=10175; SELinux=u:r:untrusted_app:s0:c175,c256,c512,c768; no external code or native binary executed.
+         1791078715.334  7136  8146 I DivarPushLab: Marker cleanup complete.
+         1791078715.334  7136  8146 I DivarPushLab: PASS: fixed marker fetched, written, handled inside UID 10175, then cleaned up.

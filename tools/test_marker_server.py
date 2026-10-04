@@ -6,7 +6,7 @@ import unittest
 from urllib.error import HTTPError
 from urllib.request import ProxyHandler, Request, build_opener
 
-from marker_server import HOST, MARKER, make_server
+from marker_server import HOST, make_server
 
 
 class MarkerServerTest(unittest.TestCase):
@@ -29,7 +29,11 @@ class MarkerServerTest(unittest.TestCase):
             self.assertEqual(response.status, 200)
             self.assertEqual(response.headers.get_content_type(), "application/json")
             self.assertEqual(response.headers["Cache-Control"], "no-store")
-            self.assertEqual(json.load(response), MARKER)
+            self.assertEqual(json.load(response), {
+                "kind": "lab-marker",
+                "message": "benign",
+                "stage": "simulated-lpe",
+            })
 
     def test_other_paths_and_query_strings_are_rejected(self) -> None:
         for path in ("/", "/payload", "/marker?url=https://example.com"):

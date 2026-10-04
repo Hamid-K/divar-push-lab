@@ -10,6 +10,7 @@ PORT = 18765
 MARKER = {
     "kind": "lab-marker",
     "message": "benign",
+    "stage": "simulated-lpe",
 }
 MARKER_BODY = json.dumps(MARKER, separators=(",", ":")).encode("utf-8")
 
@@ -29,6 +30,7 @@ class MarkerHandler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:  # noqa: N802 - HTTP method name
         if self.path == "/marker":
+            self.log_message("serving fixed simulated-LPE stage descriptor")
             self._reply(200, MARKER_BODY)
         else:
             self._reply(404, b'{"error":"not_found"}')

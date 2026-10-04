@@ -4,9 +4,19 @@
 
 The [Divar code analysis](https://gist.github.com/raminfp/a548a2af86108eb40b8bffc5c8f07aaa) describes an inserted route from a specially formed push message to `ReportDeserializer`, a worker capable of fetching instructions and handling supplied bytes. In [my X post](https://x.com/hkashfi/status/2106147963332633025), I raised the possibility that the installed app could serve as a delivery path to selected phones. Whether any such message was sent, or any later stage ran on a phone, remains unverified.
 
-This lab reconstructs the **observed inserted notification-handler branch** in the infected `11.14.20-b` APK. It is a small synthetic app, not a repackaged Divar APK. “Exact” here means the branch conditions, field mapping, internal Intent, receiver check, and **receipt-time trigger** follow that build’s code. The dangerous worker is replaced by a fixed, harmless marker; the ordinary Divar notification path is outside this focused lab. Source APK SHA-256: `cdaf0bf256269eec249787299b5ebb7058f3944c86b14debfa41f9c263ad17da`.
+This lab reconstructs the **observed inserted notification-handler branch** in the infected `11.14.20-b` APK. It is a small synthetic app, not a repackaged Divar APK. “Exact” here means the branch conditions, field mapping, internal Intent, receiver check, and **receipt-time trigger** follow that build’s code. The dangerous worker is replaced by a fixed simulated-LPE stage that cannot escalate privileges; the ordinary Divar notification path is outside this focused lab. Source APK SHA-256: `cdaf0bf256269eec249787299b5ebb7058f3944c86b14debfa41f9c263ad17da`.
 
 The `11.14.20-b` inserted branch runs while the push is processed; the user does not have to see or tap a notification.
+
+## Demo
+
+[![OneSignal push lab: emulator PASS beside the sender, marker server, and adb log](docs/media/video_frame_simulated_lpe_2026-10-04.png)](docs/evidence/onesignal_cli_simulated_lpe_2026-10-04.mp4)
+
+**[Watch the 40-second end-to-end video](docs/evidence/onesignal_cli_simulated_lpe_2026-10-04.mp4)** · [Read the device log](docs/evidence/onesignal_cli_simulated_lpe_2026-10-04.txt). The OneSignal CLI sends a control and a matching push; the matching push triggers one marker request and a **simulated** LPE stage on receipt. Android denies the read-only protected-file probe. No exploit runs and privileges do not change.
+
+<a href="docs/media/live_terminal_emulator_2026-10-04.png"><img src="docs/media/live_terminal_emulator_2026-10-04.png" width="680" alt="Live desktop screenshot showing the OneSignal sender, marker-server request, adb log, and emulator PASS result"></a>
+
+*Live terminal and emulator capture. [Open the full-size screenshot](docs/media/live_terminal_emulator_2026-10-04.png).*
 
 ## The observed route
 
@@ -19,22 +29,26 @@ flowchart LR
     P --> G{Nonempty title = push_id? Body JSON has nonempty callback_url, campaign, action?}
     G -->|Yes, on receipt| B[Explicit internal broadcast: campaign is URI and extra key/value]
     B --> R[Private receiver checks URI = extra value]
-    R --> L[Fixed benign lab marker]
+    R --> L[Fixed stage marker and precompiled sandbox probe]
     G -->|No| N[Ordinary Divar path; not reproduced here]
 ```
 
-The inserted provider branch sends the broadcast and **returns before the provider’s ordinary notification code**. The OneSignal extender then resumes its SDK processing and may display a notification, but the receiver has already started its worker. Neither the broadcast nor the worker depends on a tap. In the original APK, `campaign` is decoded by Base64 then XOR with `0x68` to form the worker’s fetch URL; `callback_url` is only a nonempty guard in this branch. The lab accepts only its fixed marker destination and never runs downloaded code.
+The inserted provider branch sends the broadcast and **returns before the provider’s ordinary notification code**. Neither that broadcast nor the receiver's worker depends on a tap. In the sampled app, the OneSignal extender can then continue its SDK display path. The current lab suppresses that display after the cloned provider call: stock OneSignal 3.15.3's default display path crashed on this API 33/target 34 lab setup because its `PendingIntent` lacked a required mutability flag. This is a **lab-only compatibility shim**; notification display fidelity is outside this test. In the original APK, `campaign` is decoded by Base64 then XOR with `0x68` to form the worker’s fetch URL; `callback_url` is only a nonempty guard in this branch. The lab accepts only its fixed marker destination and never runs downloaded code. Its precompiled stage attempts a **read-only open** of Android's protected package registry, expects `EACCES` or `EPERM`, reads no bytes, and checks that UID and SELinux context did not change.
 
 The two entry routes reach the same provider in the sampled APK:
 
 - **OneSignal:** the bundled parser takes provider data from `custom.a`, body from `alert`, and title from `title`.
 - **Divar Firebase service:** for `source=divar` or `source=default`, it passes the FCM data map as provider data, with `body` and `title` from that map. Other `source` values follow different routes or stop.
 
-This lab uses **real direct FCM cloud delivery** to a Google-enabled Android emulator. The [sample messages](docs/sample-events.md) cover both the Divar FCM adapter and a fixed OneSignal-shaped envelope sent through FCM. No historical Divar push or provider log is included.
+This lab uses **real cloud delivery** to a Google-enabled Android emulator: direct FCM for the Divar adapter and OneSignal envelope controls, and a separate live send through a new OneSignal test app. The [sample messages](docs/sample-events.md) describe both routes. No historical Divar push or provider log is included.
 
 ## OneSignal status
 
-The preserved APK contains the SDK marker `onesignal/android/031503`. This lab embeds **stock** `com.onesignal:OneSignal:3.15.3` and a real `NotificationExtenderService`. A fixed OneSignal-shaped envelope sent **directly through FCM** reached the SDK parser, extender, shared provider, receiver, and benign marker [on receipt](docs/onesignal_envelope_receipt_log.txt). A [title-mismatch control](docs/onesignal_envelope_title_mismatch_log.txt) reached the extender without dispatching. The extender then returns control to the SDK's normal processing. The sampled APK also contains a Divar-specific REST address in its OneSignal code, so matching the SDK version does **not** establish identical transport backends. The emulator has registered an active OneSignal push subscription; **a send from OneSignal's dashboard or API has not yet been verified**.
+The preserved APK contains the SDK marker `onesignal/android/031503`. This lab embeds **stock** `com.onesignal:OneSignal:3.15.3` and a real `NotificationExtenderService`. A fixed OneSignal-shaped envelope sent **directly through FCM** reached the SDK parser, extender, shared provider, receiver, and benign marker [on receipt](docs/onesignal_envelope_receipt_log.txt). A [title-mismatch control](docs/onesignal_envelope_title_mismatch_log.txt) reached the extender without dispatching. Those earlier logs used an extender that returned `false`, allowing stock SDK display processing. The current extender returns `true` only after the cloned provider call, suppressing SDK display on this emulator.
+
+On 4 October 2026, the new OneSignal test app also sent both controls through **OneSignal → FCM → emulator**. The title-mismatch push arrived at 01:50:59 UTC without dispatch or a marker request. The matching push arrived at 01:51:55.223 UTC; the cloned branch reached the receiver by .238 and completed the fixed benign marker by .334, without a tap. OneSignal's dashboard reported both test sends successful; device and marker-server observations establish the handler outcome. The sampled APK also contains a Divar-specific REST address in its OneSignal code, so this test does **not** establish that the original Divar backend sent or handled any such message.
+
+The newer OneSignal API CLI run tested the simulated-LPE stage end to end on 4 October ([40-second video](docs/evidence/onesignal_cli_simulated_lpe_2026-10-04.mp4); [device log](docs/evidence/onesignal_cli_simulated_lpe_2026-10-04.txt)). At 02:25:20.173 UTC, the title-mismatch control reached the extender and stopped without dispatch or a marker request. At 02:25:37.252 UTC, the matching push reached the extender; the receiver ran on receipt, the marker server handled one `GET /marker`, and the fixed stage reported a denied read-only open of Android's protected package registry. The app logged `PASS` by .291, with UID `10175` and its SELinux context unchanged. This was a sandbox-denial demonstration, not an exploit.
 
 ## Run the lab
 
@@ -60,7 +74,7 @@ Use JDK 21, Android SDK platform 34, a Google-enabled emulator, ADB, Python 3, a
    python3 tools/send_cloud_sample.py --project YOUR_FIREBASE_PROJECT_ID onesignal-envelope-title-mismatch
    ```
 
-7. Watch the app status, `adb logcat -d -s DivarPushLab:I '*:S'`, and the marker server. A matching cloud push should reach the provider, trigger the internal receiver, and complete the benign marker **without a tap**. Rejected samples should not reach the marker server. FCM API acceptance alone is not proof of device delivery.
+7. Watch the app status, `adb logcat -d -s DivarPushLab:I '*:S'`, and the marker server. A matching cloud push should reach the provider, trigger the internal receiver, and complete the fixed simulated stage **without a tap**. Rejected samples should not reach the marker server. FCM API acceptance alone is not proof of device delivery.
 
 The public checkout builds without `google-services.json`, but cloud registration and delivery require your own Firebase configuration. The fixed marker server has tests: `python3 -m unittest discover -s tools -p 'test_*.py'`.
 
@@ -71,15 +85,19 @@ This is a separate cloud route through the **actual 3.15.3 SDK**. It still uses 
 As of 4 October 2026, [OneSignal's Free plan](https://onesignal.com/pricing) includes unlimited mobile push sends for up to 1,000 monthly active users.
 
 1. In the **same Firebase project**, create a dedicated sender service account with only `cloudmessaging.messages.create` and `firebase.projects.get` (a custom IAM role). Generate a service-account JSON key. In the new OneSignal app, open **Settings → Push & In-App → Platforms → Google Android (FCM)** and upload that JSON key. [OneSignal documents the required permissions and upload path](https://documentation.onesignal.com/docs/android-firebase-credentials). Keep the key out of this repository.
-2. In the ignored `app/onesignal.properties`, set `app_id=<YOUR_ONESIGNAL_APP_ID>` and `sender_id=<FIREBASE_PROJECT_NUMBER>` (the numeric Firebase sender ID). Stock OneSignal 3.15.3 requires the sender ID; its registration failed when the lab supplied only the sampled `REMOTE-<app_id>` manifest pattern. Rebuild, install, and open the app. Wait for an active OneSignal push subscription; a player ID alone does not establish that a push token was registered. The app masks identifiers on screen, and the helper reads the private debug-app subscription ID through ADB.
-3. Supply your OneSignal App API key as the `ONESIGNAL_API_KEY` environment variable, then send the fixed vectors:
+2. In the ignored `app/onesignal.properties`, set `app_id=<YOUR_ONESIGNAL_APP_ID>` and `sender_id=<FIREBASE_PROJECT_NUMBER>` (the numeric Firebase sender ID). Stock OneSignal 3.15.3 requires the sender ID; its registration failed when the lab supplied only the sampled `REMOTE-<app_id>` manifest pattern. Rebuild, install, and open the app. Wait for an active OneSignal push subscription; a player ID alone does not establish that a push token was registered. Add the lab subscription to **Test Subscriptions** in the OneSignal dashboard. The app masks identifiers on screen, and the helper reads the private debug-app subscription ID through ADB.
+3. In the OneSignal dashboard, compose a push for the lab app. Copy the fixed title, body, and Additional Data `push_id` from [the OneSignal sample](docs/sample-events.md), and use **Test & preview** to send it to the lab Test Subscription. Send the `title-mismatch` control first, then the matching message. This is the cloud route verified in the [control log](docs/divar-onesignal-title-mismatch-20261004.txt) and [accepted log](docs/divar-onesignal-accepted-20261004.txt). The control should produce no marker request; the matching message should reach the marker and show `PASS` without a tap.
+
+   The API helper is an optional alternative. Supply your OneSignal App API key as the `ONESIGNAL_API_KEY` environment variable, then send the fixed vectors:
 
    ```sh
-   python3 tools/send_onesignal_sample.py accepted
    python3 tools/send_onesignal_sample.py title-mismatch
+   python3 tools/send_onesignal_sample.py accepted
    ```
 
-   The helper obtains the App ID and player ID locally and accepts no target, URL, or receiver-class override. An API response is **not** device-delivery evidence; check the emulator status, logcat, marker-server request, and the provider’s delivery record. See [sample messages](docs/sample-events.md).
+   The helper obtains the App ID and player ID locally and accepts no target, URL, or receiver-class override. Both fixed vectors were [delivered and observed on the emulator](docs/evidence/onesignal_cli_simulated_lpe_2026-10-04.txt). API acceptance alone is **not** device-delivery evidence; check the emulator status, logcat, and marker-server request. See [sample messages](docs/sample-events.md).
+
+   For the **split-screen CLI demo**, keep the emulator visible beside three terminal panes: the fixed OneSignal sender, `python3 tools/marker_server.py`, and a live `adb logcat -v epoch -s DivarPushLab:I '*:S'` stream. Send `title-mismatch` followed by `accepted`. The verified accepted run logged a denied protected-file open, unchanged UID/SELinux context, and `PASS` without a tap. The visible “Running simulated LPE payload...” line names the harmless precompiled probe; no exploit runs.
 
 **After the test:** stop the marker server, uninstall the lab app or clear its data to discard registration IDs, and remove the ignored configuration files if retiring the project. Revoke the direct FCM sender role and the dedicated OneSignal service-account key, or delete the lab Firebase/OneSignal projects. Keep FCM tokens, player IDs, OAuth tokens, OneSignal API keys, and service-account JSON out of commits and screen recordings. `google-services.json` identifies a project but is not itself a sender credential.
 
@@ -89,8 +107,9 @@ As of 4 October 2026, [OneSignal's Free plan](https://onesignal.com/pricing) inc
 | --- | --- |
 | Push parsing and trigger | Reconstructs the observed `11.14.20-b` OneSignal field mapping, FCM source route, shared provider checks, internal broadcast, and receiver equality check. |
 | Timing | Matching message acts during push processing. The notification shade and user tap are not part of the inserted branch. |
-| Worker | Replaced with a fixed marker on host loopback and a harmless in-app action. No server-selected method, arbitrary URL, executable file, or privilege escalation. |
-| Transport | Direct FCM reaches both the Divar adapter and stock OneSignal 3.15.3 parser in this synthetic app. The sampled APK appears to use a Divar-specific OneSignal REST endpoint. A send from OneSignal's dashboard or API is pending verification. |
+| Notification display | The current lab extender returns `true` after the cloned provider call to suppress stock SDK display on API 33/target 34, where its legacy `PendingIntent` caused a crash. The earlier cloud logs used `return false`. The sampled app's normal display path and runtime behavior are not established by this lab. |
+| Worker | Replaced with a fixed host-loopback stage descriptor and precompiled handler. The simulated-LPE probe tries a read-only open of `/data/system/packages.xml`, expects denial, reads no bytes, and checks unchanged UID/SELinux context. No server-selected method, arbitrary URL, executable file, exploit, or privilege escalation. |
+| Transport | Direct FCM reaches both the Divar adapter and stock OneSignal 3.15.3 parser in this synthetic app. Live OneSignal dashboard and API CLI sends also reached the emulator through FCM. The sampled APK appears to use a Divar-specific OneSignal REST endpoint, which this lab does not reproduce. |
 
 This is a behavioral reproduction of a **specific sampled handler branch**, not evidence that attackers sent a matching push. A separate vulnerability would be needed for a payload to cross Android’s app sandbox. Logs from affected phones, Divar’s sender infrastructure, Firebase, and potentially OneSignal could help reconstruct messages and downstream requests; the fields and retention available from each must be checked. A sender record by itself cannot prove execution on a device.
 

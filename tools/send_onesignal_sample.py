@@ -80,6 +80,8 @@ def main():
     key = os.environ.get("ONESIGNAL_API_KEY", "").strip()
     if not key:
         raise LabSendError("Set ONESIGNAL_API_KEY to the fresh test app's REST API key.")
+    if any(character.isspace() for character in key):
+        raise LabSendError("ONESIGNAL_API_KEY must contain only the single copied key, with no shell text.")
     body = fixed_request(args.sample, app_id(), test_subscription_id())
     request = urllib.request.Request(
         API_URL,
