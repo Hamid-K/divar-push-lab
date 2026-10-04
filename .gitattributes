@@ -1,0 +1,3 @@
+research/*.pdf binary
+research/*.zip binary
+research/IOC_Hunt/**/*.csv whitespace=cr-at-eol

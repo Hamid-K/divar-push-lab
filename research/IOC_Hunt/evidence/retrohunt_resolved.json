@@ -1,0 +1,418 @@
+{
+  "jobs": {
+    "schema_strict": "malshare_hk-1790992481",
+    "relay_specific": "malshare_hk-1790993123"
+  },
+  "counts": {
+    "schema_strict": 12,
+    "relay_specific": 10
+  },
+  "dexes": [
+    {
+      "sha256": "07379248a5e0d9a99f6f4fd52475dd2cb1e059e30894f7cd59d1b255d9606fae",
+      "matched_rules": [
+        "schema_strict",
+        "relay_specific"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260805010",
+            "AndroidVersionName": "11.14.18-w",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1787556042,
+          "meaningful_name": "Divar-11.14.18.apk",
+          "sha256": "c8e510f6dbed5d041baeb0b6c54a7aea4311a009ff2266396246657ba14b3c39",
+          "size": 69305109
+        }
+      ]
+    },
+    {
+      "sha256": "2b4f425fb2d5aad4bbad452fe7f089a2d46f054b6c10359c4a0d42c6660313ec",
+      "matched_rules": [
+        "schema_strict",
+        "relay_specific"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260805010",
+            "AndroidVersionName": "11.14.18-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1786780084,
+          "meaningful_name": "divar-11-14-18-b.apk-uptodown.com",
+          "sha256": "f10f785165adba3c8165f27576755305c970ea58807eb3c10007cb0ba48996a8",
+          "size": 69681461
+        },
+        {
+          "androguard": {
+            "AndroidVersionCode": "260805010",
+            "AndroidVersionName": "11.14.18-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1787235125,
+          "sha256": "51ddae42e93fa7f690ba5adc9bb9de39b57ac1a3f719dcb798e383ba61897000",
+          "size": 19778261
+        }
+      ]
+    },
+    {
+      "sha256": "3e5ecfc707af9a15d729089505bab8adb61abe4d9d40357444c8e587ddbd0fe7",
+      "matched_rules": [
+        "schema_strict"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260721010",
+            "AndroidVersionName": "11.14.17-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1785363560,
+          "meaningful_name": "divar-11-14-17-b.apk-uptodown.com",
+          "sha256": "0b194dab7e4600fb9e04d3c9828025ae650ed463f49f58e24f44db94a8cc3108",
+          "size": 74230437
+        },
+        {
+          "androguard": {
+            "AndroidVersionCode": "260721010",
+            "AndroidVersionName": "11.14.17-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1785886949,
+          "sha256": "5226e1a1b8884c06904fc592eba51cf6412d71a139ee5e552d803fbedc26ea60",
+          "size": 24313689
+        }
+      ]
+    },
+    {
+      "sha256": "3f3092f0ed81865c3266e94ea01d80b7e99a4a191e2c11088ab77568f3a6dd7a",
+      "matched_rules": [
+        "schema_strict",
+        "relay_specific"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260818020",
+            "AndroidVersionName": "11.14.19.1-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1787846918,
+          "meaningful_name": "divar-11-14-19-1-b.apk-uptodown.com",
+          "sha256": "5e9b34e256da8d4a2c8315d99885f9eb0cdfbb0bcb7338d13758974dc8bae660",
+          "size": 69693827
+        },
+        {
+          "androguard": {
+            "AndroidVersionCode": "260818020",
+            "AndroidVersionName": "11.14.19.1-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1788315195,
+          "sha256": "30b7fedb289fe6413554bf4597765820a508b47225e1282afe304f1c6e554467",
+          "size": 19790627
+        }
+      ]
+    },
+    {
+      "sha256": "6cafae21bdd6a8e567c32862f4fd2d425451dbbc23911b9306574a5f83745055",
+      "matched_rules": [
+        "relay_specific"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260721010",
+            "AndroidVersionName": "11.14.17-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1785363560,
+          "meaningful_name": "divar-11-14-17-b.apk-uptodown.com",
+          "sha256": "0b194dab7e4600fb9e04d3c9828025ae650ed463f49f58e24f44db94a8cc3108",
+          "size": 74230437
+        },
+        {
+          "androguard": {
+            "AndroidVersionCode": "260721010",
+            "AndroidVersionName": "11.14.17-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1785886949,
+          "sha256": "5226e1a1b8884c06904fc592eba51cf6412d71a139ee5e552d803fbedc26ea60",
+          "size": 24313689
+        }
+      ]
+    },
+    {
+      "sha256": "7fe2ec2f0982a5f23497a64bf227c92d22e8aa1af00b2a1867c1e655698110ff",
+      "matched_rules": [
+        "schema_strict"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260818010",
+            "AndroidVersionName": "11.14.19-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1788007403,
+          "meaningful_name": "de294c3e2d681e8acbe1f5e673e709a781dbe53bf213d9ac64b06648c6e63cc1.apk",
+          "sha256": "de294c3e2d681e8acbe1f5e673e709a781dbe53bf213d9ac64b06648c6e63cc1",
+          "size": 69570789
+        }
+      ]
+    },
+    {
+      "sha256": "9411e00dbce35976991094bf848d6041cb56bc779304ff5da2da4131a942380e",
+      "matched_rules": [
+        "schema_strict",
+        "relay_specific"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260707010",
+            "AndroidVersionName": "11.14.16-w",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1784824683,
+          "meaningful_name": "Divar-release-11.14.16-w-260707010.apk",
+          "sha256": "0b871191a74983326cecfbf06ac6e954fb2fd6a62d9d54b9a1c1f27f5a105037",
+          "size": 73722492
+        }
+      ]
+    },
+    {
+      "sha256": "9eb7fdf058582324a88cf31ed4975cd234e3ce08e563fec9f09461e083487255",
+      "matched_rules": [
+        "schema_strict",
+        "relay_specific"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260818020",
+            "AndroidVersionName": "11.14.19.1-w",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1788670488,
+          "meaningful_name": "Divar-release-11.14.19.1-w-260818020.apk",
+          "sha256": "9445d614ec7fbaf697d4ca4bdd8a4f28f71e36eb9584507bb77d1299197364a3",
+          "size": 69320919
+        }
+      ]
+    },
+    {
+      "sha256": "a638ad58c8f6736c74ffd3357a1e0b847c23fb221ae083fb552941d6e8eee407",
+      "matched_rules": [
+        "schema_strict"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "1700113102",
+            "AndroidVersionName": "11.31.2",
+            "Package": "com.swisscom.myswisscom",
+            "certificate": {
+              "thumbprint": "589cf738ceedbd8d9534fe943a2472fd20e4c772"
+            }
+          },
+          "first_submission_date": 1783925916,
+          "sha256": "fe67ff9f1e0ec7981b09a7c128ccae958b511308cd36df43da34dfaf7e356b91",
+          "size": 187029373
+        }
+      ]
+    },
+    {
+      "sha256": "b38013ec4ce9cede8bab50a94966c487058d72334ac70d9c3496ef8bac514ee6",
+      "matched_rules": [
+        "schema_strict",
+        "relay_specific"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260721010",
+            "AndroidVersionName": "11.14.17-w",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1785379393,
+          "meaningful_name": "Divar-release-11.14.17-w-260721010.apk",
+          "sha256": "2766aaf153f586ba7814812d7abef12cab46e9b9a72fcec344412f11a8e13238",
+          "size": 73860426
+        }
+      ]
+    },
+    {
+      "sha256": "cc21c8fb047e45920c4a0f270ef486ed2b51918e1e15e7e78076a98c89c333bf",
+      "matched_rules": [
+        "relay_specific"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260707010",
+            "AndroidVersionName": "11.14.16-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1784327485,
+          "meaningful_name": "divar-11-14-16-b.apk-uptodown.com",
+          "sha256": "23153f14683f6671043062ba1893bdc74c2e781c56d4ded05c650b7b65273065",
+          "size": 74079697
+        },
+        {
+          "androguard": {
+            "AndroidVersionCode": "260707010",
+            "AndroidVersionName": "11.14.16-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1784894598,
+          "sha256": "a49165d7493128f71c20f96f1c02e573dfc6c16c631fb2b69dd2ba7d41ee9f85",
+          "size": 24154199
+        }
+      ]
+    },
+    {
+      "sha256": "e6fbb41a5b17272093c0bc12e20a9123dedd9abe206272fdf95d35fe36afb562",
+      "matched_rules": [
+        "schema_strict",
+        "relay_specific"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260901010",
+            "AndroidVersionName": "11.14.20-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1789042657,
+          "meaningful_name": "divar-11-14-20-b.apk-uptodown.com",
+          "sha256": "cdaf0bf256269eec249787299b5ebb7058f3944c86b14debfa41f9c263ad17da",
+          "size": 69645227
+        },
+        {
+          "androguard": {
+            "AndroidVersionCode": "260901010",
+            "AndroidVersionName": "11.14.20-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1789099222,
+          "sha256": "51ec88944c7e79deb488ca2c91e1f131ac537a26a4affb0eb026115b06b0fc8f",
+          "size": 19176251
+        }
+      ]
+    },
+    {
+      "sha256": "e8584e07e91161a20e7900cc73bad39da685a70347681b0114119a0198b8e9d5",
+      "matched_rules": [
+        "schema_strict"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260707010",
+            "AndroidVersionName": "11.14.16-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1784327485,
+          "meaningful_name": "divar-11-14-16-b.apk-uptodown.com",
+          "sha256": "23153f14683f6671043062ba1893bdc74c2e781c56d4ded05c650b7b65273065",
+          "size": 74079697
+        },
+        {
+          "androguard": {
+            "AndroidVersionCode": "260707010",
+            "AndroidVersionName": "11.14.16-b",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1784894598,
+          "sha256": "a49165d7493128f71c20f96f1c02e573dfc6c16c631fb2b69dd2ba7d41ee9f85",
+          "size": 24154199
+        }
+      ]
+    },
+    {
+      "sha256": "fccd2a8d20424890f9d1eba944ad15618899cd12f32a3a140b7577c53a6e3bb2",
+      "matched_rules": [
+        "schema_strict",
+        "relay_specific"
+      ],
+      "parents": [
+        {
+          "androguard": {
+            "AndroidVersionCode": "260901010",
+            "AndroidVersionName": "11.14.20-w",
+            "Package": "ir.divar",
+            "certificate": {
+              "thumbprint": "e57f7c10fd0221f0f1048b7b7f79e8177d16fcbe"
+            }
+          },
+          "first_submission_date": 1789374017,
+          "meaningful_name": "Divar-11.14.20.apk",
+          "sha256": "bbcb365f04373f6ef2546186f4ebe21efcf161f1908b5f922242af5d34678be1",
+          "size": 69256225
+        }
+      ]
+    }
+  ]
+}

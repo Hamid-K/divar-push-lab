@@ -1,0 +1,60 @@
+{
+  "cutoff_date": "2026-10-04",
+  "rule_file_sha256": "e65a2e495b1685c0bb2ef12295ad3fb2adbc7512acf3841d9b18aa878965cdb3",
+  "corpus": {
+    "signed_divar_apks": 282,
+    "known_route_positive": 69,
+    "known_route_negative": 213
+  },
+  "method": "YARA 4.5.2 on each decompressed classes*.dex; one APK counted once per rule; route labels from independent signed-APK code audit; no live delivery inferred",
+  "rules": {
+    "ANDROID_Dex_HTTP_ResponseHeader_Triage": {
+      "known_route_positive_apks": 22,
+      "known_route_negative_apks": 0
+    },
+    "ANDROID_Dex_PushRelay_Opcode_Triage": {
+      "known_route_positive_apks": 62,
+      "known_route_negative_apks": 0
+    },
+    "ANDROID_Dex_ReflectiveStageSchema_Triage": {
+      "known_route_positive_apks": 69,
+      "known_route_negative_apks": 0
+    },
+    "ANDROID_Dex_XOR104_Schema_Triage": {
+      "known_route_positive_apks": 25,
+      "known_route_negative_apks": 0
+    },
+    "ANDROID_Dex_XOR63_Schema_Triage": {
+      "known_route_positive_apks": 38,
+      "known_route_negative_apks": 0
+    },
+    "DIVAR_Dex_ReportDeserializer_Exact": {
+      "known_route_positive_apks": 69,
+      "known_route_negative_apks": 0
+    },
+    "DIVAR_Dex_Worker_PlainURL_Candidate": {
+      "known_route_positive_apks": 6,
+      "known_route_negative_apks": 0
+    },
+    "DIVAR_Dex_Worker_XOR104_Candidate": {
+      "known_route_positive_apks": 25,
+      "known_route_negative_apks": 0
+    },
+    "DIVAR_Dex_Worker_XOR63_Candidate": {
+      "known_route_positive_apks": 38,
+      "known_route_negative_apks": 0
+    }
+  },
+  "unrelated_controls": {
+    "apk_containers": 59,
+    "dex_members": 779,
+    "families": [
+      "Balad",
+      "Neshan",
+      "Snapp",
+      "Tapsi"
+    ],
+    "all_primary_rule_hits": 0,
+    "meaning": "bounded local control set, not corpus-wide false-positive estimate"
+  }
+}

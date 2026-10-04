@@ -8,6 +8,13 @@ This lab reconstructs the **observed inserted notification-handler branch** in t
 
 The `11.14.20-b` code indicates that a well-formed matching push is **silent on the normal path**: it starts the worker on receipt, then records the push locally without posting an Android notification. No tap is needed. This conclusion comes from the preserved APK's code; this lab did not send a push to the original Divar app.
 
+## Research report and IOC Hunt
+
+- [Divar backdoor technical analysis v2.6 (PDF)](research/Divar_backdoor_technical_analysis_v2.6_2026-10-05.pdf) — 24-page CTI report covering signed APK chronology, push and HTTP entry routes, code evolution, CFGs, and the limits of this lab. The cover discloses LLM generation.
+- [IOC Hunt package (ZIP)](research/IOC_Hunt_2026-10-04.zip) · [Browse the files](research/IOC_Hunt/README.md) — YARA rules, a DEX scanner, VT search guidance, 69 route-positive APK hashes, the 282-build reference inventory, and validation data. Hits are leads for code-flow review, not proof of payload delivery or execution.
+
+[SHA-256 checksums](research/SHA256SUMS) identify the exact PDF and ZIP in this repository.
+
 ## Demo
 
 [![OneSignal push lab: emulator PASS beside the sender, marker server, and adb log](docs/media/video_frame_simulated_lpe_2026-10-04.png)](docs/evidence/onesignal_cli_simulated_lpe_2026-10-04.mp4)
