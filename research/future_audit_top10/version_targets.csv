@@ -1,0 +1,637 @@
+app,package_id,version_name,version_code,variant,first_observed_date,last_observed_date,record_scope,observation_count,known_sha256_count,local_sample_count,acquisition_status,representative_source_url
+Divar,ir.divar,3.3,3030,,2013-02-28,2013-02-28,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/98337c9126b7afd2a83cfa9515539fd0dd85ab9e131e59898187869e8cb0ecd0/details
+Divar,ir.divar,6.7,103141405,,2015-03-24,2015-03-24,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/7cb32944e6f84f1afb59bdd238436dc9a0e0eeca24c5a88b0d1d3dac153a6bf3/details
+Divar,ir.divar,7.0.2,111071638,,2015-11-09,2015-11-09,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/0f816a2aa93608d981897bcf191221f10517d7ee1f24316949374934dac86493/details
+Divar,ir.divar,8.0.0,201211201,,2016-02-01,2016-02-01,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/b28e05df34f478fa6c60dab9d3e200fa841eac76819f5d7b5e564531df08e87c/details
+Divar,ir.divar,8.1.1,206201812,,2016-06-20,2016-06-20,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/3193c1654233451fccbc15ddff6c2a8e693a6e324e6f15f4652048aa3c40e0c5/details
+Divar,ir.divar,8.2,208201254,,2016-08-21,2016-08-21,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/13307212c972aa827eb2f3fc3ed4af85eb8bc4a02b6d4b1f6c06ad2419f60a24/details
+Divar,ir.divar,8.2,208221158,,2016-08-23,2016-08-23,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/a42f1cc64a3a9bd207c73897801a2923e8fbe25aaa142895f112a8c1b66086b5/details
+Divar,ir.divar,8.8.1,229604101,,2017-07-01,2017-07-01,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/459f4c0c7a1e7eefef9acc65f6c5dae68b26d8d11549b1cd4ada32a4a2f944d1/details
+Divar,ir.divar,8.9.2,229604151,,2017-07-07,2017-07-07,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/cf5b892cb5c54ac6d99b34100263e8fb90019c132dfeee7eaaf1bc3e1be49c47/details
+Divar,ir.divar,9.0.0,229604201,,2017-07-11,2017-07-11,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/77cac64cf516d0bea7fc0b463cc159875045a063a9fe2eead4e6ffc872e74ce4/details
+Divar,ir.divar,9.0.1,229605011,,2017-07-23,2017-07-23,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/9f40b1a322258e0733c3b18b054c5a6452c2642232865bc436012d53810586db/details
+Divar,ir.divar,9.1.0,229606011,,2017-08-22,2017-08-22,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/31c90c6a008e54f08f7b59c017d97dc73703a8619a59b0b8061d9ed6dd9fbe4c/details
+Divar,ir.divar,9.1.1,229606061,,2017-08-29,2017-08-29,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/a4cb6f0cb9ac7fbc09e9e876bad3dbd5adb738036f41701feb2799bc528c1ed2/details
+Divar,ir.divar,9.9.4,229611041,,2018-01-31,2018-01-31,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/e85f000e1ad50cb0d5d43f174b55287c96cd206da374d89195f18ccba674b7d7/details
+Divar,ir.divar,9.9.6,229611111,,2018-01-31,2018-01-31,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/2fdc5d85296246a439ef808501090b18d62f1ed2a4693ea4a67a57c62fe6b13d/details
+Divar,ir.divar,10.0.0,229611231,,2018-02-12,2018-02-12,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/09740a3359bad298f1ed4c36d3780d17e973d35ea417fe1ad971a076ba65ee1f/details
+Divar,ir.divar,10.0.1,229612241,,2018-03-18,2018-03-18,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/c2684cf7adeb0b48111a52fcdd1cf4e462ec54351d213f2f8c2f4fda91c7eaed/details
+Divar,ir.divar,10.0.2,229612281,,2018-03-19,2018-03-19,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/4e493ac4cc4f8016d7afa0fbec133cb623bb0e99a25420023b99e6462b21926e/details
+Divar,ir.divar,10.0.4,229701281,,2018-04-17,2018-04-17,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/1bfdfaed8329305f26c13d69f7f0881d222312e23fee9e63cce0fcfa0b83da35/details
+Divar,ir.divar,10.1.1,229703081,,2018-05-29,2018-05-29,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/29bca60942aaa04dcb17099c3a40e08fd306990708d986cd9a264d9f0f6a1af6/details
+Divar,ir.divar,10.1.2,229703091,,2018-05-30,2018-05-30,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/53e563e73a28869e4dcc9c2b847bfa33b3bf0adadd13c4b71730b432b175c36f/details
+Divar,ir.divar,10.1.5,229704041,,2018-06-25,2018-07-01,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/9792d0d0bf705f81180aebd576173faa3f85e3ecc34755f1cec395c318608825/details
+Divar,ir.divar,10.2.1,229705012,,2018-07-26,2018-07-26,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/0a4aef0b20f6adfc7dc54218a4182fc8fb369e675a15a3755056325c40590656/details
+Divar,ir.divar,10.2.3,229705172,,2018-08-08,2018-08-09,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/d402040e73c9709bc8981f9e179c7e24b0909a720ea6e478e53aebb4bb6b3e1d/details
+Divar,ir.divar,10.3.4,229707043,,2018-09-27,2018-09-27,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/244a2439fad0bafb151fa189f83f3832599c7a6cc42cdb6fba7012237ce4dfbd/details
+Divar,ir.divar,10.4.0,229708290,,2018-11-24,2018-11-24,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/c2fc4fbba1f3b9dc8f6a35f13cf5cab83487f019c99715f7f2dd374842fef4f5/details
+Divar,ir.divar,10.4.2,229709070,,2018-11-28,2018-11-29,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/2440d77bc26bf34acf56ae83a35671579ed54e5e98c3193ab8407e422f7c0746/details
+Divar,ir.divar,10.4.5,229710020,,2018-12-23,2018-12-23,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/205715d4dcd00b28ff530a8dbd51b07d26e0da0db249f1eb8bc6d033e1d85892/details
+Divar,ir.divar,10.4.6,229710040,,2018-12-25,2018-12-26,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/84b0571d67de22f1e841fe7ebdf3bb160d7cd4a68883c1242ece96f3c8e0f3e9/details
+Divar,ir.divar,10.4.7,229710080,,2018-12-31,2018-12-31,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/e0b74790d67b22c8fdd506454e5e415c0bc5ca2f927073c6385eaa6eae52a998/details
+Divar,ir.divar,10.5.0,229711061,,2019-01-28,2019-01-28,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/16c02883144ad5b88880b4d898993e4bf0bdee397638238ad95fcfca82f5e3a0/details
+Divar,ir.divar,10.5.1,229712061,,2019-02-28,2019-02-28,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/551784dc0e18a7cc837be86f3f205173a087650283caf5277e94b670796f32f0/details
+Divar,ir.divar,10.5.3,229712200,,2019-03-12,2019-03-12,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/7ea717c7a538f92036449408281975cb38956ec2a94b3c198c771c7130bf773f/details
+Divar,ir.divar,10.5.5,229712221,,2019-03-14,2019-03-14,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/5b8ffe5ba4e808eeb23b9d108d9fb525e9fffc7a52189cb65a568d87c322bc2a/details
+Divar,ir.divar,11.0.1,229803010,,2019-05-23,2019-05-23,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/4acbb638132e694e6f1a40fd14f1dac3abfd041e6591dfb951e818c9977c99b8/details
+Divar,ir.divar,11.0.6,229803053,,2019-05-26,2019-05-28,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/80f4d5a255462e66b600275aff9ead1ffe64f51d0dc5e01d5427467a863ad048/details
+Divar,ir.divar,11.0.8,229804010,,2019-06-22,2019-06-23,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/4040d53062345194a522c3e1883b9301ec36209236d77bb01cdbb0e9889ad344/details
+Divar,ir.divar,11.0.10,229804310,,2019-08-22,2019-08-22,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/9672b7feccf1d0fe362dd39efd894ed014a07703071cc1f751f0c90da9d2bb00/details
+Divar,ir.divar,11.0.12,229806030,,2019-08-27,2019-08-27,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/4bd19ff3a155d9d28b104919d60a3cc286a9932c30ccb17eae9790dbedf3ac2f/details
+Divar,ir.divar,11.0.14,229807010,,2019-09-24,2019-09-24,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/8b8da23e74d51b1bb924c0af0abb5079922c19b3de937bc15470344d1aa3515d/details
+Divar,ir.divar,11.0.15,229807150,,2019-10-07,2019-10-07,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/5dacbd642a48c0cbcfd58809a9a61a39cb203c616428b50400a2fa1e3755d132/details
+Divar,ir.divar,11.0.16,229807160,,2019-10-08,2019-10-08,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/7bbe4a3765e36027540c8b906279105efca43c133c0c4025bb57c11c2c46621b/details
+Divar,ir.divar,11.0.19,229808010,,2019-10-23,2019-10-23,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/d590793f9e0e50d56cca5507f6658ad698c41eddf2ed6a505e84897dfc02d8a1/details
+Divar,ir.divar,11.0.21,229808190,,2019-11-11,2019-11-11,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/6ceac96430636e3020d1e3e895c726c4bbb315fa2ba238056b9874f926fdc1cc/details
+Divar,ir.divar,11.0.24,229809300,,2019-12-21,2019-12-22,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/f79fd63dc68b1ff00d929ac98f4b168bb57203e7daa7fb4f969b1f653f80e342/details
+Divar,ir.divar,11.1.1,229810160,,2020-01-06,2020-01-06,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/ee59cea18c06a509555f2b1d2f1989daa0c59a697da3dc8b5fe0bce32de66865/details
+Divar,ir.divar,11.1.2,229810280,,2020-01-19,2020-01-19,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/561f53e34e6cc0bc614720545534313eb2ff20290908d498ab28ae31ad08adae/details
+Divar,ir.divar,11.1.4,229811130,,2020-02-02,2020-02-03,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/b79bc960e897fb03f0b02e89ee992b4148ca508b793f8aba4d1c5a360b991b8d/details
+Divar,ir.divar,11.1.6,229811280,,2020-02-18,2020-02-18,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/859c02c1cfe45cd0f5df5a19f26844ac4c59ffdec9ef94ff55436cd0c40b4a4c/details
+Divar,ir.divar,11.1.8,229812110,,2020-03-01,2020-03-01,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/9024c50db10f65d4ea40a6f1b2d738c1d24f749798f7edf15fcbb4945a7d0686/details
+Divar,ir.divar,11.1.10,229812270,,2020-03-18,2020-03-18,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/279f7c50b53d267d6c92c361504efdbfbe8a20066c3ac025c187a57c6878db42/details
+Divar,ir.divar,11.1.11,229901130,,2020-04-02,2020-04-02,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/19cfaa382f39585b8555122e9c4fc70b1d9ac0a5cb2a9fff6aa3ff81434fe93a/details
+Divar,ir.divar,11.1.13,229902010,,2020-04-20,2020-04-24,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/1a37f32e40f095d58ecfba3ca6610f113eadf7ffab3a99bdbc69c7ed7d5eba1e/details
+Divar,ir.divar,11.1.14,229902060,,2020-04-25,2020-04-25,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/84c3d0ceff9d635187187e41c146bc7b3415fa9cbbd9b3ecf96f049bf71ff156/details
+Divar,ir.divar,11.1.15,229902130,,2020-05-02,2020-05-02,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/56810ea709a87c23aff64bde29f5e0b70081a599f82b5485fbbd3c89e9bef7f6/details
+Divar,ir.divar,11.1.16,229902270,,2020-05-17,2020-05-17,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/fe4c3c4b6f4ee345cddbeb2cb1c8ce6c17e74c1b2a153697c67df88a26517d6c/details
+Divar,ir.divar,11.1.17,229903100,,2020-05-31,2020-05-31,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/5a0b2966060eee4560a04ae8916f6e4e9ba58adfa87aa59f646207af757dea1e/details
+Divar,ir.divar,11.1.18,229903161,,2020-06-06,2020-06-06,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/e449ba0697f449c58b1ed37c47d834e150d30d1c759ad0ff4d4f2709d34c9777/details
+Divar,ir.divar,11.1.19,229903240,,2020-06-14,2020-06-14,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/15241014201273c2265618d03432f5e2e74bfbd6e59622583286d5cf29adf473/details
+Divar,ir.divar,11.1.20,229904090,,2020-06-29,2020-06-29,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/8ea721e8c94d7c57b1997bf969066ace221d1a149110eae562da3c34d269cc3a/details
+Divar,ir.divar,11.1.21,229904210,,2020-07-11,2020-07-11,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/5f4da853ab002037dbe425d063228268ccaa4fd1b1d58320ca5f6dd5561d2f45/details
+Divar,ir.divar,11.1.22,229905040,,2020-07-25,2020-07-26,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/b12d16853527275ed878110d25e42ba54dc70f1a9a67beb5f6d3989ce7f50282/details
+Divar,ir.divar,11.1.24,229905200,,2020-08-10,2020-08-11,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/05ef5792e823f3ec2ad4a99209ff392c0d9df32de77fc906cc71a296df06bfd0/details
+Divar,ir.divar,11.1.26,229906020,,2020-08-24,2020-08-25,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/b4efc08866fb37c6de22dd286e64772f246ad7505317f131a3bb823fe6442f3d/details
+Divar,ir.divar,11.1.27,229906150,,2020-09-06,2020-09-07,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/42796583b9dce270d5c56b7b4a915f98aa26b47a4fd9b6a94c6ffeb24f16fcc3/details
+Divar,ir.divar,11.2.1,229906300,,2020-09-21,2020-09-22,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/52e66cefc3117bcb84e2b8f94cc508caf59dd53a7503a312fe6d915f332cba23/details
+Divar,ir.divar,11.2.3,229907130,,2020-10-05,2020-10-07,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/f05d5aea3c7e6dad81daba5e1465e01981c7391ee7736cfc676f4c507051aa70/details
+Divar,ir.divar,11.2.4,229907270,,2020-10-19,2020-10-20,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/cde24fdc7052bb89c2e0500a61a611e126e9cf48ce2954e0cd3eb1197bc226d9/details
+Divar,ir.divar,11.2.5,229908100,,2020-11-01,2020-11-02,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/b8d17402587f6e633615a1e3e5c211d2bd30ecb5c938d13cb1ca15b94d0ce6cb/details
+Divar,ir.divar,11.2.6,229908250,,2020-11-15,2020-11-15,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/544af718216460f5916d7ad6b510e47c7c49eb48e83357fa887ddb6d5e771a57/details
+Divar,ir.divar,11.2.8,229908280,,2020-11-19,2020-11-20,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/24e47fa63f6d493b3fca2f06a446958ab680b6aaa1bc3feb64597e2e6190e9bc/details
+Divar,ir.divar,11.2.9,229909080,,2020-11-29,2020-11-29,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/e79ab10e86b75f60c92b3378849f72eb186e794fae5bda39199adabe84749ea5/details
+Divar,ir.divar,11.3.0,229909220,,2020-12-13,2020-12-13,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/bcacd2d1ad0c689760aecf95d96f434303285f6cce05b96bb3270bfbd42501e8/details
+Divar,ir.divar,11.3.1,229909250,,2020-12-16,2020-12-16,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/def9aa9fc939790c49ba3e84be4789dd1d48861e115acf204425a23e57f8a0b7/details
+Divar,ir.divar,11.3.2,229910060,,2020-12-27,2020-12-28,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/2ed1730998476d69f8f8e541a5066a5b3c3414daaa59e391d3c291a131ed1e35/details
+Divar,ir.divar,11.3.3,229910200,,2021-01-10,2021-01-10,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/28e9ad95d8ce392183e9f933e2200d7343065882a53a6203a4610f4417d5c933/details
+Divar,ir.divar,11.3.4,229911040,,2021-01-24,2021-01-24,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/a9a5499d18ecca33031cbbf9ee90a5db56918802955c1862338111f8f47c7bec/details
+Divar,ir.divar,11.3.5,229911060,,2021-01-25,2021-01-26,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/45d6c12a9a295b7133ba01ede91d43a6a597462446505c70bce08d55968bd7fb/details
+Divar,ir.divar,11.3.6,229911180,,2021-02-08,2021-02-12,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/67cbed83b86164f249f8943e53f3a5bda241f31b220bc04c327e9367e6fcb1ef/details
+Divar,ir.divar,11.3.7,229912020,,2021-02-22,2021-02-22,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/541f3afc56402c82fc08d35aea5a7c7e4113e2874aa8a7ab5c34edb1ce404c55/details
+Divar,ir.divar,11.3.8,229912160,,2021-03-08,2021-03-08,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/30c854559a7c93f62f2cb99985ef732702f17d14243b3edbb10d8bd1f5e09bb0/details
+Divar,ir.divar,11.3.9,229912250,,2021-03-18,2021-04-06,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/cb8fec64b0c4a7480698c9ff7fceb3d2d0e94df12b822fbf4c581f0c033b7ddc/details
+Divar,ir.divar,11.4.0,230001210,,2021-04-12,2021-04-14,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/7fd1c8b528f9590222b206d2732d8b97cf73038e0011f665835fa4023d012b42/details
+Divar,ir.divar,11.4.1,230002040,,2021-04-26,2021-05-01,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/5f741ae273ef44cbc359cffba78d4c68f0ce7279854cf04230879e06c9ede23a/details
+Divar,ir.divar,11.4.2,230002180,,2021-05-08,2021-05-12,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/21413d1faf330da4d2501b8b7df37703ebba00d456d4b19895c83de6f9adb144/details
+Divar,ir.divar,11.4.3,230003020,,2021-05-24,2021-05-31,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/76abcd39fe0f1f8a0ec0c76834a1d46b2fd57e7e363ba5fdddfbec7ef3479446/details
+Divar,ir.divar,11.4.5,230003180,,2021-06-09,2021-06-10,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/353d21e45877bba97dccd5a71a55d206129f00195a141c187060b222c2e66a2f/details
+Divar,ir.divar,11.4.6,230003290,,2021-06-20,2021-06-21,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/de4890345129542a73fb72ef1cf0b6050c889101e9703cc40a3408f3749c093d/details
+Divar,ir.divar,11.4.7,230004131,,2021-07-06,2021-07-06,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/989bac85e5981ec16011354272c175c8870fa129998b0beb25b79c1e7b51105d/details
+Divar,ir.divar,11.4.9,230005090,,2021-08-02,2021-08-02,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/ba2c2eba854dea53a9a6d2d74a5e7027a0ac634cc1e1e5bfffde707b236a125f/details
+Divar,ir.divar,11.4.11,230005250,,2021-08-19,2021-08-19,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/4497412456b673298766f687430fd2ebb42ef7bedf9bf9e493be3fe820b99149/details
+Divar,ir.divar,11.4.12-ALT,230005310,,2021-09-01,2021-09-01,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/086cbc4e0e94a44786f875b4bd109bb3dc2b2007cc176496c3602e20ef8cbdf4/details
+Divar,ir.divar,11.4.13,230006080,,2021-09-04,2024-08-18,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/e80ec68a7bed15348a04f9d866b3e3a5ac886ccd320dea350cfd5cdd4b761b37/details
+Divar,ir.divar,11.4.14,230006210,,2021-09-14,2021-09-14,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/bc6cbbeac3064f97fbe6274168b1d02e74783c0ca0f8c498d00c739d4b23f24a/details
+Divar,ir.divar,11.5.0,230007040,,2021-09-30,2021-09-30,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/b475a439abf00f6edf2bc013bb9af4d36c80f0007eeaa6049c9a81d764fea4f4/details
+Divar,ir.divar,11.5.1,230007180,,2021-10-13,2021-10-13,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/575e8bb4992c5e289c7f41da6eafb94b7d8ad49d978e804fc5af9da8dfe1ec43/details
+Divar,ir.divar,11.5.2,230008030,,2021-10-25,2021-10-25,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/29e7a7b545be78da7a37f58a064fa728620bbdcd9f15e06c9f77824bd599ed0b/details
+Divar,ir.divar,11.5.3,230008150,,2021-11-07,2021-11-07,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/b073297b0fa0009c2451a3520f41bfe79f129adcadc159ea9492f0597745283c/details
+Divar,ir.divar,11.5.6,230009150,,2021-12-08,2021-12-11,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/1e447dbc40daf1180102cfc5afce5317750ff2cdde1a01dde8c7edc5c8215123/details
+Divar,ir.divar,11.5.7,230009270,,2021-12-20,2021-12-20,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/b19281955e4f575f4b1f1ae6dcb73f4b3da8de4d99a4660f02d83380e3ea4a27/details
+Divar,ir.divar,11.5.5,230009140,,2022-01-04,2022-01-04,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/26705cdc6378c8189130796c3ea1438ac62a06adbb9cf89f80d1545e719a8169/details
+Divar,ir.divar,11.5.9,230010120,,2022-01-04,2022-01-04,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/1deca4c562b664755b328581e30dcb869f026eee32280703baa85a7aa95738cc/details
+Divar,ir.divar,11.5.10,230010250,,2022-01-17,2022-01-19,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/d2394118bea0fa665995ec4c9f3c3258d9ecee95d05c357ccc14cb6567177f4d/details
+Divar,ir.divar,11.5.12,230011100,,2022-01-30,2022-01-30,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/4ad3f9a33bb979acaedf91f5fe9e5198dd145887fd2f8e525985bbcf2013e8d4/details
+Divar,ir.divar,11.5.11,230011090,,2022-02-02,2022-02-02,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/54960318fa9f5bb78b1975e84da553f3da9da41e835cab25bcf031615a986c61/details
+Divar,ir.divar,11.5.13,230011230,,2022-02-13,2022-02-14,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/cd2638f1a5c50d4882c13c6036a321f99652d126ce61d5159a6375d5ae437089/details
+Divar,ir.divar,11.5.14,230012070,,2022-02-26,2022-02-26,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/bafa261d066a45ba3d4e28005d9f0a51423d96652ff77c46fdbed9211dc47776/details
+Divar,ir.divar,11.5.15,230012221,,2022-03-14,2022-03-14,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/c20d4006688c7ed376c34fdeafe2c7b4dff05884344c7583ab7fdca1f40b9fdf/details
+Divar,ir.divar,11.5.16,230101270,,2022-04-19,2022-04-19,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/84baa387ab7de4b76a2c35c37daf869d9da2fd996386d9688f4ae252193c3273/details
+Divar,ir.divar,11.5.17,230102241,,2022-05-17,2022-05-17,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/f63e1c3b3e8487795d14da9bfdae10657eda4a6f131b9c80942c603f5813cb89/details
+Divar,ir.divar,11.5.18,230103070,,2022-05-28,2022-05-29,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/2ddcc29661974c22ce5aff40f2d35af793fa488209e5ac5421637b778a0b2e93/details
+Divar,ir.divar,11.6.0,230103220,,2022-06-13,2022-06-18,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/0d1a0c7743b396ee1f51040c34cb57fb7aa06923cb2f4862703ef60e8728b174/details
+Divar,ir.divar,11.6.1,230104200,,2022-07-12,2022-07-12,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/6e8100ad4612882e18991878d6b3746b5007b6a2f1203e9c535f8b0e28af3ca3/details
+Divar,ir.divar,11.6.2,230104262,,2022-07-23,2022-07-25,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/a74498b0d713789b371c8490ef78a22ae77f878a94886b44cb0b35b8dcfa7e9c/details
+Divar,ir.divar,11.6.3,230105090,,2022-08-07,2022-08-07,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/b2396edd140dcc76702c486ea836988913db052f05cb2c222a2060dd05b7d4cf/details
+Divar,ir.divar,11.6.4,230105230,,2022-08-20,2022-08-20,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/11f7811d011c46d14b8b6c5433633a598179058a4de242683470c555d92d1c57/details
+Divar,ir.divar,11.6.5,230105231,,2022-08-23,2022-08-23,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/dca2b9ef9e7a7eef30e2361d7c3c5699ddd4543d25ca0a64b348a65c74d2acdc/details
+Divar,ir.divar,11.6.6,230106060,,2022-09-03,2022-09-04,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/16e2b665aeb268f47a9edff71956bb9aa1198f2b45c0d9d7b798dc44b7bd2984/details
+Divar,ir.divar,11.6.7,230106200,,2022-09-18,2022-09-18,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/621d26450665af23aafe7b8507258e303af0bdae1ebdacf24bd6737b65976628/details
+Divar,ir.divar,11.6.8,230107190,,2022-10-20,2022-10-20,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/d3fca0b0fd25bfff22feb153e9e679f51e2e237a4ad7c8480d9d4e9240ca5333/details
+Divar,ir.divar,11.6.10,230108152,,2022-11-15,2022-11-15,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/7774e17e095c6deaa1f747dc9a67e1db05d0b967cac798d434b3612ea51d661a/details
+Divar,ir.divar,11.6.9,230108151,,2022-11-15,2022-11-15,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/cd7e48d6108814b94edfc47c137c742b143881116d679ae37878b468d6291743/details
+Divar,ir.divar,11.6.11,230109131,,2022-12-20,2022-12-20,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/1913e196c39fc80c9d166cd275feaccc186c3cbd50a8681a6e8a8f2e75797db0/details
+Divar,ir.divar,11.6.12,230109132,,2022-12-24,2022-12-24,pre_2023_baseline,1,1,1,local_sample,https://www.virustotal.com/gui/file/5edb1b57d26bc3386e4122f5446468841420062b9c06cd09649779564a8c5f5b/details
+Divar,ir.divar,11.7.0,230109271,,2022-12-27,2022-12-28,pre_2023_baseline,2,2,2,local_sample,https://www.virustotal.com/gui/file/81eac054e24760215302ab4530fb2cfc827490afa70a31ec1ed75a5472ce8da0/details
+Divar,ir.divar,11.7.1-beta,230110110,beta,2023-01-08,2023-01-08,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/aa07b9155fc48cd8c87628f72be6abf928ae54dfa1e1d93f112e982669f98dbd/details
+Divar,ir.divar,11.7.1,230110111,,2023-01-10,2023-01-13,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/b2633e9ee9945811b51c7b771392cadb0685d40c7009b1b15a451ec664b62fff/details
+Divar,ir.divar,11.7.2-beta,230110250,beta,2023-01-17,2023-01-17,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/e4a2a2bfbb3bb1a69858d4c2f381d446e9d2079007cb7c87bbf141cff95647b1/details
+Divar,ir.divar,11.7.2,230110251,,2023-01-23,2023-01-23,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/9dce239269051978fcd3c75cde0b1a597190243642bbbe55244846195b135b90/details
+Divar,ir.divar,11.7.3,230111091,,2023-02-05,2023-02-05,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/39d940e8eebfa314b4492f7f36d208aa669ba7a26d187eb5ea0c376f771a4d97/details
+Divar,ir.divar,11.7.4-beta,230111180,beta,2023-02-17,2023-02-17,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/3413462fad51b6ca8f1983f0837533fe564a58895f507f06a1b1089b6dadbb0d/details
+Divar,ir.divar,11.7.4-beta,230111240,beta,2023-02-17,2023-02-17,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/e1e872f3c085a1a8e8a8280258287007cca2063148f7fb04bbbac082e3b17b04/details
+Divar,ir.divar,11.7.4,230111241,,2023-02-26,2023-02-26,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/2ace673c5fa11dcc6ad6d38e95fadde4593d86ecb2496a7fc941d8b9f8b1e7c7/details
+Divar,ir.divar,11.7.5,230112131,,2023-03-14,2023-03-14,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/75301b49c4869eb4c2238c26147b4bca0d2194cfaebc4294a2924a3a9b82a704/details
+Divar,ir.divar,11.7.6,230201201,,2023-04-17,2023-04-17,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/272b7971e2713c898ebabf80987367cd0413d2e38d55e9d5c3983dd19769cd97/details
+Divar,ir.divar,11.7.7,230201203,,2023-04-17,2023-04-18,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/3144341b4ff3ed757e91103b39d02b76aa88dcf92e65b9314e391d3ddd287b4a/details
+Divar,ir.divar,11.8.0,230202041,,2023-05-03,2023-05-03,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/38acc45dffce9d61eb4f6ff403297073320f1efb54012df1c2d0cc24b2f7dc7a/details
+Divar,ir.divar,11.8.1,230202172,,2023-05-14,2023-05-14,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/ee36859f872cf5cf3723f0cfde50adf5c61409a273ff268d6d0660f83c326a81
+Divar,ir.divar,11.8.2,230202311,,2023-05-29,2023-05-29,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/caa357ad191d77af83eb5a87471f64be66abd961663164470f4dc55a8b019101
+Divar,ir.divar,11.8.3,230203161,,2023-06-12,2023-06-12,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/15e4a710e995a020f26511930d8efd195e6f3707d4740ac7e2390581fe6e0432
+Divar,ir.divar,11.8.4,230203281,,2023-06-26,2023-06-26,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/abf9cbe26ea6665a7b47ebebed4c467196cc4b7b621c08bcf37d5e0455d01ace/details
+Divar,ir.divar,11.8.5,230204111,,2023-07-12,2023-07-12,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/2cc3886acb7d777c180e98f61aaba2465f19b251ded63558131ebb27659fab8a/details
+Divar,ir.divar,11.8.6,230204251,,2023-07-24,2023-07-24,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/582f49a01474dd164200dc52015e43db38d3abf1553d1b6d5b5e6642655e33f8/details
+Divar,ir.divar,11.9.0,230205081,,2023-08-07,2023-08-07,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/4292f192844c496a2b75f90f40f1ff789d6c35664ad40641c7a89c0da5e889d0/details
+Divar,ir.divar,11.9.1,230205082,,2023-08-09,2023-08-09,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/273c5e66b6398677e9eaaa56b0000ec3f918340d278c17e4416b31f7ea867524/details
+Divar,ir.divar,11.9.2,230819010,,2023-08-21,2023-08-21,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/f8bfc9211034a4109ac5aec6deff8036bab3b278ec0ff56f25e5d02107a81bfd/details
+Divar,ir.divar,11.9.3,230822020,,2023-08-23,2023-08-23,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/61053573a1a15a04e6ea45ca4b8e489bbad9678be067cc3d27da10c6b3f100eb/details
+Divar,ir.divar,11.9.4,230903000,,2023-09-05,2023-09-05,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/95c4722435f7bc6cfeb230a16b0d53b36b5f62f553594dee4c0576d9982794aa/details
+Divar,ir.divar,11.9.5,230911010,,2023-09-22,2023-09-22,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/284d88348398bf52aa48dabce78be9099d25f670a7cab304582aa9d97d91a4da/details
+Divar,ir.divar,11.9.7,230925020,,2023-10-03,2023-10-03,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/ed7562ae404f7f25ba6dc21ebdd5af01e81e50f282d5a8479eae0cb0415bee65/details
+Divar,ir.divar,11.9.8,231008010,,2023-10-16,2023-10-16,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/3a4054a68fdb4156c250ff9f51ab1faabdb7e56529b21f96e0d9e9f7d868d48f/details
+Divar,ir.divar,11.9.9,231022010,,2023-10-30,2023-10-30,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/0c0f91c55fb7a09e4eb0903bfff67819671c1bd232aad4eec3e39126ce61ab68/details
+Divar,ir.divar,11.10.0,231105010,,2023-11-13,2023-11-13,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/5e999bf5506802ff1450895ae079a6fef927f7cab93e62103fce61dbd845a510/details
+Divar,ir.divar,11.10.1,231119010,,2023-11-26,2023-11-26,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/51055520dab6e7b0d7e8c3344d9493dfdc00a74857a0fcfd926d658451c70fe5/details
+Divar,ir.divar,11.10.2,231204020,,2023-12-10,2023-12-10,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/f3e10444baa34b66365794735cefab414a04291d9026d021b1e5ac50927de781/details
+Divar,ir.divar,11.9.6,230925010,,2023-12-14,2023-12-14,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/4b6baad65804ba42637bada56d972f8c956e904fbdd7c8cabc35897a4f2af606/details
+Divar,ir.divar,11.10.3,231218010,,2023-12-25,2023-12-25,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/414dc672823219b6e1be765d4f0017a00c32949132b6ac999683fbf568e84318/details
+Divar,ir.divar,11.10.4,240101010,,2024-01-08,2024-01-08,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/3c596f76c07e2121bdf4d9e4ae2dbb15314a80479ed51d1da103602d5b1f1428/details
+Divar,ir.divar,11.10.5,240114010,,2024-01-23,2024-01-23,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/1d1ad55653dc443f51c3aa58e18c171aa2d04d4e27c10d1f5382268968c817f9/details
+Divar,ir.divar,11.10.6,240128010,,2024-02-05,2024-02-05,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/275a0810e7a4ae471941e85db77c9cf3a3638347d0c7e181bedce7bd8db0a68c/details
+Divar,ir.divar,11.10.7,240212010,,2024-02-19,2024-02-19,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/df0c10f5adf70f800956a5d1af501eb2cd162314afe5f48bec503e21cec6062b/details
+Divar,ir.divar,11.11.0,240228010,,2024-03-10,2024-03-10,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/c94ceb21fe6c9c19cf0c4ae1cd3b379f7988e816d933ae53ad7c3c40c3c75fa5
+Divar,ir.divar,11.11.1,240407010,,2024-04-16,2024-04-16,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/9cc99f0b2ce752539a08202893b5332de7d463f85019e347a9fa5c9c730ee571
+Divar,ir.divar,11.11.2,240421010,,2024-04-28,2024-04-28,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/12fc26635370d930f2d9bc85867884dd883ae818ac0c4976d7caaab2845086a9
+Divar,ir.divar,11.11.3,240505010,,2024-05-14,2024-05-14,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/67553b6a1b075f11e0f33059f990dd2244b872597c5ef2d34e5a1c39c9e894bc
+Divar,ir.divar,11.11.4,240519020,,2024-05-27,2024-05-27,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/06cfa492875677974690eab2a0476a8dd72aaccbfcc653019fdd277625efa269
+Divar,ir.divar,11.12.0-beta,240616000,beta,2024-06-18,2024-06-18,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/1fb0fa9015283d0c28f7a9e351d2925c2abff9c6b51ea2727da5ef06e6da0157/details
+Divar,ir.divar,11.12.0,240616010,,2024-06-24,2024-06-24,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/18cb05e733f71d88b76466ebde6df56d5b49fc94e4a223029cd1cbe6fd41cd6b
+Divar,ir.divar,11.12.1,240701010,,2024-07-09,2024-07-09,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/5d3d3452298cfc76d3393f7eafec35c638e0797a81e0bbebe3b1738cb0fc294e
+Divar,ir.divar,11.12.2,240728010,,2024-08-05,2024-08-05,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/3134990f4fcf66ea5c291ad107e56a7b8869278e44ed0140824c11bb820b5ac5
+Divar,ir.divar,11.12.3,240811010,,2024-08-19,2024-08-19,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/4a26e750da01879e91dc3d823a08038eec0b02074dcb5161e3fcc4c644502183
+Divar,ir.divar,11.12.4,240826020,,2024-09-01,2024-09-01,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/38d27f25b59c81998467b928878d7de0adc85a2a5f02756180812e1cc75b3ab0
+Divar,ir.divar,11.12.5,240908010,,2024-09-14,2024-09-14,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/81bfd39bbc5b395a61a6dd804b6802fd28091564d2ae28cd77a2fbedb80da0de
+Divar,ir.divar,11.12.6,240923010,,2024-09-29,2024-09-29,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/d73ad3784f54f2fa31a089579a8d13cf19a12f76e18cb5aeea71e1524e09232d
+Divar,ir.divar,11.12.7,241006010,,2024-10-13,2024-10-13,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/b5bc08eabc46703a481952fa4487ca9d6800fb13f4892662b850f2ccfc2e5a38
+Divar,ir.divar,11.12.8,241020010,,2024-10-27,2024-10-27,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/ffba625120a34a9c189ab25ecf4fcb0945548355364bdbdf964c532e80153830/details
+Divar,ir.divar,11.13.0,241104010,,2024-11-10,2024-11-10,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/dd36f4a146deb55247917552063bfcc6854ec3efb93a5e438cddf9cfed689cc8
+Divar,ir.divar,11.13.1,241117010,,2024-11-23,2024-11-23,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/b93266fbbb29718c77a4dfaa26a4e0a181a9ab14112a53ba82c1a1a6469918d6
+Divar,ir.divar,11.13.2,241201010,,2024-12-09,2024-12-09,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/677cd05adc9a448f963f9386e2d89174a745768e31031053a40b9c0cbcd8887c
+Divar,ir.divar,11.13.3,241215010,,2024-12-21,2024-12-21,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/58c59c8f1c35b02223e6a4cb75a1982c0419c1f24711b9d843d169ccda073a0e
+Divar,ir.divar,11.13.4,241229010,,2025-01-04,2025-01-04,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/2352ff767432cc214f5bd51da881ba5a2d4feda4739867b9aa9ea123ada53b94
+Divar,ir.divar,11.13.5,250112010,,2025-01-20,2025-01-20,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/9ef4641c7ab7e99722961c2475c5bae2b2d56424b326c606e0307a6aa3c75e42
+Divar,ir.divar,11.13.6,250126010,,2025-02-03,2025-02-03,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/da2828e05e6756d33f700d7db948f457b9a8c62319c112d39bfe397f32eee7e7
+Divar,ir.divar,11.13.7,250209010,,2025-02-18,2025-02-18,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/28f91e4107cd90d63771b43ae9e8e2aa56784a09cdbfee945ef7fc1fd93a22cb
+Divar,ir.divar,11.13.8,250302010,,2025-03-10,2025-03-10,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/df2c7fa3f55b2abec34f8e178230dcfd1401edf10f6a9d6e1b4a674ac61c1139
+Divar,ir.divar,11.13.9,250407010,,2025-04-14,2025-04-14,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/7d5b766309ebdbf1cf58a2a8f8a563b3ebf18c66df8d69416de02f01999fb6eb
+Divar,ir.divar,11.13.10,250420010,,2025-04-28,2025-04-28,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/c8b6a3a01d28ed82372ae33b485eb2b4d115c1f195ca1fa42482bda3b7afef64
+Divar,ir.divar,11.13.11,250420020,,2025-05-03,2025-05-03,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/9f232774bfacd3bdbac960a2ce957ae619c88db8b836f2136794612f5bfacf5d/details
+Divar,ir.divar,11.13.12,250504010,,2025-05-12,2025-05-12,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/8c8e7406a745c31cf67bfc44c69262676f86a3e41b6ca6fb2914926600a80b22/details
+Divar,ir.divar,11.13.12,250504020,,2025-05-21,2025-05-21,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/f13e2dc2db2cde6cbad66da1c3cc0cb3986ba14c8fa3349e751806319a276535
+Divar,ir.divar,11.13.13,250518010,,2025-05-26,2025-05-26,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/4a9e9d0553c9fdc2e55af5fd0d2e9853dd61b994681d4137918ca4d9f1f8e6bc
+Divar,ir.divar,11.13.14,250602010,,2025-06-10,2025-06-10,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/0fe66bde25e6af845183e71af22bed9c88052157ebf24efb644e314d974d374f
+Divar,ir.divar,11.13.15,250622010,,2025-06-30,2025-06-30,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/046afaf397d41fe10a670934bb6a6733cecec52513b5e70f2f765897a804b151
+Divar,ir.divar,11.13.16,250707010,,2025-07-14,2025-07-14,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/935a183265a06d50a3e57bdaa4ef56c6a84574f7ef5fdabad250ca227110eaa9
+Divar,ir.divar,11.13.17,250720010,,2025-07-28,2025-07-28,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/3a33d8c8e3ed1ffdc0217a48d0ba7c6495d79fd01584b16746c5c6e6af072932
+Divar,ir.divar,11.13.18,250804010,,2025-08-12,2025-08-12,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/67cc91139d748bda282b577bbcdf27fcd304ccd5948b5db383d0f74c4e36c041
+Divar,ir.divar,11.13.19,250817010,,2025-09-08,2025-09-08,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/79b9daf09635bc08e80d26c9828f7d647f2a23c33ed1836fb00df70599fa2292
+Divar,ir.divar,11.13.20,250902010,,2025-09-15,2025-09-15,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/0bac2690dced1ba7fd5f9364eed49985c9fd9a7852ff9f4907313925663efc39
+Divar,ir.divar,11.14.1,250914010,,2025-09-25,2025-09-25,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/296734e5758242cce5ef7a21ef9128c2110abc2f4610a23097ba6b5e8fa9fb45/details
+Divar,ir.divar,11.14.2,250928010,,2025-10-05,2025-10-05,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/73b6fedb0da9a842523b994b20defd01abb163dd24e93d3e730c1091dc04ea7d/details
+Divar,ir.divar,11.14.3,251012010,,2025-10-26,2025-10-26,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/c1c42fccbdf0d1beb57af0041fe930071462fd9d489a8d02778b76c1b1f52108/details
+Divar,ir.divar,11.14.4,251026020,,2025-11-12,2025-11-12,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/2e8b96a6801e4defb4169491e92e00ae9d595d038e7f03bca60ed80a60ca2cb0/details
+Divar,ir.divar,11.14.5,251111010,,2025-11-20,2025-11-21,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/2d175a904337bd1c9b024e9c1b9bf2accbc9f133988b09ba074ad5c647659aad/details
+Divar,ir.divar,11.14.6,251125010,,2025-12-03,2025-12-03,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/bfd4b3b24f91c942abf947e142d305c1a8ebb80e051ff8a6a48e90053acfca80/details
+Divar,ir.divar,11.14.7,251209010,,2025-12-16,2025-12-16,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/4945f271482a4e45855fab6b5f681019486f7a65807ab7797a54ce3586f24312/details
+Divar,ir.divar,11.14.8,251223010,,2026-01-05,2026-01-05,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/468c06a9741ccdb904c0dce898c2109d7d244c1459460c67593b84abffeab94d/details
+Divar,ir.divar,11.14.8.1,260113000,,2026-01-23,2026-01-23,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/c6ef7533fb6df169d09508f8a7d44ab1c3437430b05a5fe1fd542d7e050c17ee/details
+Divar,ir.divar,11.14.9,260127010,,2026-02-02,2026-02-02,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/1636d586bd89ae68cf9d8214b3ab31ddda60f3c05b8b4a4eed724520f2cc7bad/details
+Divar,ir.divar,11.14.10,260208010,,2026-02-24,2026-02-24,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/9e6a9955d9b6e1db5636d4213c386944da8e740170f4e6159b2ecb202decb0db/details
+Divar,ir.divar,11.14.11,260303010,,2026-03-20,2026-05-29,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/c0b2074818d089cd18bc1b00b62d8999f889eb39b2f03f0923496c9fbc3ca929/details
+Divar,ir.divar,11.14.12,260428010,,2026-05-24,2026-05-24,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/85b3a2826986f61b583475a9f88570b082cc4e5cae30f409117bf9bbc750ece1/details
+Divar,ir.divar,11.14.12.1,260428020,,2026-05-28,2026-07-14,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/152c788fd27af2d9115d55bc1e18d8ea70dca107a2747dabe74576041b77fac9/details
+Divar,ir.divar,11.14.13,260526010,,2026-06-02,2026-06-02,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/66ff5f83890dffc39c1920e09f49a6d56a68f7ea196765fc4af3e94e75433e38/details
+Divar,ir.divar,11.14.14,260609010,,2026-06-19,2026-06-27,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/38052e14d4d68bb0ded3547165c6173e4b42ff4e691c4d9b51cbd3dfd84602a6/details
+Divar,ir.divar,11.14.15-b,260623010,b,2026-07-03,2026-07-13,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/9c02f4467d5495bdcdd2c9783a496d665ba128a81f6793e7018e8b59382b4a6f/details
+Divar,ir.divar,11.14.16-b,260707010,b,2026-07-17,2026-07-24,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/23153f14683f6671043062ba1893bdc74c2e781c56d4ded05c650b7b65273065/details
+Divar,ir.divar,11.14.16-w,260707010,w,2026-07-23,2026-07-23,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/0b871191a74983326cecfbf06ac6e954fb2fd6a62d9d54b9a1c1f27f5a105037/details
+Divar,ir.divar,11.14.17-b,260721010,b,2026-07-29,2026-08-04,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/0b194dab7e4600fb9e04d3c9828025ae650ed463f49f58e24f44db94a8cc3108/details
+Divar,ir.divar,11.14.17-w,260721010,w,2026-07-30,2026-07-30,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/2766aaf153f586ba7814812d7abef12cab46e9b9a72fcec344412f11a8e13238/details
+Divar,ir.divar,11.14.18-b,260805010,b,2026-08-15,2026-08-20,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/f10f785165adba3c8165f27576755305c970ea58807eb3c10007cb0ba48996a8/details
+Divar,ir.divar,11.14.18-w,260805010,w,2026-08-24,2026-08-24,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/c8e510f6dbed5d041baeb0b6c54a7aea4311a009ff2266396246657ba14b3c39/details
+Divar,ir.divar,11.14.19.1-b,260818020,b,2026-08-27,2026-09-02,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/5e9b34e256da8d4a2c8315d99885f9eb0cdfbb0bcb7338d13758974dc8bae660/details
+Divar,ir.divar,11.14.19-b,260818010,b,2026-08-29,2026-08-29,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/de294c3e2d681e8acbe1f5e673e709a781dbe53bf213d9ac64b06648c6e63cc1/details
+Divar,ir.divar,11.14.19.1-w,260818020,w,2026-09-06,2026-09-06,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/9445d614ec7fbaf697d4ca4bdd8a4f28f71e36eb9584507bb77d1299197364a3/details
+Divar,ir.divar,11.14.20-b,260901010,b,2026-09-10,2026-09-11,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/cdaf0bf256269eec249787299b5ebb7058f3944c86b14debfa41f9c263ad17da/details
+Divar,ir.divar,11.14.20-w,260901010,w,2026-09-14,2026-09-14,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/bbcb365f04373f6ef2546186f4ebe21efcf161f1908b5f922242af5d34678be1/details
+Divar,ir.divar,11.15.0-w,260921010,w,2026-09-22,2026-09-22,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/2c57177e254ec914883a2ed33716e703fad1e2cd21f022332b79a06667852db8/details
+Divar,ir.divar,11.15.0-b,260921010,b,2026-10-03,2026-10-03,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/7d2f2dbea3b6066971275c9269b16705265b576a6cf349d5c8df3490d8c19274/details
+Rubika,app.rbmain.a,3.6.4,,,2024-01-21,2024-01-21,in_window,1,0,0,catalog_only,https://certfa.com/lab/android-app/sha1/dc70156038e32e2941d0a00442659ec0df3dd3d1/
+Rubika,app.rbmain.a,3.6.4,364,,2024-07-12,2024-07-12,in_window,1,0,0,catalog_only,https://www.pgyer.com/app/build/ykb0w7viss
+Rubika,app.rbmain.a,3.7.3,,,2024-07-21,2024-07-21,in_window,1,0,0,catalog_only,https://certfa.com/lab/android-app/sha1/60efafb94adcdb16f7a7ea80b760c80827669e88/
+Rubika,app.rbmain.a,3.9.8,,,2025-10-29,2025-10-29,in_window,1,0,0,catalog_only,https://myket.ir/app/app.rbmain.a
+Rubika,app.rbmain.a,4.0.5,,,2026-08-23,2026-08-23,in_window,1,0,0,catalog_only,https://www.yekmod.com/rubika/
+Rubika,app.rbmain.a,4.1.1,,,2026-09-20,2026-09-20,in_window,1,0,0,catalog_only,https://cafebazaar.ir/app/app.rbmain.a
+Rubika,app.rbmain.a,3.0.7,,,,,undated_unknown,1,0,0,catalog_only,https://www.pgyer.com/apk/apk/app.rbmain.a/download
+Rubika,app.rbmain.a,3.1.1,,,,,undated_unknown,1,0,0,catalog_only,https://www.pgyer.com/apk/apk/app.rbmain.a/download
+Rubika,app.rbmain.a,3.3.2,,,,,undated_unknown,1,0,0,catalog_only,https://www.pgyer.com/apk/apk/app.rbmain.a/download
+Eitaa,ir.eitaa.messenger,6.2,24401,,2023-03-05,2023-03-05,in_window,1,0,0,catalog_only,https://tx.me/s/Salehi786?after=5970
+Eitaa,ir.eitaa.messenger,6.3.1,2451,,2023-08-28,2023-08-28,in_window,1,0,0,catalog_only,https://t.me/s/SalehiApps?before=1091&q=%23%D9%86%D8%B3%D8%AE%D9%87_%D8%AC%D8%AF%DB%8C%D8%AF_%D8%A7%DB%8C%D8%AA%D8%A7
+Eitaa,ir.eitaa.messenger,6.3.4,,,2023-09-02,2023-09-02,in_window,1,0,0,catalog_only,https://certfa.com/lab/android-app/sha1/237643bada0063c05b94e307c43fe0292758cd14/
+Eitaa,ir.eitaa.messenger,6.3.7,,,2023-11-02,2023-11-02,in_window,1,0,0,catalog_only,https://certfa.com/lab/android-app/sha1/f0d84fc1b8c9b3fc8afb658ce27a0fa4340f741c/
+Eitaa,ir.eitaa.messenger,6.4.14,,,2024-02-29,2024-02-29,in_window,1,0,0,catalog_only,https://t.me/s/SalehiApps?before=1091&q=%23%D9%86%D8%B3%D8%AE%D9%87_%D8%AC%D8%AF%DB%8C%D8%AF_%D8%A7%DB%8C%D8%AA%D8%A7
+Eitaa,ir.eitaa.messenger,6.6.2,,,2025-05-18,2025-05-18,in_window,1,0,0,catalog_only,https://t.me/s/SalehiApps?before=1091&q=%23%D9%86%D8%B3%D8%AE%D9%87_%D8%AC%D8%AF%DB%8C%D8%AF_%D8%A7%DB%8C%D8%AA%D8%A7
+Eitaa,ir.eitaa.messenger,6.7.10,,,2026-06-06,2026-06-06,in_window,1,0,0,catalog_only,https://telegram.me/s/SalehiApps?after=1170
+Eitaa,ir.eitaa.messenger,7.1,,,2026-08-29,2026-08-29,in_window,1,0,0,catalog_only,https://telegram.me/s/SalehiApps?after=1170
+Eitaa,ir.eitaa.messenger,7.1.2,,,2026-09-13,2026-09-13,in_window,1,0,0,catalog_only,https://myket.ir/app/ir.eitaa.messenger
+Eitaa,ir.eitaa.messenger,4.2,,,,,undated_unknown,1,0,0,catalog_only,https://www.pgyer.com/apk/apk/ir.eitaa.messenger/download
+Snapp,cab.snapp.passenger,2.6.4,,Snapp passenger historical baseline,2016-10-19,2016-10-19,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,2.6.5,,Snapp passenger historical baseline,2016-11-06,2016-11-06,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.0.0,,Snapp passenger historical baseline,2016-12-07,2016-12-07,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.0.1,,Snapp passenger historical baseline,2016-12-08,2016-12-08,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.0.2,,Snapp passenger historical baseline,2016-12-10,2016-12-10,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.1.0,,Snapp passenger historical baseline,2017-01-08,2017-01-08,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.1.1,,Snapp passenger historical baseline,2017-01-09,2017-01-09,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.1.2,,Snapp passenger historical baseline,2017-01-25,2017-01-25,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.1.3,,Snapp passenger historical baseline,2017-02-14,2017-02-14,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.2.0,,Snapp passenger historical baseline,2017-03-07,2017-03-07,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.2.1,,Snapp passenger historical baseline,2017-03-09,2017-03-09,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.2.2,,Snapp passenger historical baseline,2017-03-15,2017-03-15,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.3.2,,Snapp passenger historical baseline,2017-06-21,2017-06-21,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.3.3,,Snapp passenger historical baseline,2017-06-22,2017-06-22,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.3.5,,Snapp passenger historical baseline,2017-07-24,2017-07-24,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.3.6,,Snapp passenger historical baseline,2017-08-09,2017-08-09,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,3.3.7,,Snapp passenger historical baseline,2017-08-20,2017-08-20,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/old-versions/
+Snapp,cab.snapp.passenger,8.6.0,,Snapp passenger,2023-07-21,2023-07-21,in_window,1,0,0,catalog_only,https://t.me/s/skymitie/35062?q=%23snapp
+Snapp,cab.snapp.passenger,8.7.0,,Snapp passenger,2023-08-17,2023-08-17,in_window,1,0,0,catalog_only,https://t.me/s/skymitie/35062?q=%23snapp
+Snapp,cab.snapp.passenger,8.8.1,,Snapp passenger,2023-09-19,2023-09-19,in_window,1,0,0,catalog_only,https://t.me/s/skymitie/35062?q=%23snapp
+Snapp,cab.snapp.passenger,8.9.0,,Snapp passenger,2023-10-25,2023-10-25,in_window,1,0,0,catalog_only,https://t.me/s/snappi?before=45350&q=%23%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF
+Snapp,cab.snapp.passenger,8.18.0,,Snapp passenger,2024-08-26,2024-08-26,in_window,1,0,0,catalog_only,https://t.me/s/skymitie/35062?q=%23snapp
+Snapp,cab.snapp.passenger,8.19.0,,Snapp passenger,2024-09-18,2024-09-18,in_window,1,0,0,catalog_only,https://t.me/s/skymitie/35062?q=%23snapp
+Snapp,cab.snapp.passenger,8.19.1,,Snapp passenger,2024-11-04,2024-11-04,in_window,1,0,0,catalog_only,https://t.me/s/skymitie/35062?q=%23snapp
+Snapp,cab.snapp.passenger,8.20.0,,Snapp passenger,2024-11-04,2024-11-04,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.20.1,,Snapp passenger,2024-11-09,2024-11-09,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.21.0,,Snapp passenger,2024-11-23,2024-11-23,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.22.0,,Snapp passenger,2024-12-07,2024-12-07,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.30.0,,Snapp passenger,2025-03-08,2025-03-08,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.30.1,,Snapp passenger,2025-03-13,2025-03-13,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.31.0,,Snapp passenger,2025-04-14,2025-04-14,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.32.0,,Snapp passenger,2025-05-20,2025-05-20,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.32.1,,Snapp passenger,2025-05-25,2025-05-25,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.33.0,292,Snapp passenger,2025-07-16,2025-07-16,in_window,1,1,0,published_hash_only,https://www.apkmirror.com/apk/snapp-cab/snapp-2/snapp-8-33-0-release/snapp-8-33-0-android-apk-download/
+Snapp,cab.snapp.passenger,8.34.0,,Snapp passenger,2025-08-14,2025-08-14,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.35.0,,Snapp passenger,2025-09-26,2025-09-26,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.35.1,,Snapp passenger,2025-10-01,2025-10-01,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.36.0,,Snapp passenger,2025-10-30,2025-10-30,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.37.0,297,Snapp passenger,2025-12-15,2025-12-15,in_window,1,1,1,local_sample,https://apkpure.net/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/versions
+Snapp,cab.snapp.passenger,8.38.0,298,Snapp passenger,2026-01-07,2026-02-02,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/f97c6ca31be013bde648b5c7109a44830e07eac48f32eccb923ee0190725e8bc
+Snapp,cab.snapp.passenger,8.39.0,299,Snapp passenger,2026-03-02,2026-03-02,in_window,1,1,1,local_sample,https://apkpure.net/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/versions
+Snapp,cab.snapp.passenger,8.40.0,300,Snapp passenger,2026-06-09,2026-06-09,in_window,1,1,1,local_sample,https://apkpure.net/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/versions
+Snapp,cab.snapp.passenger,8.41.0,,Snapp passenger,2026-06-09,2026-06-09,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger,8.41.1,302,Snapp passenger,2026-06-23,2026-06-23,in_window,1,1,1,local_sample,https://apkpure.net/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger/versions
+Snapp,cab.snapp.passenger,8.42.0,303,Snapp passenger,2026-07-31,2026-07-31,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/94edbc09dd4745daac331be3412779a6fa1778560432b5fa0e97fb96d34ab2cd
+Snapp,cab.snapp.passenger,8.42.1,304,Snapp passenger,2026-08-11,2026-08-18,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/7b7cdc750b2e835405b8cf7819267e81a6c728f1d6120c0f8b8dc9407aeebdcb
+Snapp,cab.snapp.passenger,8.42.2,305,Snapp passenger,2026-08-21,2026-09-01,in_window,3,3,3,local_sample,https://www.virustotal.com/gui/file/cc1139edc943b904e23e60b5e6c8cd8c0a0d6ff116007c8f4502189614cde1e0
+Snapp,cab.snapp.passenger,8.43.0,,Snapp passenger,2026-10-01,2026-10-01,in_window,1,0,0,catalog_only,https://snapp.en.uptodown.com/android/versions
+Snapp,cab.snapp.passenger.gp,8.2.0,260,Snapp passenger GP,2023-03-25,2023-03-25,in_window,1,0,0,catalog_only,https://apkpure.net/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger.gp/versions
+Snapp,cab.snapp.passenger.gp,8.3.0,262,Snapp passenger GP,2023-04-23,2023-04-23,in_window,1,0,0,catalog_only,https://apkpure.net/snapp-%D8%A7%D8%B3%D9%86%D9%BE/cab.snapp.passenger.gp/versions
+Snapp,cab.snapp.passenger.play,7.0.0,244,Snapp passenger Play,2022-04-12,2022-04-12,pre_2023_baseline,1,0,0,catalog_only,https://apkpure.net/snapp/cab.snapp.passenger.play/versions
+Snapp,cab.snapp.passenger.play,8.0.3,251,Snapp passenger Play,2022-07-25,2022-07-25,pre_2023_baseline,1,0,0,catalog_only,https://apkpure.net/snapp/cab.snapp.passenger.play/versions
+Snapp,cab.snapp.passenger.play,8.1.4,,Snapp passenger Play,2022-10-16,2022-10-16,pre_2023_baseline,1,0,0,catalog_only,https://apkpure.net/snapp/cab.snapp.passenger.play/versions
+Snapp,cab.snapp.passenger.play,8.1.5,,Snapp passenger Play,2022-11-13,2022-11-13,pre_2023_baseline,1,0,0,catalog_only,https://www.apkmirror.com/apk/snapp-cab/snapp/snapp-8-1-5-release/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.6.1,70283,Neshan,2023-04-05,2023-04-05,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.6.1/70283
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.8.0,70294,Neshan,2023-06-10,2023-06-10,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.8.0/70294
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.9.0,,Neshan,2023-06-16,2023-06-16,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.9.0
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.10.0,,Neshan,2023-07-16,2023-07-16,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.10.0
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.11.0,70307,Neshan,2023-07-16,2023-07-16,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.11.0/70307
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.11.0,70309,Neshan,2023-07-23,2023-07-23,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.11.0/70309
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.12.0,70312,Neshan,2023-07-30,2023-07-30,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.12.0/70312
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.12.0,70316,Neshan,2023-08-11,2023-08-11,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.12.0/70316
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.13.0,70318,Neshan,2023-08-11,2023-08-11,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.13.0/70318
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.13.0,70322,Neshan,2023-08-26,2023-08-26,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.13.0/70322
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.14.2,,Neshan,2023-09-07,2023-09-07,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.14.2
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.15.1,,Neshan,2023-09-09,2023-09-09,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.15.1
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.15.2,,Neshan,2023-09-17,2023-09-17,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.15.2
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.15.3,,Neshan,2023-09-18,2023-09-18,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.15.3
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.16.2,,Neshan,2023-10-01,2023-10-01,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.16.2
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.17.3,,Neshan,2023-10-19,2023-10-19,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.17.3
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.18.2,,Neshan,2023-11-04,2023-11-04,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.18.2
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.19.3,,Neshan,2023-12-20,2023-12-20,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.19.3
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.20.1,,Neshan,2024-01-03,2024-01-03,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.20.1
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.19.4,,Neshan,2024-01-10,2024-01-10,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.19.4
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.20.2,,Neshan,2024-01-14,2024-01-14,in_window,1,0,0,catalog_only,https://gionee-f100.apkbog.com/en/apk/xn------tze8bleg2j7agjbeq92sba/11.20.2
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.23.1,,Neshan,2024-02-27,2024-02-27,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.21.1,,Neshan,2024-03-01,2024-03-01,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.23.3,,Neshan,2024-03-12,2024-03-12,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,11.24.3,,Neshan,2024-03-14,2024-03-14,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.0.0,,Neshan,2024-03-16,2024-03-16,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.1.1,,Neshan,2024-04-17,2024-04-17,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.0.1,,Neshan,2024-04-18,2024-04-18,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.3.2,,Neshan,2024-06-07,2024-06-07,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.2.2,,Neshan,2024-06-24,2024-06-24,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.4.2,,Neshan,2024-06-30,2024-06-30,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.5.3,,Neshan,2024-08-06,2024-08-06,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.6.2,,Neshan,2024-08-21,2024-08-21,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.7.3,,Neshan,2024-10-23,2024-10-23,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.7.4,,Neshan,2024-11-06,2024-11-06,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.7.5,,Neshan,2024-11-23,2024-11-23,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,12.8.3,70477,Neshan,2024-12-22,2024-12-22,in_window,1,0,0,catalog_only,https://www.apkturbo.com/apps/download-app/org.rajman.neshan.traffic.tehran.navigator/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,13.0.13,,Neshan,2025-02-22,2025-02-22,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,13.0.16,,Neshan,2025-03-17,2025-03-17,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.2.0,,Neshan,2025-03-21,2025-03-21,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.2.3,,Neshan,2025-05-29,2025-05-29,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.3.2,,Neshan,2025-06-02,2025-06-02,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.3.3,,Neshan,2025-07-17,2025-07-17,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.3.9,,Neshan,2025-07-18,2025-07-18,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.3.10,,Neshan,2025-07-21,2025-07-21,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.3.13,,Neshan,2025-07-27,2025-07-27,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.4.7,70542,Neshan,2025-07-30,2025-07-30,in_window,1,0,0,catalog_only,https://apkcombo.com/neshan-map-navigation-app/org.rajman.neshan.traffic.tehran.navigator/old-versions/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.3.14,70543,Neshan,2025-08-06,2025-08-06,in_window,1,0,0,catalog_only,https://www.apkmirror.com/apk/%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%86%D8%B4%D8%A7%D9%86/%D9%86%D8%B4%D8%A7%D9%86-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-neshan/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.4.11,70562,Neshan,2025-08-10,2025-08-10,in_window,1,0,0,catalog_only,https://www.apkmirror.com/apk/%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%86%D8%B4%D8%A7%D9%86/%D9%86%D8%B4%D8%A7%D9%86-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-neshan/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.5.5,70566,Neshan,2025-08-30,2025-08-30,in_window,1,0,0,catalog_only,https://www.apkmirror.com/apk/%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%86%D8%B4%D8%A7%D9%86/%D9%86%D8%B4%D8%A7%D9%86-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-neshan/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.5.7,70570,Neshan,2025-09-15,2025-09-15,in_window,1,0,0,catalog_only,https://www.apkmirror.com/apk/%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%86%D8%B4%D8%A7%D9%86/%D9%86%D8%B4%D8%A7%D9%86-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-neshan/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.6.4,70573,Neshan,2025-10-05,2025-10-05,in_window,1,0,0,catalog_only,https://www.apkmirror.com/apk/%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%86%D8%B4%D8%A7%D9%86/%D9%86%D8%B4%D8%A7%D9%86-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-neshan/
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.7.4,70604,Neshan,2025-10-23,2025-10-23,in_window,1,0,0,catalog_only,https://apkpure.net/%D9%86%D8%B4%D8%A7%D9%86-%D9%86%D9%82%D8%B4%D9%87-%D9%88%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8Cneshan/org.rajman.neshan.traffic.tehran.navigator/versions
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.7.9,70609,Neshan,2025-11-10,2025-11-10,in_window,1,1,1,local_sample,https://d.apkpure.net/b/XAPK/org.rajman.neshan.traffic.tehran.navigator?versionCode=70609&nc=arm64-v8a&sv=21
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.8.9,70620,Neshan,2026-01-27,2026-01-27,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/681b4f975d40b9d0f1dfa9d5d6b79d59cbd3ca46746a6f9f013ef1e1bf7bcfd4
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.8.10,70626,Neshan,2026-02-18,2026-02-18,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/947c4a9412ef577b29c87d87764b4e9e0e3ddfd1966bff2cbab83adb3f2f8115
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.10.2.3,70773,Neshan,2026-06-05,2026-06-05,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/90499f420b9288d8574e9bf9ae01ee90b2dc1dabb3005877b8655468c204a698
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.11.0.4,70779,Neshan,2026-06-28,2026-06-28,in_window,1,1,1,local_sample,https://d.apkpure.net/b/XAPK/org.rajman.neshan.traffic.tehran.navigator?versionCode=70779&nc=arm64-v8a&sv=21
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.11.1.2,70782,Neshan,2026-07-05,2026-08-10,in_window,5,5,5,local_sample,https://www.virustotal.com/gui/file/27d043cba2c137e324b613391659d417cb8db0264838c5c972a18f8b889dbd47
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.9.0.10,70657,Neshan,2026-07-24,2026-07-24,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/3ff5a89d2beb88dcbabdb6890b6fc4a3ff1187236d3c1c8a1e80e32d97830a09
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.12.0.2,70786,Neshan,2026-08-11,2026-08-11,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/73ce0ecf024edda270aefd8c1daa5a0e16e6c0a8cc6c757ebc648a6029c14e8f
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.12.0.3,70789,Neshan,2026-08-12,2026-08-19,in_window,4,4,4,local_sample,https://www.virustotal.com/gui/file/cb04dc605bdc0c4b622e0def4b953bd78e42bbb792a1714c392ed6968368e587
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.13.0.6,70794,Neshan,2026-09-01,2026-09-20,in_window,5,5,5,local_sample,https://www.virustotal.com/gui/file/24e8c96780668a13d7d3fb9780a0c52ccd1012f4ba06515d2f523506a98e5a0a
+Neshan,org.rajman.neshan.traffic.tehran.navigator,14.14.0.4,,Neshan third-party catalog lead,2026-09-27,2026-09-27,in_window,1,0,0,catalog_only,https://www.yekmod.com/neshan/
+Telewebion,net.telewebion,2.5.3,28,unspecified:4.59MB,2017-06-22,2017-06-22,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,2.5.3,29,unspecified:4.59MB,2017-06-28,2017-06-28,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,2.5.4,,unspecified:5.02MB,2017-09-04,2017-09-04,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,2.6,,unspecified:4.93MB,2017-11-16,2017-11-16,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,2.6.1,,unspecified:4.93MB,2017-11-23,2017-11-23,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,2.6.2,,unspecified:4.93MB,2018-01-23,2018-01-23,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,2.6.3,,unspecified:4.99MB,2018-02-10,2018-02-10,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,2.6.4,41,unspecified:5.51MB,2018-04-30,2018-04-30,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,2.6.4,42,unspecified:5.53MB,2018-05-08,2018-05-08,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,2.6.5,,unspecified:5.86MB,2018-06-11,2018-06-11,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,2.6.7,,unspecified:6.18MB,2018-09-21,2018-09-21,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.0.4,,universal:8.20MB,2018-11-12,2018-11-12,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.0.5,,universal:8.21MB,2018-11-19,2018-11-19,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.0.6,114,universal:8.09MB,2018-11-20,2018-11-20,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.0.6,116,universal:8.09MB,2018-11-30,2018-11-30,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.0.7,,universal:8.60MB,2018-12-09,2018-12-09,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.0.8,,universal:8.60MB,2018-12-21,2018-12-21,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.0.9,,universal:8.60MB,2019-01-01,2019-01-01,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.1.0,126,universal:8.60MB,2019-01-08,2019-01-08,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.1.0,129,universal:8.61MB,2019-01-17,2019-01-17,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.1.1,,universal:8.68MB,2019-03-08,2019-03-08,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.1.2,,universal:8.66MB,2019-09-30,2019-09-30,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.1.3,,universal:6.61MB,2020-02-15,2020-02-15,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.2,142,unspecified:6.61MB,2020-02-22,2020-02-22,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.2,146,unspecified:5.01MB,2020-07-27,2020-07-27,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.3,148,unspecified:5.54MB,2020-10-01,2020-10-01,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.3,150,unspecified:6.35MB,2020-11-18,2020-11-18,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.4,154,unspecified:6.23MB,2021-01-15,2021-01-15,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,3.4,155,unspecified:6.25MB,2021-01-23,2021-01-23,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.0,158,ARM7:7.72MB,2021-05-19,2021-05-19,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.0,158,unspecified:1.52MB,2021-05-19,2021-05-19,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.1,159,ARM7:7.90MB,2021-06-11,2021-06-11,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.1,159,ARM7:7.91MB,2021-06-11,2021-06-11,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.1,159,ARM8:8.14MB,2021-06-11,2021-06-11,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.3,161,ARM7:7.94MB,2021-06-17,2021-06-17,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.3,161,ARM7:7.95MB,2021-06-17,2021-06-17,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.3,161,ARM8:8.18MB,2021-06-17,2021-06-17,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.4,162,ARM7:7.54MB,2021-06-23,2021-06-23,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.4,162,ARM8:7.91MB,2021-06-23,2021-06-23,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.5,163,ARM7:7.53MB,2021-07-31,2021-07-31,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.5,163,ARM7:7.54MB,2021-07-31,2021-07-31,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.0.5,163,ARM8:7.91MB,2021-07-31,2021-07-31,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.2.4,,,2021-11-29,2021-11-29,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.ar.uptodown.com/android/versions
+Telewebion,net.telewebion,4.2.4,169,ARM7:7.82MB,2021-12-02,2021-12-02,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.2.4,169,ARM8:8.26MB,2021-12-02,2021-12-02,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.2.3,,,2022-01-24,2022-01-24,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.ar.uptodown.com/android/versions
+Telewebion,net.telewebion,4.2.6,170,ARM7:9.65MB file A,2022-02-03,2022-02-03,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.2.6,170,ARM7:9.65MB file B,2022-02-03,2022-02-03,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.2.6,170,ARM8:10.04MB,2022-02-03,2022-02-03,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.3.1,173,ARM7:9.87MB,2022-02-25,2022-02-25,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.3.1,173,ARM7:9.89MB,2022-02-25,2022-02-25,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.3.1,173,ARM8:10.29MB,2022-02-25,2022-02-25,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.3.2,174,ARM7:9.87MB,2022-03-14,2022-03-14,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.3.2,174,ARM8:10.29MB,2022-03-14,2022-03-14,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.3.2,175,ARM7:9.91MB,2022-03-14,2022-03-14,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.3.5,177,ARM7:9.89MB,2022-04-04,2022-04-04,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.3.5,177,ARM7:9.90MB,2022-04-04,2022-04-04,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.3.5,177,ARM8:10.31MB,2022-04-04,2022-04-04,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.4.3,183,arm64-v8a,2022-09-06,2022-09-06,pre_2023_baseline,1,1,0,published_hash_only,https://www.apkmirror.com/apk/simraco/telewebion/telewebion-4-4-3-release/telewebion-4-4-3-android-apk-download/
+Telewebion,net.telewebion,4.4.3,183,armeabi-v7a,2022-09-06,2022-09-06,pre_2023_baseline,1,1,0,published_hash_only,https://www.apkmirror.com/apk/simraco/telewebion/telewebion-4-4-3-release/telewebion-4-4-3-3-android-apk-download/
+Telewebion,net.telewebion,4.4.3,183,x86_64,2022-09-06,2022-09-06,pre_2023_baseline,1,1,0,published_hash_only,https://www.apkmirror.com/apk/simraco/telewebion/telewebion-4-4-3-release/telewebion-4-4-3-2-android-apk-download/
+Telewebion,net.telewebion,4.4.3,183,ARM7:10.43MB,2022-09-16,2022-09-16,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.4.3,183,ARM8:10.87MB,2022-09-16,2022-09-16,pre_2023_baseline,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.4.6,186,arm64-v8a,2023-01-29,2023-01-29,in_window,1,1,0,published_hash_only,https://www.apkmirror.com/apk/simraco/telewebion/telewebion-4-4-6-release/telewebion-4-4-6-2-android-apk-download/
+Telewebion,net.telewebion,4.4.6,186,armeabi-v7a,2023-01-29,2023-01-29,in_window,1,1,0,published_hash_only,https://www.apkmirror.com/apk/simraco/telewebion/telewebion-4-4-6-release/telewebion-4-4-6-3-android-apk-download/
+Telewebion,net.telewebion,4.4.6,186,x86_64,2023-01-29,2023-01-29,in_window,1,1,0,published_hash_only,https://www.apkmirror.com/apk/simraco/telewebion/telewebion-4-4-6-release/telewebion-4-4-6-android-apk-download/
+Telewebion,net.telewebion,5.1.4,,,2024-03-01,2024-03-01,in_window,1,0,0,catalog_only,https://telewebion.ar.uptodown.com/android/versions
+Telewebion,net.telewebion,5.1.5,5105,universal,2024-03-18,2024-03-18,in_window,1,1,0,published_hash_only,https://www.apkmirror.com/apk/simraco/telewebion/telewebion-5-1-5-release/telewebion-5-1-5-android-apk-download/
+Telewebion,net.telewebion,5.1.13,5113,universal,2024-07-16,2024-07-16,in_window,1,1,0,published_hash_only,https://www.apkmirror.com/apk/simraco/telewebion/telewebion-5-1-13-release/telewebion-5-1-13-android-apk-download/
+Telewebion,net.telewebion,5.1.15,,,2024-07-25,2024-07-25,in_window,1,0,0,catalog_only,https://telewebion.en.uptodown.com/android/versions
+Telewebion,net.telewebion,4.3.2,,,2024-10-25,2024-10-25,in_window,1,0,0,catalog_only,https://telewebion.ar.uptodown.com/android/versions
+Telewebion,net.telewebion,5.1.19,,,2024-12-17,2024-12-17,in_window,1,0,0,catalog_only,https://telewebion.en.uptodown.com/android/versions
+Telewebion,net.telewebion,5.1.19,,arm64-v8a:22.68MB APKS,2024-12-21,2024-12-21,in_window,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,5.1.19,,armeabi-v7:22.19MB APKS,2024-12-21,2024-12-21,in_window,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,5.1.5,,,2025-01-22,2025-01-22,in_window,1,0,0,catalog_only,https://telewebion.ar.uptodown.com/android/versions
+Telewebion,net.telewebion,4.2.6,,,2025-02-15,2025-02-15,in_window,1,0,0,catalog_only,https://telewebion.ar.uptodown.com/android/versions
+Telewebion,net.telewebion,5.2.0,5200,,2025-03-05,2025-03-05,in_window,1,0,0,catalog_only,https://apkpure.net/telewebion/net.telewebion/versions
+Telewebion,net.telewebion,5.2.1,5201,,2025-03-18,2025-03-18,in_window,1,0,0,catalog_only,https://apkpure.net/telewebion/net.telewebion/versions
+Telewebion,net.telewebion,4.3.1,,,2025-04-07,2025-04-07,in_window,1,0,0,catalog_only,https://telewebion.ar.uptodown.com/android/versions
+Telewebion,net.telewebion,5.1.20,,,2025-04-10,2025-04-10,in_window,1,0,0,catalog_only,https://telewebion.en.uptodown.com/android/versions
+Telewebion,net.telewebion,5.2.2,5202,,2025-04-28,2025-04-28,in_window,1,0,0,catalog_only,https://apkpure.net/telewebion/net.telewebion/versions
+Telewebion,net.telewebion,5.2.2,,arm64-v8a:25.82MB APKS,2025-04-30,2025-04-30,in_window,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,5.2.2,,armeabi-v7:25.12MB APKS,2025-04-30,2025-04-30,in_window,1,0,0,catalog_only,https://telewebion.apkcafe.in/
+Telewebion,net.telewebion,4.3.5,,,2025-07-19,2025-07-19,in_window,1,0,0,catalog_only,https://telewebion.ar.uptodown.com/android/versions
+Telewebion,net.telewebion,5.2.3,5203,universal,2025-07-28,2025-07-28,in_window,1,1,0,published_hash_only,https://www.apkmirror.com/apk/simraco/telewebion/telewebion-5-2-3-release/telewebion-5-2-3-android-apk-download/
+Telewebion,net.telewebion,4.3.4,,,2025-08-19,2025-08-19,in_window,1,0,0,catalog_only,https://telewebion.ar.uptodown.com/android/versions
+Telewebion,net.telewebion,5.2.4,5204,,2025-10-02,2025-10-02,in_window,1,0,0,catalog_only,https://apkpure.net/telewebion/net.telewebion/versions
+Telewebion,net.telewebion,5.2.5,5205,,2025-10-26,2025-10-26,in_window,1,0,0,catalog_only,https://apkpure.net/telewebion/net.telewebion/versions
+Telewebion,net.telewebion,5.2.6,5206,,2025-12-22,2025-12-22,in_window,1,0,0,catalog_only,https://apkpure.net/telewebion/net.telewebion/versions
+Telewebion,net.telewebion,5.2.7,5207,,2026-02-08,2026-02-08,in_window,1,0,0,catalog_only,https://apkpure.net/telewebion/net.telewebion/versions
+Telewebion,net.telewebion,5.2.8,5208,,2026-02-22,2026-02-22,in_window,1,0,0,catalog_only,https://apkpure.net/telewebion/net.telewebion/versions
+Telewebion,net.telewebion,5.2.9,5209,,2026-04-10,2026-04-10,in_window,1,0,0,catalog_only,https://apkpure.net/telewebion/net.telewebion/versions
+Telewebion,net.telewebion,5.3.0,,,2026-06-09,2026-06-09,in_window,1,0,0,catalog_only,https://telewebion.en.uptodown.com/android/versions
+Telewebion,net.telewebion,5.3.1,,,2026-06-09,2026-06-09,in_window,1,0,0,catalog_only,https://telewebion.en.uptodown.com/android/versions
+Telewebion,net.telewebion,5.3.3,,,2026-06-11,2026-06-11,in_window,1,0,0,catalog_only,https://telewebion.en.uptodown.com/android/versions
+Telewebion,net.telewebion,5.3.2,,,2026-06-13,2026-06-13,in_window,1,0,0,catalog_only,https://telewebion.en.uptodown.com/android/versions
+Telewebion,net.telewebion,5.3.4,,,2026-06-16,2026-06-16,in_window,1,0,0,catalog_only,https://telewebion.en.uptodown.com/android/versions
+Telewebion,net.telewebion,5.3.5,,,2026-06-20,2026-06-20,in_window,1,0,0,catalog_only,https://telewebion.en.uptodown.com/android/versions
+Telewebion,net.telewebion,5.3.6,,,2026-09-20,2026-09-20,in_window,1,0,0,catalog_only,https://telewebion.en.uptodown.com/android
+Telewebion,net.telewebion,5.3.7,,,2026-09-21,2026-09-26,in_window,2,1,0,published_hash_only,https://telewebion.en.uptodown.com/android
+Balad,com.baladmaps,4.60.2,6323,Balad Play,2022-08-15,2022-08-15,pre_2023_baseline,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8%D8%8C-%D9%86%D9%82%D8%B4%D9%87-balad/com.baladmaps/versions
+Balad,com.baladmaps,4.62.1,6613,Balad Play,2022-10-12,2022-10-12,pre_2023_baseline,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8%D8%8C-%D9%86%D9%82%D8%B4%D9%87-balad/com.baladmaps/versions
+Balad,com.baladmaps,4.63.0,6623,Balad Play,2022-10-31,2022-10-31,pre_2023_baseline,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8%D8%8C-%D9%86%D9%82%D8%B4%D9%87-balad/com.baladmaps/versions
+Balad,com.baladmaps,4.64.1,6663,Balad Play,2023-02-07,2023-02-07,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8%D8%8C-%D9%86%D9%82%D8%B4%D9%87-balad/com.baladmaps/versions
+Balad,com.baladmaps,4.60.2,,Balad Play; Uptodown archive,2023-12-27,2023-12-27,in_window,1,0,0,catalog_only,https://balad.en.uptodown.com/android/versions
+Balad,com.baladmaps,4.71.1,6903,Balad Play,2025-03-09,2025-03-09,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8%D8%8C-%D9%86%D9%82%D8%B4%D9%87-balad/com.baladmaps/versions
+Balad,com.baladmaps,4.73.2,6953,Balad Play,2025-08-07,2025-08-07,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8%D8%8C-%D9%86%D9%82%D8%B4%D9%87-balad/com.baladmaps/versions
+Balad,com.baladmaps,4.74.1,6973,Balad Play,2025-09-24,2025-09-24,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8%D8%8C-%D9%86%D9%82%D8%B4%D9%87-balad/com.baladmaps/versions
+Balad,com.baladmaps,4.49.3,,Balad Play; Uptodown archive,2025-11-02,2025-11-02,in_window,1,0,0,catalog_only,https://balad.en.uptodown.com/android/versions
+Balad,com.baladmaps,4.48.1,,Balad Play; Uptodown archive,2025-11-08,2025-11-08,in_window,1,0,0,catalog_only,https://balad.en.uptodown.com/android/versions
+Balad,com.baladmaps,4.59.0,,Balad Play; Uptodown archive,2025-12-31,2025-12-31,in_window,1,0,0,catalog_only,https://balad.en.uptodown.com/android/versions
+Balad,com.baladmaps,4.76.4,7031,Balad Play,2026-02-09,2026-02-09,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8%D8%8C-%D9%86%D9%82%D8%B4%D9%87-balad/com.baladmaps/versions
+Balad,com.baladmaps,4.77.0,7041,Balad Play,2026-02-20,2026-02-20,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/515e0330b2bb1429bcfdf7c8bdf7f15580fefc458e1e2c8ba7b0bb36c984e2e6
+Balad,com.baladmaps,4.78.1,7061,Balad Play,2026-03-29,2026-03-29,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/02c402939a7314edeaa61cdb93fd0b7c010a1f6bae760589efb1b83702fd5b85
+Balad,com.baladmaps,4.79.0,7071,Balad Play,2026-04-14,2026-04-14,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/dc4c8462fbf75956c5e2c0c45bf019f7a79588291d5e0a08acc09da7d34faaf9
+Balad,com.baladmaps,4.41.2,,Balad Play; Uptodown archive,2026-06-08,2026-06-08,in_window,1,0,0,catalog_only,https://balad.en.uptodown.com/android/versions
+Balad,com.baladmaps,4.82.1,7121,Balad Play,2026-08-06,2026-08-06,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/0936895d1635d0529e2d9a7c62cf4308faa39b743acb3bae63af4c2f31374813
+Balad,com.baladmaps,4.82.1,7120,Balad Play,2026-09-05,2026-09-05,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/c5ee4231d60b71556391d36f7b8f3acf664a7dd0be097ae86951bf5c025c76fe
+Balad,com.baladmaps,4.83.2,7150,Balad Play,2026-09-28,2026-09-28,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/c34c4cdb80c23a804d1442fe5114c25dea02c56757ba77bdbf83e067b4ec913a
+Balad,ir.balad,4.29.2-armv8,5531,Balad Bazaar,2021-07-04,2021-07-04,pre_2023_baseline,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%E2%80%93-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C/ir.balad/versions
+Balad,ir.balad,4.35.1-armv7,5625,Balad Bazaar,2021-08-25,2021-08-25,pre_2023_baseline,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%E2%80%93-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C/ir.balad/versions
+Balad,ir.balad,4.35.1-armv8,5626,Balad Bazaar,2021-08-25,2021-08-25,pre_2023_baseline,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%E2%80%93-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C/ir.balad/versions
+Balad,ir.balad,4.65.0,,Balad Bazaar,2023-07-17,2023-07-17,in_window,1,0,0,catalog_only,https://phoneky.com/android/?id=d1d303850
+Balad,ir.balad,4.68.5,6820,Balad Bazaar,2024-12-08,2024-12-08,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%E2%80%93-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C/ir.balad/versions
+Balad,ir.balad,4.71.0,6890,Balad Bazaar,2025-03-03,2025-03-03,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%E2%80%93-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C/ir.balad/versions
+Balad,ir.balad,4.71.1,6900,Balad Bazaar,2025-03-05,2025-03-05,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%E2%80%93-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C/ir.balad/versions
+Balad,ir.balad,4.72.0,6910,Balad Bazaar,2025-05-26,2025-05-26,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%E2%80%93-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C/ir.balad/versions
+Balad,ir.balad,4.72.1,6920,Balad Bazaar,2025-06-30,2025-06-30,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%E2%80%93-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C/ir.balad/versions
+Balad,ir.balad,4.73.0,6930,Balad Bazaar,2025-08-04,2025-08-04,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%E2%80%93-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C/ir.balad/versions
+Balad,ir.balad,4.75.0,6981,Balad Bazaar,2025-10-25,2025-10-25,in_window,1,0,0,catalog_only,https://apkpure.net/%D8%A8%D9%84%D8%AF-%E2%80%93-%D9%86%D9%82%D8%B4%D9%87-%D9%88-%D9%85%D8%B3%DB%8C%D8%B1%DB%8C%D8%A7%D8%A8-%D9%81%D8%A7%D8%B1%D8%B3%DB%8C/ir.balad/versions
+Balad,ir.balad,4.76.0,,Balad Bazaar,2025-11-22,2025-11-22,in_window,1,0,0,catalog_only,https://balad-ir-balad.en.uptodown.com/android/versions
+Balad,ir.balad,4.76.2,,Balad Bazaar archive entry 1,2025-12-05,2025-12-05,in_window,1,0,0,catalog_only,https://balad-ir-balad.en.uptodown.com/android/versions
+Balad,ir.balad,4.76.2,,Balad Bazaar archive entry 2,2025-12-15,2025-12-15,in_window,1,0,0,catalog_only,https://balad-ir-balad.en.uptodown.com/android/versions
+Balad,ir.balad,4.76.3,7021,Balad Bazaar,2025-12-17,2025-12-17,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/2cd665cc41445f86a33d529c92cf11afb68b25073f7f2a5794bee90bfe65aacc
+Balad,ir.balad,4.76.4,7031,Balad Bazaar,2025-12-21,2025-12-21,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/08395cba9ed4dd3ab20507b8791e364fd9f588156f5dcea98350c8333e19a304
+Balad,ir.balad,4.77.0,7041,Balad Bazaar,2026-02-05,2026-02-05,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/214c667001e63627544bb2174a347dbe1e97069a48ec973b634d50502d9abaf1
+Balad,ir.balad,4.78.0,,Balad Bazaar,2026-02-24,2026-02-24,in_window,1,0,0,catalog_only,https://balad-ir-balad.en.uptodown.com/android/versions
+Balad,ir.balad,4.78.1,,Balad Bazaar archive entry 1,2026-02-24,2026-02-24,in_window,1,0,0,catalog_only,https://balad-ir-balad.en.uptodown.com/android/versions
+Balad,ir.balad,4.79.0,7071,Balad Bazaar,2026-03-18,2026-03-18,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/4c015bc86454142d7d5e4318e02454d0e1c7c2c9c602f3227fbde5a631c31784
+Balad,ir.balad,4.78.1,,Balad Bazaar archive entry 2,2026-04-19,2026-04-19,in_window,1,0,0,catalog_only,https://balad-ir-balad.en.uptodown.com/android/versions
+Balad,ir.balad,4.80.0,,Balad Bazaar archive entry 1,2026-05-09,2026-05-09,in_window,1,0,0,catalog_only,https://balad-ir-balad.en.uptodown.com/android/versions
+Balad,ir.balad,4.80.0,,Balad Bazaar archive entry 2,2026-05-21,2026-05-21,in_window,1,0,0,catalog_only,https://balad-ir-balad.en.uptodown.com/android/versions
+Balad,ir.balad,4.81.0,,Balad Bazaar,2026-06-04,2026-06-04,in_window,1,0,0,catalog_only,https://balad-ir-balad.en.uptodown.com/android/versions
+Balad,ir.balad,4.81.1,7101,Balad Bazaar,2026-06-10,2026-06-10,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/da7e348ba2fd161e0a0d05b7ad7a216f95389f9e69219144d5cc72bf7454370b
+Balad,ir.balad,4.82.0,7111,Balad Bazaar,2026-07-08,2026-07-08,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/e492928e6330fdd00248b748d89dd621a8ad7dbb9d7ded28e6fd36f335c1201d
+Balad,ir.balad,4.82.1,7121,Balad Bazaar,2026-07-14,2026-07-24,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/1b7952a94c1b48270acbc4024abaf1d7034a28e09d1c4f29614119fac066d9ee
+Balad,ir.balad,4.82.1,7120,Balad Bazaar,2026-07-19,2026-08-01,in_window,3,3,3,local_sample,https://www.virustotal.com/gui/file/38f93aedba3d80268f17c7858af375b8bbb21a2369763ef96f3eef8bbe791d0a
+Balad,ir.balad,4.83.0,7131,Balad Bazaar,2026-08-04,2026-08-04,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/3f6b5f50f43f332a963e95bbbea4092a6c74c66c70aca563f3dc718e6e2a33cb
+Balad,ir.balad,4.83.1,7141,Balad Bazaar,2026-08-11,2026-08-15,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/3f385ab9c61740dc763161a62b0abb5e9661fd81894f2073a02a1ef46ace3379
+Balad,ir.balad,4.83.1,7140,Balad Bazaar,2026-08-13,2026-08-18,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/4ee099547c3533579b1513d2d7932ad8578a99b92f2054258962560fc8127603
+Balad,ir.balad,4.83.0,7130,Balad Bazaar,2026-08-17,2026-08-17,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/d5b38a482e9bcc62b942e993b4539d10a3385f06787411dced83f80ad66d0541
+Balad,ir.balad,4.83.2,7151,Balad Bazaar,2026-08-19,2026-08-19,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/e3bab81fdd1561fd7de3421fcd1662e1dc8cf12ef32fa79c8f0774aa21d46b2f
+Balad,ir.balad,4.83.2,7150,Balad Bazaar,2026-08-21,2026-08-21,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/22c1baaf9fdd0513a8bd0f03829cac10ae26d945e4a253e23fbfc6ba194cb9c2
+Balad,ir.balad,4.84.0,7161,Balad Bazaar,2026-09-05,2026-09-05,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/18a117060b5e4423a0487f401378304f55999d11b83591f9c5f3780726ac6165
+Balad,ir.balad,4.84.1,7171,Balad Bazaar,2026-09-07,2026-09-15,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/8285d68e7d2ad5075ab6e23daa8d8e3126d75bcde81247a90f8201d0c6f6a3d2
+Balad,ir.balad,4.84.1,7170,Balad Bazaar,2026-09-10,2026-09-19,in_window,2,2,2,local_sample,https://www.virustotal.com/gui/file/748b2d8c5b4d158ed428cbd93ed580eea5137e5ce50bc4403cac04fa0fbec19e
+Balad,ir.balad,4.84.0,7160,Balad Bazaar,2026-09-29,2026-09-29,in_window,1,1,1,local_sample,https://www.virustotal.com/gui/file/d76c77633224e48760b60226722a50146b8d7245ceb1a96ac0a0ece3b98008d7
+Balad,ir.balad,4.85.0,,Balad Bazaar,2026-10-04,2026-10-04,in_window,1,0,0,catalog_only,https://balad-ir-balad.en.uptodown.com/android/versions
+Digikala,com.digikala,1.0.2,,,2015-07-28,2015-07-28,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.0.3,,,2015-08-23,2015-08-23,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.0.4,,,2015-09-05,2015-09-05,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.0.5,,,2015-09-19,2015-09-19,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.0.7,,,2015-11-30,2015-11-30,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.1.1,,,2016-02-27,2016-02-27,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.2.1,,,2016-06-09,2016-06-09,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.3.2,,,2016-08-17,2016-08-17,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.4.0,,,2016-12-11,2016-12-11,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.4.1,,,2017-03-04,2017-03-04,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.5.2,,,2017-07-12,2017-07-12,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.6.8,,,2017-10-10,2017-10-10,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.6.9,,,2017-10-17,2017-10-17,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.7.2,,,2017-12-06,2017-12-06,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.7.3,,,2017-12-18,2017-12-18,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.7.4,,,2018-01-22,2018-01-22,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.8.0,,,2018-02-14,2018-02-14,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.8.1,,,2018-02-25,2018-02-25,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.8.2,,,2018-03-19,2018-03-19,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.8.3,,,2018-06-10,2018-06-10,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.9.0,,,2019-02-24,2019-02-24,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.9.1,,,2019-02-24,2019-02-24,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.9.2,,,2019-03-12,2019-03-12,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,1.9.3,,,2019-05-10,2019-05-10,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/digikala/com.digikala/old-versions/
+Digikala,com.digikala,2.8.4-CB,,archive_entry_3,2022-05-19,2022-05-19,pre_2023_baseline,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.8.4-CB,,archive_entry_1,2022-05-25,2022-05-25,pre_2023_baseline,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.9.0-CB,,,2022-06-20,2022-06-20,pre_2023_baseline,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.9.0.1-MK,,,2022-07-16,2022-07-16,pre_2023_baseline,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.8.4-CB,,archive_entry_2,2022-07-26,2022-07-26,pre_2023_baseline,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.9.1-CB,,,2022-08-17,2022-08-17,pre_2023_baseline,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.9.1.1-MK,,,2022-09-06,2022-09-06,pre_2023_baseline,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.9.2-CB,,,2022-10-17,2022-10-17,pre_2023_baseline,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.9.3-CB,,,2023-01-06,2023-01-06,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.9.4-MK,,,2023-03-29,2023-03-29,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.10.0-CB,,,2023-08-13,2023-08-13,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.11.0-CB,,,2023-12-04,2023-12-04,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,2.11.1-CB,,,2024-02-14,2024-02-14,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,3.0.0-CB,,,2024-04-22,2024-04-22,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,3.1.0-CB,,,2024-11-10,2024-11-10,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,3.1.1-HW,,,2025-02-14,2025-02-14,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,3.1.2-MK,,,2025-10-09,2025-10-09,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,3.1.3-MK,,,2025-10-29,2025-10-29,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,3.2.0-MK,,,2026-05-04,2026-05-04,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,3.2.2-MK,,,2026-05-23,2026-05-23,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala,3.2.3-CB,,current_store_listing,2026-07-27,2026-07-27,in_window,1,0,0,catalog_only,https://cafebazaar.ir/app/com.digikala
+Digikala,com.digikala,3.2.3-MK,,,2026-08-03,2026-08-03,in_window,1,0,0,catalog_only,https://digikala.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.7.2-GP,,,2021-11-30,2021-11-30,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.8.1-GP,,,2022-01-18,2022-01-18,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.7.1-GP,,,2022-01-23,2022-01-23,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.7 - GP,,,2022-02-03,2022-02-03,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.8.4-GP,,entry_3,2022-05-19,2022-05-19,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.8.4-GP,,entry_2,2022-05-24,2022-05-24,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.8.4-GP,,entry_1,2022-05-26,2022-05-26,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.9.0-GP,,,2022-06-21,2022-06-21,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.9.0.1-GP,,,2022-07-02,2022-07-02,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.9.1-GP,,,2022-08-15,2022-08-15,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.9.1.1-GP,,,2022-09-05,2022-09-05,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.9.2-GP,,,2022-10-17,2022-10-17,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.9.2.1-GP,,,2022-12-07,2022-12-07,pre_2023_baseline,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.9.3-GP,,,2023-01-07,2023-01-07,in_window,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.8.2-GP,,entry_2,2023-02-13,2023-02-13,in_window,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.8-GP,,,2023-02-18,2023-02-18,in_window,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.8.2-GP,,,2023-03-04,2023-03-04,in_window,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.9.4-GP,,,2023-03-12,2023-03-12,in_window,1,1,0,published_hash_only,https://digikala-diagon.en.uptodown.com/android/download
+Digikala,com.digikala.diagon,2.8.3-GP,,,2024-09-29,2024-09-29,in_window,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Digikala,com.digikala.diagon,2.6.3 - GP,,,2025-03-29,2025-03-29,in_window,1,0,0,catalog_only,https://digikala-diagon.en.uptodown.com/android/versions
+Aparat,com.aparat,3.4.1,,,2015-09-22,2015-09-22,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/aparat/com.aparat/old-versions/
+Aparat,com.aparat,3.5,,,2015-11-24,2015-11-24,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/aparat/com.aparat/old-versions/
+Aparat,com.aparat,4.0.1,,,2016-01-30,2016-01-30,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/aparat/com.aparat/old-versions/
+Aparat,com.aparat,4.0.2,,,2016-02-02,2016-02-02,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/aparat/com.aparat/old-versions/
+Aparat,com.aparat,4.0.3,,,2016-02-24,2016-02-24,pre_2023_baseline,1,0,0,catalog_only,https://apkcombo.com/aparat/com.aparat/old-versions/
+Aparat,com.aparat,5.2.3,,,2022-12-28,2022-12-28,pre_2023_baseline,1,0,0,catalog_only,https://aparat.it.uptodown.com/android/download
+Aparat,com.aparat,5.2.4,,uptodown_entry_1,2023-03-07,2023-03-07,in_window,1,0,0,catalog_only,https://aparat.it.uptodown.com/android/download
+Aparat,com.aparat,5.2.4,,uptodown_entry_2,2023-04-28,2023-04-28,in_window,1,0,0,catalog_only,https://aparat.it.uptodown.com/android/download
+Aparat,com.aparat,5.3.1,,uptodown_entry,2023-05-30,2023-05-30,in_window,1,0,0,catalog_only,https://aparat.it.uptodown.com/android/download
+Aparat,com.aparat,5.3.1,,apkcombo_entry,2024-07-08,2024-07-08,in_window,1,0,0,catalog_only,https://apkcombo.com/aparat/com.aparat/old-versions/
+Aparat,com.aparat,6.0.0,,,2025-04-13,2025-04-13,in_window,1,0,0,catalog_only,https://aparat.it.uptodown.com/android/download
+Aparat,com.aparat,6.0.1,,,2025-04-16,2025-04-16,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.0.2,,,2025-05-06,2025-05-06,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.0,,entry_1,2025-08-10,2025-08-10,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.0,,entry_2,2025-08-11,2025-08-11,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.1,,,2025-09-27,2025-09-27,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.2,,,2025-10-13,2025-10-13,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.3,,,2026-01-05,2026-01-05,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.4,,entry_1,2026-01-17,2026-01-17,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.4,,entry_2,2026-01-20,2026-01-20,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.5,,entry_1,2026-02-23,2026-02-23,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.5,,entry_2,2026-02-26,2026-02-26,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.6,,entry_1,2026-03-13,2026-03-13,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.7,,entry_1,2026-04-09,2026-04-09,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.6,,entry_2,2026-04-26,2026-04-26,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,6.1.7,,entry_2,2026-05-12,2026-05-12,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,7.0.0,,entry_1,2026-05-25,2026-05-25,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,7.0.1,,entry_1,2026-06-04,2026-06-04,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,7.0.0,,entry_2,2026-06-05,2026-06-05,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,7.0.1,,entry_2,2026-06-06,2026-06-06,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,7.1.0,,entry_1,2026-07-26,2026-07-26,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,7.1.0,,entry_2,2026-07-30,2026-07-30,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,7.2.0,,entry_1,2026-09-09,2026-09-09,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,7.2.1,,current_store_listing,2026-09-19,2026-09-19,in_window,1,0,0,catalog_only,https://cafebazaar.ir/app/com.aparat
+Aparat,com.aparat,7.2.1,,entry_1,2026-09-19,2026-09-19,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Aparat,com.aparat,7.2.1,,entry_2,2026-09-21,2026-09-21,in_window,1,0,0,catalog_only,https://aparat.en.uptodown.com/android/versions
+Baam,ir.bmi.bam.nativeweb,4.7.1.265,,,2023-11-25,2023-11-25,in_window,1,1,0,published_hash_only,https://certfa.com/lab/android-app/sha1/ff1e80a620438a4ee13e31ef2e284de5bf41534b/
+Baam,ir.bmi.bam.nativeweb,4.9.2.315,,,2024-04-23,2024-04-23,in_window,1,0,0,catalog_only,https://certfa.com/lab/android-app/sha1/a449db1274863bf853e27dfad9af6ada9e9c6667/
+Baam,ir.bmi.bam.nativeweb,4.8.1.277,,,2024-06-10,2024-06-10,in_window,1,0,0,catalog_only,https://www.pgyer.com/apk/fa/apk/ir.bmi.bam.nativeweb/download
+Baam,ir.bmi.bam.nativeweb,4.13.1.360,,,2024-07-23,2024-07-23,in_window,1,1,0,published_hash_only,https://certfa.com/lab/android-app/sha1/5d74788b534ba69cac9184feba932c74d8094cbe/
+Baam,ir.bmi.bam.nativeweb,4.14.2.378,,,2024-09-25,2024-09-25,in_window,1,1,0,published_hash_only,https://certfa.com/lab/android-app/sha1/b2b9f6c1f5aec6106640a399e970fbc01aa5b617/
+Baam,ir.bmi.bam.nativeweb,4.14.2.379,41402379,,2024-10-17,2024-10-17,in_window,1,0,0,catalog_only,https://apkcombo.com/ar/%D9%87%D9%85%D8%B1%D8%A7%D9%87-%D8%A8%D8%A7%D9%85-%D9%85%D9%84%DB%8C/ir.bmi.bam.nativeweb/
+Baam,ir.bmi.bam.nativeweb,4.26.1.635,,,2026-09-29,2026-09-29,in_window,1,0,0,catalog_only,https://cafebazaar.ir/app/ir.bmi.bam.nativeweb
+Baam,ir.bmi.bam.nativeweb,3.2.8.10,,,,,undated_unknown,1,0,0,catalog_only,https://www.pgyer.com/apk/fa/apk/ir.bmi.bam.nativeweb/download
+Baam,ir.bmi.bam.nativeweb,4.25.3.632,,,,,undated_unknown,1,0,0,catalog_only,https://barato.ir/bam-android/
+Baam,ir.bmi.bam.nativeweb,4.7.2.269,,,,,undated_unknown,1,0,0,catalog_only,https://www.pgyer.com/apk/fa/apk/ir.bmi.bam.nativeweb/download
+Baam,ir.bmi.bam.nativeweb,N2.6.7,,,,,undated_unknown,1,0,0,catalog_only,https://www.pgyer.com/apk/fa/apk/ir.bmi.bam.nativeweb/download

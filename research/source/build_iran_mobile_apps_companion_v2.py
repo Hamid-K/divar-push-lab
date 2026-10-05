@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the independent Iranian mobile-app companion report, edition 2.0.
+"""Build the independent Iranian mobile-app companion report, edition 2.1.
 
 The narrative is deliberately bounded by the acquired APKs. The adjacent CSV is
 the normalized, exact-file inventory used for the coverage graphic. No server
@@ -29,6 +29,9 @@ ROOT = Path(__file__).resolve().parent.parent
 PDF = ROOT / "Iran_mobile_apps_companion.pdf"
 INVENTORY = list(csv.DictReader((ROOT / "Iran_mobile_apps_sample_inventory_v2.0.csv").open(newline="")))
 assert len(INVENTORY) == 103 and len({r["sha256"] for r in INVENTORY}) == 103
+TOP10_TARGETS = list(csv.DictReader((ROOT / "future_audit_top10/version_targets.csv").open(newline="")))
+TOP10_APPS = ("Divar", "Rubika", "Eitaa", "Snapp", "Neshan", "Telewebion", "Balad", "Digikala", "Aparat", "Baam")
+assert len(TOP10_TARGETS) == 636
 W, H = A4
 M = 43
 BW = W - 2 * M
@@ -144,7 +147,7 @@ def arrow(c: canvas.Canvas, x1: float, y1: float, x2: float, y2: float,
 class Report:
     def __init__(self):
         self.c = canvas.Canvas(str(PDF), pagesize=A4, pageCompression=1)
-        self.c.setTitle("From push to position | Iranian mobile-app command and location paths | v2.0")
+        self.c.setTitle("From push to position | Iranian mobile-app command and location paths | v2.1")
         self.c.setAuthor("Hamid Kashfi")
         self.c.setSubject("Bounded signed-APK analysis of Balad, Neshan, Snapp and Tapsi")
         self.n = 0
@@ -206,7 +209,7 @@ class Report:
         txt(c,"HAMID KASHFI",45,43,9.2,"white","AvenirB")
         txt(c,"LLM-generated report",45,29,7.8,"muted","AvenirR")
         right(c,"5 OCTOBER 2026",W-45,43,8.2,"white","AvenirB")
-        right(c,"VERSION 2.0",W-45,29,8.0,"coral","AvenirB")
+        right(c,"VERSION 2.1",W-45,29,8.0,"coral","AvenirB")
 
     def page(self, label: str, *, title: str | None = None, deck: str = "",
              continued: bool = False) -> None:
@@ -950,6 +953,64 @@ def investigation(r: Report) -> None:
               "the app providers here must be assessed on their own code and logs.",tone="teal",fill="pale2")
 
 
+def future_work(r: Report) -> None:
+    """A source-linked acquisition plan, not a verdict on unaudited apps."""
+    grouped = defaultdict(list)
+    for row in TOP10_TARGETS:
+        grouped[row["app"]].append(row)
+
+    rows = []
+    totals = [0, 0, 0, 0]
+    for app in TOP10_APPS:
+        records = grouped[app]
+        in_window = [row for row in records if row["record_scope"] == "in_window"]
+        sampled = sum(int(row["local_sample_count"]) > 0 for row in in_window)
+        counts = (len({row["version_name"] for row in records}),
+                  len(in_window), sampled, len(in_window) - sampled)
+        totals = [total + count for total, count in zip(totals, counts)]
+        rows.append([app, *(str(count) for count in counts)])
+    assert tuple(totals) == (554, 362, 145, 217)
+    rows.append(["**TOTAL**", *(f"**{count}**" for count in totals)])
+
+    r.page("future work", title="The ten-app audit backlog",
+           deck="The 28 September 2026 Tehran Index ranking selects ten apps from 64 tracked Cafe Bazaar listings. It is a store sample, not a national top ten.")
+    card_w = (BW - 16) / 3
+    for i, (count, label, tone) in enumerate([
+        ("362", "TARGETS OBSERVED", "teal"),
+        ("145", "TARGETS WITH APK", "green"),
+        ("217", "TARGETS NEEDING APK", "coral"),
+    ]):
+        x = M + i * (card_w + 8)
+        box(r.c, x, r.y - 61, card_w, 61, "pale", 8)
+        txt(r.c, count, x + 12, r.y - 32, 21, tone, "AvenirB")
+        txt(r.c, label, x + 12, r.y - 49, 7.1, "muted", "ArialB")
+    r.y -= 78
+
+    r.h2("Observed versions and exact-file backlog")
+    r.table(["App", "Version names", "2023-26 targets", "With APK", "Need APK"],
+            rows, [147, 88, 100, 83, BW - 418], font=8.0, leading=11.0,
+            min_row=23)
+    r.p("Version names are distinct observed labels per app across all dates. A target is a package, "
+        "version code and variant identity first observed in the 2023-26 window. 'With APK' counts "
+        "targets represented by at least one exact local file; it is not a count of APK files. "
+        "Snapp here is the passenger app; the driver app and Tapsi in this report are outside this selected ten.",
+        size=7.9, leading=10.9, after=7)
+    r.p("The [complete version/build ledger](https://github.com/Hamid-K/divar-push-lab/blob/main/research/future_audit_top10/version_targets.csv) "
+        "lists all 636 targets. The [217-target acquisition queue](https://github.com/Hamid-K/divar-push-lab/blob/main/research/future_audit_top10/in_window_acquisition_targets.csv) "
+        "lists target identities without locally held APK bytes and their source links. Dates are first source observations, not proven release or delivery dates.",
+        size=7.9, leading=10.9, after=9)
+    r.h2("Next pass")
+    r.bullet("Retrieve each accessible APK or complete split set. Record SHA-256, package, version code, "
+             "signer, source and retrieval time; sample earlier boundary builds where the catalog is thin.",
+             size=8.0, leading=11.0, after=4)
+    r.bullet("Compare adjacent exact files for push handling, dynamic loading, native code, permissions, "
+             "location collection and off-band network paths. Keep separate package tracks separate.",
+             size=8.0, leading=11.0, after=4)
+    r.p("No new APKs were acquired in this inventory pass. The 217 targets are a documented acquisition floor; "
+        "missing releases and multiple files per target can increase the work. No new app is classified here.",
+        size=7.7, leading=10.5, tone="muted", after=0)
+
+
 def anchors(r: Report) -> None:
     r.page("exact-file anchors",title="Files behind the pivotal comparisons",
            deck="Each SHA-256 is clickable to its VirusTotal file page. A file page or host name is an evidence pivot, not a malicious IOC.")
@@ -1016,10 +1077,10 @@ def sources(r: Report) -> None:
         "raw DEX or repeated variants where material; the Impulse conclusion is bounded by disassembled "
         "request-path reachability. This was **static analysis**, not an observed victim-device run.",
         size=8.1,leading=11.5)
-    r.callout("Report history", "Version 1.2 was a chronology-led preliminary cross-app review. "
-              "Version 2.0 follows the Divar v2.7 case-file design, centers the four additional apps, "
-              "adds 103-file coverage and semantic path diagrams, and sharpens date, native-host and "
-              "server-use limits. Prepared 5 October 2026 by Hamid Kashfi with LLM assistance.",
+    r.callout("Report history", "Version 1.2 was a chronology-led preliminary review. "
+              "Version 2.0 added exact-file coverage and semantic path diagrams for four apps. "
+              "Version 2.1 adds the source-linked ten-app acquisition inventory and future-work table. "
+              "Prepared 5 October 2026 by Hamid Kashfi with LLM assistance.",
               tone="teal",fill="pale2")
 
 
@@ -1041,6 +1102,7 @@ def main() -> None:
     deltas(r)
     permissions(r)
     investigation(r)
+    future_work(r)
     anchors(r)
     sources(r)
     r.save()
