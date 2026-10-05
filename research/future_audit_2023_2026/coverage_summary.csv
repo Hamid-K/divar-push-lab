@@ -1,0 +1,8 @@
+app,track,package,audited_sha256_files,audited_version_build_identities,new_core_candidate_identities,named_pre_boundary_checkpoints,new_post_report_candidates,unresolved_pre_boundary_checkpoint
+Balad,Balad Bazaar,ir.balad,26,18,14,0,1,yes
+Balad,Balad Play,com.baladmaps,6,6,4,1,0,no
+Neshan,Neshan,org.rajman.neshan.traffic.tehran.navigator,21,10,52,1,0,no
+Snapp,Snapp driver,cab.snapp.driver,5,4,15,2,0,no
+Snapp,Snapp passenger,cab.snapp.passenger,12,8,22,0,1,yes
+Tapsi,Tapsi driver,taxi.tap30.driver,13,11,12,0,0,yes
+Tapsi,Tapsi passenger,taxi.tap30.passenger,20,13,13,0,0,yes
