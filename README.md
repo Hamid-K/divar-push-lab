@@ -16,7 +16,7 @@ The `11.14.20-b` code indicates that a well-formed matching push is **silent on 
 
 - [IOC Hunt package (ZIP)](research/IOC_Hunt_2026-10-04.zip) · [Browse the files](research/IOC_Hunt/README.md) — YARA rules, a DEX scanner, VT search guidance, 69 route-positive APK hashes, the 282-build reference inventory, and validation data. Hits are leads for code-flow review, not proof of payload delivery or execution.
 
-The three version-free PDF paths are the links to share. The older dated paths contain identical current PDFs so previously shared links keep working; update those compatibility copies whenever replacing a report.
+Published report PDFs use stable filenames. Git history records earlier revisions; drafts are kept in the local DFIR workspace.
 
 [SHA-256 checksums](research/SHA256SUMS) identify the exact reports, inventory and ZIP in this repository.
 
