@@ -380,7 +380,7 @@ def assessment(r: Report) -> None:
         "and [my subsequent disclosure](https://x.com/hkashfi/status/2106147963332633025), I asked a narrower question: "
         "did contemporaneous Balad, Neshan, Snapp or Tapsi updates carry a comparable inserted delivery route, "
         "or add a sensitive location path that could matter in a targeting operation? The [Divar technical report]"
-        "(https://github.com/Hamid-K/divar-push-lab/blob/main/research/Divar_backdoor_technical_analysis_v2.7_2026-10-05.pdf) "
+        "(https://github.com/Hamid-K/divar-push-lab/blob/main/research/Divar_backdoor_technical_analysis_v2.8_2026-10-05.pdf) "
         "now covers 282 exact signed files, including a push-to-stage route first observed in 2023 and a later HTTP-header entry. "
         "This companion examines **103 exact APKs across seven package tracks** for other app behavior. [01-03]")
     r.p("I found **no Divar-equivalent notification-to-loader chain** in the inspected Balad, Neshan, Snapp or Tapsi samples. "
@@ -983,7 +983,7 @@ def sources(r: Report) -> None:
     entries=[
         ("01", "Divar case notes by Ramin Farajpour Cami", "https://gist.github.com/raminfp/a548a2af86108eb40b8bffc5c8f07aaa"),
         ("02", "My Divar disclosure on X", "https://x.com/hkashfi/status/2106147963332633025"),
-        ("03", "Divar technical case file v2.7", "https://github.com/Hamid-K/divar-push-lab/blob/main/research/Divar_backdoor_technical_analysis_v2.7_2026-10-05.pdf"),
+        ("03", "Divar technical case file v2.8", "https://github.com/Hamid-K/divar-push-lab/blob/main/research/Divar_backdoor_technical_analysis_v2.8_2026-10-05.pdf"),
         ("04", "UN: opening strikes, 28 February 2026", "https://turkiye.un.org/en/310903-bombing-iran-and-retaliatory-strikes-%E2%80%98-grave-threat-international-peace-and-security%E2%80%99"),
         ("05", "UN: 7 April two-week ceasefire announcement", "https://india.un.org/en/313596-un-secretary-general-conflict-middle-east-7-april-2026"),
         ("06", "UN: June peace deal and intermittent fire", "https://india.un.org/en/317325-guterres-welcomes-us-iran-peace-deal-%E2%80%98critical-step%E2%80%99-toward-ending-conflict"),
