@@ -1,6 +1,6 @@
 # Mobile-app evidence notes
 
-These notes support the [cross-app companion report](../../Iran_mobile_apps_companion_v2.0_2026-10-05.pdf). They identify the exact Balad, Neshan, Snapp and Tapsi APKs behind its principal code findings. The [103-file inventory](../../Iran_mobile_apps_sample_inventory_v2.0.csv) records the full acquired corpus, package tracks, signer fingerprints and date basis.
+These notes support the [cross-app companion report](../../Iran_mobile_apps_companion.pdf). They identify the exact Balad, Neshan, Snapp and Tapsi APKs behind its principal code findings. The [103-file inventory](../../Iran_mobile_apps_sample_inventory_v2.0.csv) records the full acquired corpus, package tracks, signer fingerprints and date basis.
 
 | App | Selected evidence |
 | --- | --- |
