@@ -14,8 +14,9 @@ The `11.14.20-b` code indicates that a well-formed matching push is **silent on 
 - [گزارش فنی فارسی v2.8.1 (PDF)](research/Divar_backdoor_technical_analysis_fa.pdf) — the corrected 27-page Persian edition, with idiomatic code-execution terminology, translated flow diagrams, a linked 282-file inventory, the YARA appendix, sources, and the same evidence limits.
 - [From push to position: Iranian mobile apps companion v2.0 (PDF)](research/Iran_mobile_apps_companion.pdf) — a 19-page signed-APK audit of Balad, Neshan, Snapp and Tapsi, with exact-file coverage, chronology, route graphs, semantic code changes, permissions, and evidence limits. No coordinated campaign or malicious collection is established. The [103-file inventory (CSV)](research/Iran_mobile_apps_sample_inventory_v2.0.csv), [technical evidence notes](research/evidence/mobile_apps/README.md) and [PDF builder](research/source/build_iran_mobile_apps_companion_v2.py) accompany it.
 
-These three PDF filenames stay fixed across report revisions. The dated files remain as frozen copies so existing links continue to work; use the links above for the latest editions.
 - [IOC Hunt package (ZIP)](research/IOC_Hunt_2026-10-04.zip) · [Browse the files](research/IOC_Hunt/README.md) — YARA rules, a DEX scanner, VT search guidance, 69 route-positive APK hashes, the 282-build reference inventory, and validation data. Hits are leads for code-flow review, not proof of payload delivery or execution.
+
+The three version-free PDF paths are the links to share. The older dated paths contain identical current PDFs so previously shared links keep working; update those compatibility copies whenever replacing a report.
 
 [SHA-256 checksums](research/SHA256SUMS) identify the exact reports, inventory and ZIP in this repository.
 
