@@ -51,9 +51,9 @@ A matching push should produce one `GET /marker` and an app `PASS`; the mismatch
 
 ## Research and limits
 
-- [Main CTI report: English](research/Divar_backdoor_technical_analysis.pdf) · [فارسی](research/Divar_backdoor_technical_analysis_fa.pdf) — release chronology, push and HTTP routes, code analysis, and IoCs.
-- [Livestream whitepaper: English](research/Divar_livestream_whitepaper_en.pdf) · [فارسی](research/Divar_livestream_whitepaper_fa.pdf) · [presentation](https://youtube.com/live/uGGs-6wP0xE).
-- [Iranian mobile-app comparison: English](research/Iran_mobile_apps_companion.pdf) · [فارسی](research/Iran_mobile_apps_companion_fa.pdf).
+- Main CTI report ([FA](research/Divar_backdoor_technical_analysis_fa.pdf) / [EN](research/Divar_backdoor_technical_analysis.pdf)) — release chronology, push and HTTP routes, code analysis, and IoCs.
+- Livestream whitepaper ([FA](research/Divar_livestream_whitepaper_fa.pdf) / [EN](research/Divar_livestream_whitepaper_en.pdf)) · [presentation](https://youtube.com/live/uGGs-6wP0xE).
+- Iranian mobile-app comparison ([FA](research/Iran_mobile_apps_companion_fa.pdf) / [EN](research/Iran_mobile_apps_companion.pdf)).
 - [IOC Hunt rules and methods](research/IOC_Hunt/README.md) · [APK release-marker matrix](research/Divar_release_marker_matrix.csv) · [artifact checksums](research/SHA256SUMS).
 
 The lab models one sampled push branch, not the separate HTTP response-header route or the sampled APK's Divar-specific OneSignal REST path. It does not establish that a hostile push was sent through Divar's production account or that a device was exploited. For source and validation details, see [evidence and limits](docs/evidence.md), [OneSignal incident-response leads](docs/divar-onesignal-incident-response.md), [Ramin Farajpour Cami's original analysis](https://gist.github.com/raminfp/a548a2af86108eb40b8bffc5c8f07aaa), and [Hamid Kashfi's follow-up](https://x.com/hkashfi/status/2106147963332633025).
